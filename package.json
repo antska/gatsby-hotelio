@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-datocms-demo",
-  "description": "Gatsby DatoCMS creative portfolio demo",
+  "name": "gatsby-hotelio",
+  "description": "Gatsby DatoCMS Hotel website",
   "version": "1.0.0",
-  "author": "Stefano Verna <s.verna@datocms.com>",
+  "author": "Antonis Skandalis <ant.skandalis@gmail.com>",
   "dependencies": {
     "dotenv": "^8.1.0",
     "gatsby": "^2.20.0",
@@ -18,10 +18,14 @@
     "react-helmet": "^5.2.0",
     "react-masonry-component": "^6.2.1",
     "react-slick": "^0.25.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "typescript": "^3.9.2"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "hotelio",
+    "hotel",
+    "datocms"
   ],
   "license": "MIT",
   "main": "n/a",
@@ -31,6 +35,13 @@
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\""
   },
   "devDependencies": {
-    "prettier": "^1.17.0"
+    "@types/react-helmet": "^5.0.15",
+    "@types/styled-components": "^5.1.0",
+    "gatsby-plugin-styled-components": "^3.2.3",
+    "gatsby-plugin-typescript": "^2.3.3",
+    "prettier": "^2.0.4",
+    "styled-components": "^5.1.0",
+    "twin.macro": "^1.0.0-alpha.9",
+    "typescript-plugin-tw-template": "^1.0.2"
   }
 }
