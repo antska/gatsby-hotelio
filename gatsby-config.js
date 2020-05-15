@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
@@ -6,8 +6,9 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-datocms`,
       options: {
@@ -15,4 +16,4 @@ module.exports = {
       },
     },
   ],
-}
+};
