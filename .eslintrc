@@ -1,5 +1,7 @@
 {
-  "extends": ["wesbos"],
+  "extends": ["wesbos", "airbnb-typescript"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "rules": {
     "no-console": 2,
     "import/no-unresolved": 0,
