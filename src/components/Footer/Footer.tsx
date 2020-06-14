@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className="bg-helens-blue text-white">
       <div className="container mx-auto flex justify-center py-24">
         <div className="flex-1">
-          <h2 className="mb-4">CONTACT</h2>
+          <h5 className="mb-4">CONTACT</h5>
           <p>
             Tel.: +30 22840 91235
             <br />
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
         {footer.datoCmsFooter.footerImages.map((award, key: number) => (
           <div key={`award_${key}`} className="flex-1">
-            <h2 className="mb-4">{award.title}</h2>
+            <h5 className="mb-4">{award.title}</h5>
             <Img fixed={award.fixed} />
           </div>
         ))}

@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../Header';
 import Footer from '../Footer';
 
 type Props = {
@@ -8,7 +7,6 @@ type Props = {
 
 const Layout = ({ children }: Props) => (
   <>
-    <Header />
     <main className="container mx-auto">{children}</main>
     <Footer />
   </>
