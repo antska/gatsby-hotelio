@@ -33,8 +33,8 @@ const Footer = () => {
             />
           ))}
         </div>
-        {footer.datoCmsFooter.footerImages.map(award => (
-          <div className="flex-1">
+        {footer.datoCmsFooter.footerImages.map((award, key: number) => (
+          <div key={`award_${key}`} className="flex-1">
             <h2 className="mb-4">{award.title}</h2>
             <Img fixed={award.fixed} />
           </div>
@@ -43,8 +43,8 @@ const Footer = () => {
       <div className="flex justify-between mx-2 py-8 px-12 border-t border-white text-xs">
         <div className="flex-1">© Copyright Helen's Minimal Studios & Apartments</div>
         <div className="flex-1 text-right">
-          {footer.allDatoCmsMenu.edges.map(({ node: menuItem }) => (
-            <Link className="mr-6" to={menuItem.url}>
+          {footer.allDatoCmsMenu.edges.map(({ node: menuItem }, key: number) => (
+            <Link className="mr-6" to={menuItem.url} key={`menuLink_${key}`}>
               {menuItem.label}
             </Link>
           ))}

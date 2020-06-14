@@ -7,8 +7,17 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-typescript`,
+    {
+      resolve: 'gatsby-background-image-es5',
+      options: {
+        // add your own characters to escape, replacing the default ':/'
+        specialChars: '/:'
+      }
+    },
     {
       resolve: `gatsby-source-datocms`,
       options: {

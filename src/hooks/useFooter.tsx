@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-export const useFooter = () => {
-  const footer = useStaticQuery(
+export const useFooter = () =>
+  useStaticQuery(
     graphql`
       query social {
         allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
@@ -37,5 +37,3 @@ export const useFooter = () => {
       }
     `
   );
-  return footer;
-};
