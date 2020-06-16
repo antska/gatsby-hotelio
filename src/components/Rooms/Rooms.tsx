@@ -7,7 +7,7 @@ type Props = {};
 const Rooms = () => {
   const data = useStaticQuery(
     graphql`
-      query IndexQuery {
+      query RoomsQuery {
         allDatoCmsRoom(sort: { fields: [position], order: ASC }) {
           edges {
             node {
@@ -29,7 +29,7 @@ const Rooms = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center  mt-16">
         <h2 className="font-semibold">Our Rooms</h2>
         <div>
           <p className="">
@@ -40,9 +40,9 @@ const Rooms = () => {
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-6">
         {data.allDatoCmsRoom.edges.map(({ node: work }) => (
-          <Card image={work.coverImage.fluid} title={work.title} excerpt={work.excerpt} />
+          <Card image={work.coverImage.fluid} title={work.title} excerpt={work.excerpt} linkTo={work.slug} />
         ))}
       </div>
     </>
