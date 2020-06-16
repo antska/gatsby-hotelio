@@ -32,7 +32,7 @@ const Rooms = () => {
       <div className="flex justify-between items-center  mt-16">
         <h2 className="font-semibold">Our Rooms</h2>
         <div>
-          <p className="">
+          <p>
             Make a reservation on{' '}
             <Link to="https://www.booking.com/hotel/gr/eleni-studios-aliki.html" className="text-blue-800">
               booking.com

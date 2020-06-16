@@ -17,7 +17,7 @@ const Card = ({ image, title, excerpt, linkTo }) => (
     </div>
     <div className="">
       <Link to={`/${linkTo}`}>
-        <h4 className="pb-4 text-center text-gray-900 font-bold">{title}</h4>
+        <h4 className="pb-4 text-center text-gray-900 font-semibold">{title}</h4>
       </Link>
       {excerpt && <p className="border-t border-black p-1 text-sm">{excerpt}</p>}
     </div>

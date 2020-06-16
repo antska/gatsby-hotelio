@@ -4,13 +4,19 @@ export const useInstagram = () =>
   useStaticQuery(
     graphql`
       query {
+        datoCmsHome {
+          logo {
+            fixed(height: 40, width: 40) {
+              ...GatsbyDatoCmsFixed
+            }
+          }
+        }
+
         allInstaNode(sort: { fields: likes, order: DESC }) {
           edges {
             node {
               id
               likes
-              preview
-              original
               timestamp
               localFile {
                 childImageSharp {
