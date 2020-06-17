@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import BackgroundImage from 'gatsby-background-image';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
@@ -23,7 +23,7 @@ const Header = () => {
             <h1 className="text-center">Pleasant Stay in Paros Island</h1>
             <p>Rooms &amp; apartments</p>
           </div>
-          <div className="absolute bottom-0 left-0 w-full bg-white text-center">
+          <div className="nav bottom-nav">
             {header.allDatoCmsMenu.edges.map(({ node: menuItem }, key: number) => (
               <div key={`menuItem_${key}`} className="inline-block p-4">
                 <Link to={menuItem.url}>{menuItem.label}</Link>
