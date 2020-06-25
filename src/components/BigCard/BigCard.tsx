@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import Img, { FluidObject } from 'gatsby-image';
 
 type Props = {
-  image: string;
+  image: FluidObject;
   title: string;
   excerpt: string;
+  linkTo: string;
 };
 
-const BigCard = ({ image, title, excerpt, linkTo }) => (
+const BigCard = ({ image, title, excerpt, linkTo }: Props) => (
   <div className="h-full">
     <h2 className="pb-4 text-gray-900 font-semibold">{title}</h2>
     <div className="mb-4 transition duration-150 ease-in-out">

@@ -2,8 +2,6 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import BigCard from '../BigCard';
 
-type Props = {};
-
 const Explore = () => {
   const data = useStaticQuery(
     graphql`
@@ -35,6 +33,7 @@ const Explore = () => {
           title={explore.title}
           excerpt={explore.excerpt}
           linkTo={explore.slug}
+          key={explore.slug}
         />
       ))}
     </div>

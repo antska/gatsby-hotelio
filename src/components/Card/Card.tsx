@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import Img, { FluidObject } from 'gatsby-image';
 
 type Props = {
-  image: string;
+  image: FluidObject;
   title: string;
   excerpt: string;
+  linkTo: string;
 };
 
-const Card = ({ image, title, excerpt, linkTo }) => (
+const Card = ({ image, title, excerpt, linkTo }: Props) => (
   <div className="h-full">
     <div className="mb-4 transition duration-150 ease-in-out">
       <Link to={`/${linkTo}`}>

@@ -2,8 +2,6 @@ import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import Card from '../Card';
 
-type Props = {};
-
 const Rooms = () => {
   const data = useStaticQuery(
     graphql`
@@ -29,7 +27,7 @@ const Rooms = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center  mt-16">
+      <div className="flex justify-between items-center mt-16">
         <h2 className="font-semibold">Our Rooms</h2>
         <div>
           <p>
@@ -42,7 +40,13 @@ const Rooms = () => {
       </div>
       <div className="grid grid-cols-3 gap-6">
         {data.allDatoCmsRoom.edges.map(({ node: work }) => (
-          <Card image={work.coverImage.fluid} title={work.title} excerpt={work.excerpt} linkTo={work.slug} />
+          <Card
+            image={work.coverImage.fluid}
+            title={work.title}
+            excerpt={work.excerpt}
+            linkTo={work.slug}
+            key={work.slug}
+          />
         ))}
       </div>
     </>

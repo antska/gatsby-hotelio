@@ -12,7 +12,7 @@ export const useInstagram = () =>
           }
         }
 
-        allInstaNode(sort: { fields: likes, order: DESC }) {
+        allInstaNode(sort: { fields: timestamp, order: DESC }) {
           edges {
             node {
               id
@@ -20,8 +20,8 @@ export const useInstagram = () =>
               timestamp
               localFile {
                 childImageSharp {
-                  fixed(width: 300, height: 300) {
-                    ...GatsbyImageSharpFixed
+                  fluid(maxWidth: 300, maxHeight: 300) {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
