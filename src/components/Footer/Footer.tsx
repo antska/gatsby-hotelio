@@ -1,9 +1,9 @@
 import React from 'react';
-// @ts-ignore
-import { SocialIcon } from 'react-social-icons';
-import Img from 'gatsby-image';
-import { useFooter } from '../../hooks/useFooter';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
+
+import { useFooter } from '../../hooks/useFooter';
+import SocialIcons from '../SocialIcons';
 
 const Footer = () => {
   const footer = useFooter();
@@ -16,22 +16,13 @@ const Footer = () => {
           <p>
             Tel.: +30 22840 91235
             <br />
-            Mob: +30 6946630596
+            Mob: +30 694 663 0596
             <br />
-            Email: studioeleniparos@gmail.com
+            Email: info@helenstudios.com
           </p>
         </div>
         <div className="flex-1">
-          {footer.allDatoCmsSocialProfile.edges.map(({ node: profile }) => (
-            <SocialIcon
-              key={profile.profileType}
-              url={profile.url}
-              style={{ height: 40, width: 40 }}
-              fgColor="#fff"
-              bgColor={profile.color.hex}
-              className="mr-2"
-            />
-          ))}
+          <SocialIcons />
         </div>
         {footer.datoCmsFooter.footerImages.map((award, key: number) => (
           <div key={`award_${key}`} className="flex-1">

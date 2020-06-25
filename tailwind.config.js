@@ -7,7 +7,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        'helens-blue': '#59809a'
+        'helens-blue': '#59809a',
+        instagram: '#C13584',
+        facebook: '#2D5F9A',
+        tripadvisor: '#32da9d',
+        email: '#F6AD55'
       }
     }
   },

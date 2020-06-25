@@ -1,15 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import Img from 'gatsby-image';
-import { Link } from 'gatsby';
-import { SocialIcon } from 'react-social-icons';
+import { FaInstagram } from 'react-icons/fa';
 
 import { useInstagram } from '../../hooks/useInstagram';
-
-type Props = {
-  image: string;
-  title: string;
-  excerpt: string;
-};
 
 const InstagramFeed = () => {
   const instagram = useInstagram();
@@ -37,10 +30,10 @@ const InstagramFeed = () => {
           </div>
         </a>
       </div>
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-4 gap-4">
         {igPosts.slice(0, visible).map(({ node: ig }) => (
-          <a href={`https://www.instagram.com/p/${ig.id}`} target="_blank" rel="noopener norefferer">
-            <Img className="mb-4" fixed={ig.localFile.childImageSharp.fixed} />
+          <a href={`https://www.instagram.com/p/${ig.id}`} target="_blank" rel="noopener norefferer" key={ig.id}>
+            <Img fluid={ig.localFile.childImageSharp.fluid} />
           </a>
         ))}
       </div>
@@ -50,17 +43,15 @@ const InstagramFeed = () => {
             <span>Load more...</span>
           </button>
         )}
-        <button className="ml-4 bg-blue-500 hover:bg-gray-800 text-white text-xs px-2 rounded">
-          <SocialIcon
-            url="https://www.instagram.com/helenstudios_paros/"
-            style={{ height: 30, width: 30 }}
-            fgColor="#fff"
-            bgColor="transparent"
-          />
-          <a href="https://www.instagram.com/helenstudios_paros" target="_blank" rel="noopener norefferer">
-            Follow us on Instagram
-          </a>
-        </button>
+        <a
+          href="https://www.instagram.com/helenstudios_paros/"
+          target="_blank"
+          rel="noopener norefferer"
+          className="ml-4 bg-blue-500 hover:bg-gray-800 text-white text-xs px-2 rounded flex justify-center items-center"
+        >
+          <FaInstagram className="mr-1" title="Instagram" />
+          <span>Follow us on Instagram</span>
+        </a>
       </div>
     </>
   );

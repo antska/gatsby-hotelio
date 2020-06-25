@@ -3,21 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 export const useFooter = () =>
   useStaticQuery(
     graphql`
-      query social {
-        allDatoCmsSocialProfile(sort: { fields: [position], order: ASC }) {
-          edges {
-            node {
-              profileType
-              url
-              color {
-                hex
-              }
-              icon {
-                url
-              }
-            }
-          }
-        }
+      query footer {
         datoCmsFooter {
           footerImages {
             title

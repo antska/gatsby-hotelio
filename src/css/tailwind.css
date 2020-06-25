@@ -21,7 +21,7 @@ h4 {
 /*! purgecss end ignore */
 
 .nav {
-    @apply left-0 w-full bg-white text-center;
+    @apply left-0 w-full bg-white text-center z-10;
 }
 
 .bottom-nav {
@@ -30,6 +30,10 @@ h4 {
 
 .top-nav {
     @apply fixed top-0 left-0;
+}
+
+.social-icon {
+    @apply inline-block outline-none rounded-full text-white transition-all duration-300 h-8 w-8 text-base text-center mr-2;
 }
 
 @tailwind utilities;

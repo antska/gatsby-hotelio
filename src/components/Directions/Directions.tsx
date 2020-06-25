@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// @ts-ignore
-import { SocialIcon } from 'react-social-icons';
 import ReactMapGL, { Marker, Popup, NavigationControl } from 'react-map-gl';
 import Pin from './Pin';
 
