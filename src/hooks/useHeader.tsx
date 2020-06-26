@@ -10,6 +10,9 @@ export const useHeader = () =>
               ...GatsbyDatoCmsFixed
             }
           }
+          miniLogo {
+            url
+          }
           hero {
             fluid(maxWidth: 1920) {
               ...GatsbyDatoCmsFluid
@@ -29,7 +32,7 @@ export const useHeader = () =>
             }
           }
         }
-        allDatoCmsMenu {
+        allDatoCmsMenu(sort: { fields: position }) {
           edges {
             node {
               url

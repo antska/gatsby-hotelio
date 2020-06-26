@@ -6,8 +6,12 @@ import Rooms from '../components/Rooms';
 import Explore from '../components/Explore';
 import InstagramFeed from '../components/InstagramFeed';
 import Directions from '../components/Directions';
+import { useHeader } from '../hooks/useHeader';
+import NavBar from '../components/NavBar';
 
 const IndexPage = () => {
+  const header = useHeader();
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
@@ -32,7 +36,14 @@ const IndexPage = () => {
 
   return (
     <>
-      <Header />
+      <Header
+        heroImage={header.datoCmsHome.hero.fluid}
+        title="Pleasant Stay in Paros Island"
+        subtitle="Rooms &amp; apartments"
+        hasLogo
+        fullScreen
+      />
+      <NavBar bottomNav />
       <Layout>
         <Rooms />
         <Explore />

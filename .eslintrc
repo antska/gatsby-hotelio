@@ -1,7 +1,24 @@
 {
   "extends": ["wesbos", "airbnb-typescript"],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "react"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module" // Allows for the use of imports
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
   "rules": {
     "no-console": 2,
     "import/no-unresolved": 0,
@@ -16,5 +33,14 @@
         "tabWidth": 2
       }
     ]
-  }
+  },
+  "overrides": [
+    // Override some TypeScript rules just for .js files
+    {
+      "files": ["*.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off" //
+      }
+    }
+  ]
 }
