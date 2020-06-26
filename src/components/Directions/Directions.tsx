@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import ReactMapGL, { Marker, Popup, NavigationControl } from 'react-map-gl';
-import Pin from './Pin';
+import Map from '../Map';
 
 const Directions = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -14,42 +13,7 @@ const Directions = () => {
   return (
     <section className="grid grid-cols-3 mt-8">
       <div className="col-span-2">
-        <ReactMapGL
-          {...viewport}
-          width="100%"
-          mapStyle="mapbox://styles/antska/ckbigw86p1b1l1jq6v9ckk2rp"
-          onViewportChange={nextViewport => setViewport(nextViewport)}
-          mapboxApiAccessToken={process.env.MAPBOX_TOKEN}
-          scrollZoom={false}
-        >
-          <Marker
-            longitude={25.1365297}
-            latitude={36.9948562}
-            offsetTop={-20}
-            offsetLeft={-10}
-            draggable={false}
-            captureClick={false}
-          >
-            <div onClick={() => setShowPopup(true)}>
-              <Pin size={20} />
-            </div>
-          </Marker>
-          {showPopup && (
-            <Popup
-              latitude={37.78}
-              longitude={-122.41}
-              closeButton={true}
-              closeOnClick={false}
-              onClose={() => setShowPopup(false)}
-              anchor="top"
-            >
-              <div>You are here</div>
-            </Popup>
-          )}
-          <div className="absolute right-0 bottom-0 mb-6">
-            <NavigationControl />
-          </div>
-        </ReactMapGL>
+        <Map />
       </div>
       <div className="col-span-1 bg-helens-blue p-20 text-white">
         <h2 className="font-semibold">How to reach us</h2>

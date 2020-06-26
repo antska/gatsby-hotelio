@@ -29,7 +29,7 @@ h4 {
 }
 
 .top-nav {
-    @apply fixed top-0 left-0 shadow-xl;
+    @apply fixed top-0 left-0 shadow-xl transition-all duration-300;
 }
 
 .social-icon {
