@@ -6,9 +6,7 @@ export const useInstagram = () =>
       query {
         datoCmsHome {
           logo {
-            fixed(height: 40, width: 40) {
-              ...GatsbyDatoCmsFixed
-            }
+            url
           }
         }
 

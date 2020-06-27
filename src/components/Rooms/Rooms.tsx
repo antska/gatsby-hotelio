@@ -39,13 +39,13 @@ const Rooms = () => {
         </div>
       </div>
       <div className="grid grid-cols-3 gap-6">
-        {data.allDatoCmsRoom.edges.map(({ node: work }) => (
+        {data.allDatoCmsRoom.edges.map(({ node: room }) => (
           <Card
-            image={work.coverImage.fluid}
-            title={work.title}
-            excerpt={work.excerpt}
-            linkTo={work.slug}
-            key={work.slug}
+            image={room.coverImage.fluid}
+            title={room.title}
+            excerpt={room.excerpt}
+            linkTo={`rooms/${room.slug}`}
+            key={room.slug}
           />
         ))}
       </div>

@@ -2,11 +2,12 @@ import React from 'react';
 
 type Props = {
   children: React.ReactNode;
+  extraClasses?: string;
 };
 
-const Layout = ({ children }: Props) => (
+const Layout = ({ extraClasses, children }: Props) => (
   <>
-    <main className="container mx-auto">{children}</main>
+    <main className={`container mx-auto ${extraClasses}`}>{children}</main>
   </>
 );
 

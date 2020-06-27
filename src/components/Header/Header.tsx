@@ -1,7 +1,7 @@
 import React from 'react';
 import BackgroundImage from 'gatsby-background-image';
 
-import Img, { FluidObject } from 'gatsby-image';
+import { FluidObject } from 'gatsby-image';
 import { useHeader } from '../../hooks/useHeader';
 
 type Props = {
@@ -25,8 +25,8 @@ const Header = ({ heroImage, title, subtitle, hasLogo = false, fullScreen = fals
       <div className="h-full bg-black bg-opacity-25">
         <div className="flex items-center justify-center h-full">
           {hasLogo && (
-            <div className="absolute top-0 z-10 w-full mt-4 text-center">
-              <Img fixed={header.datoCmsHome.logo.fixed} />
+            <div className="absolute top-0 z-10 w-56 h-8 mt-4 text-center">
+              <img src={header.datoCmsHome.logo.url} title="logo" alt="logo" />
             </div>
           )}
           <div className="text-center font-hairline text-white">

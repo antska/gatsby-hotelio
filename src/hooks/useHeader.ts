@@ -6,9 +6,7 @@ export const useHeader = () =>
       query header {
         datoCmsHome {
           logo {
-            fixed(height: 200, width: 200) {
-              ...GatsbyDatoCmsFixed
-            }
+            url
           }
           miniLogo {
             url
