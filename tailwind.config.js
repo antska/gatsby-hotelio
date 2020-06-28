@@ -11,10 +11,11 @@ module.exports = {
         instagram: '#C13584',
         facebook: '#2D5F9A',
         tripadvisor: '#259c70',
-        email: '#F6AD55'
+        email: '#F6AD55',
+        gold: '#9e7256'
       },
       height: {
-        '80vh': '80vh'
+        '90vh': '90vh'
       }
     }
   },
