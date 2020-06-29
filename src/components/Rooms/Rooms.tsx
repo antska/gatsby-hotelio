@@ -10,7 +10,7 @@ type Props = {
   currentRoomId?: string;
 };
 
-const Rooms = ({ withTitle = true, withBooking = true, limit = 6, currentRoomId = undefined }: Props) => {
+const Rooms = ({ withTitle = true, withBooking = true, limit = undefined, currentRoomId = undefined }: Props) => {
   const data = useStaticQuery(
     graphql`
       query RoomsQuery {
