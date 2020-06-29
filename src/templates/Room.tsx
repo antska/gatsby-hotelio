@@ -17,12 +17,11 @@ import Rooms from '../components/Rooms';
 const settings = {
   slidesToShow: 2,
   speed: 500,
-  arrows: true,
   infinite: true,
   centerMode: true,
   slidesToScroll: 1,
-  nextArrow: <RiArrowRightSLine />,
-  prevArrow: <RiArrowLeftSLine />
+  nextArrow: <RiArrowRightSLine size="12" color="black" />,
+  prevArrow: <RiArrowLeftSLine size="12" color="black" />
 };
 
 const amenities = [
@@ -83,7 +82,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
           </div>
         </section>
       </Layout>
-      <section id="amenities" className="p-12 shadow-lg z-40 bg-helens-dark-blue text-white">
+      <section id="amenities" className="p-24 bg-helens-dark-blue text-white">
         <div className="grid grid-cols-2 gap-4">
           <div className="pr-12">
             <div className="flex items-center mb-4">
@@ -119,10 +118,10 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
           ))}
         </Slider>
       </section>
-      <section className="container mt-12 mx-auto text-center">
+      <section className="container my-12 mx-auto text-center">
         <h2>Other Rooms</h2>
         <p>COULD ALSO BE INTEREST FOR YOU</p>
-        <Rooms withTitle={false} withBooking={false} limit={3} />
+        <Rooms withTitle={false} withBooking={false} limit={3} currentRoomId={room.id} />
       </section>
       <Footer />
     </>

@@ -19,6 +19,11 @@ module.exports = {
       height: {
         '90vh': '90vh',
         '600': '600px'
+      },
+      right: {
+        '1': '1rem',
+        '2': '2rem',
+        '3': '3rem'
       }
     }
   },

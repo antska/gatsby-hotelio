@@ -7,9 +7,10 @@ type Props = {
   withTitle?: boolean;
   withBooking?: boolean;
   limit?: number;
+  currentRoomId?: string;
 };
 
-const Rooms = ({ withTitle = true, withBooking = true, limit = 6 }: Props) => {
+const Rooms = ({ withTitle = true, withBooking = true, limit = 6, currentRoomId = undefined }: Props) => {
   const data = useStaticQuery(
     graphql`
       query RoomsQuery {
@@ -32,7 +33,22 @@ const Rooms = ({ withTitle = true, withBooking = true, limit = 6 }: Props) => {
     `
   );
 
-  const rooms = limit ? data.allDatoCmsRoom.edges.slice(0, limit) : data.allDatoCmsRoom.edges;
+  const shuffleArray = (array: object[]) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * i);
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  };
+
+  const remainingRooms =
+    currentRoomId && data.allDatoCmsRoom.edges.filter(({ node: room }) => room.id !== currentRoomId);
+
+  const shuffledRooms = remainingRooms && shuffleArray(remainingRooms);
+
+  const rooms = limit ? shuffledRooms.slice(0, limit) : data.allDatoCmsRoom.edges;
 
   return (
     <>
