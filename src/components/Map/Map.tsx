@@ -11,9 +11,9 @@ const Map = compose(
   }),
   withScriptjs,
   withGoogleMap
-)(() => (
+)(({ marker }) => (
   <GoogleMap defaultZoom={17} defaultCenter={{ lat: 36.9946889, lng: 25.1345078 }}>
-    <Marker animation={2} position={{ lat: 36.9946846, lng: 25.1366965 }} />
+    <Marker animation={2} position={marker} />
   </GoogleMap>
 ));
 
