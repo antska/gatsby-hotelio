@@ -10,15 +10,16 @@ type Props = {
   subtitle: string;
   hasLogo?: boolean;
   fullScreen?: boolean;
+  bgFixed?: boolean;
 };
 
-const Header = ({ heroImage, title, subtitle, hasLogo = false, fullScreen = false }: Props) => {
+const Header = ({ heroImage, title, subtitle, hasLogo = false, fullScreen = false, bgFixed = false }: Props) => {
   const header = useHeader();
 
   return (
     <BackgroundImage
       Tag="header"
-      className={`${fullScreen ? 'h-screen' : 'h-80vh'}`}
+      className={`${fullScreen ? 'h-screen' : 'h-90vh'} ${bgFixed ? 'bg-fixed' : ''}`}
       fluid={heroImage}
       backgroundColor={`#040e18`}
     >

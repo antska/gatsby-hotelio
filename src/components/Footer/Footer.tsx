@@ -14,9 +14,9 @@ const Footer = () => {
         <div className="flex-1">
           <h5 className="mb-4">CONTACT</h5>
           <p>
-            Tel.: +30 22840 91235
+            Mobile: (+30) 697 837 0698
             <br />
-            Mob: +30 694 663 0596
+            WhatsApp: (+30) 698 339 5086
             <br />
             Email: info@helenstudios.com
           </p>

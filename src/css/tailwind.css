@@ -36,11 +36,57 @@ h4 {
     @apply inline-block outline-none rounded-full text-white transition-all duration-300 h-8 w-8 text-base text-center mr-2;
 }
 
+.centered-axis-x {
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
 @tailwind utilities;
 html {
     font-family: 'Titillium Web', 'Renner', 'Lato', 'Helvetica', sans-serif;
 }
 
-.scroll-smooth {
-    scroll-behavior: smooth;
+.slick-prev {
+    left: 25px;
+}
+
+.slick-next {
+    right: 25px;
+}
+
+.slick-prev, .slick-next {
+    background: white;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+    background: white;
+    transition: all 500ms;
+    opacity: 1;
+}
+
+.slick-next:hover, .slick-next:focus {
+    transform: translate(10px, -50%);
+}
+
+.slick-prev:hover, .slick-prev:focus {
+    transform: translate(-10px, -50%);
+}
+
+.svg-icon {
+    /* width: 1em;
+    height: 1em; */
+}
+
+.svg-icon path, .svg-icon polygon, .svg-icon rect {
+    fill: black;
+}
+
+.svg-icon circle {
+    stroke: black;
+    stroke-width: 1;
 }
