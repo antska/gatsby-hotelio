@@ -76,3 +76,17 @@ html {
 .slick-prev:hover, .slick-prev:focus {
     transform: translate(-10px, -50%);
 }
+
+.svg-icon {
+    /* width: 1em;
+    height: 1em; */
+}
+
+.svg-icon path, .svg-icon polygon, .svg-icon rect {
+    fill: black;
+}
+
+.svg-icon circle {
+    stroke: black;
+    stroke-width: 1;
+}
