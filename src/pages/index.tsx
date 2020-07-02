@@ -7,6 +7,7 @@ import InstagramFeed from '../components/InstagramFeed';
 import Directions from '../components/Directions';
 import { useHeader } from '../hooks/useHeader';
 import NavBar from '../components/NavBar';
+import Welcome from '../components/Welcome';
 
 const IndexPage = () => {
   const header = useHeader();
@@ -43,6 +44,11 @@ const IndexPage = () => {
         fullScreen
       />
       <NavBar bottomNav />
+      <Welcome
+        title={header.datoCmsHome.welcomeTitle}
+        description={header.datoCmsHome.welcomeMessage}
+        image={header.datoCmsHome.welcomeImage.fluid}
+      />
       <Layout>
         <Rooms />
         <InstagramFeed />

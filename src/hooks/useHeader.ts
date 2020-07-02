@@ -16,6 +16,13 @@ export const useHeader = () =>
               ...GatsbyDatoCmsFluid
             }
           }
+          welcomeTitle
+          welcomeMessage
+          welcomeImage {
+            fluid {
+              ...GatsbyDatoCmsFluid
+            }
+          }
         }
         allDatoCmsHeroSlider {
           edges {
