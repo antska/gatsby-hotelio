@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -11,6 +11,7 @@ import Welcome from '../components/Welcome';
 
 const IndexPage = () => {
   const header = useHeader();
+  const [bottomNav, setBottomNav] = useState(true);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -23,14 +24,12 @@ const IndexPage = () => {
   const handleScroll = () => {
     const main = document.querySelector('header');
     const nav = document.querySelector('.nav');
-    const offset = main?.offsetHeight - nav?.offsetHeight;
+    const offset = main?.offsetHeight ?? 0 - (nav as HTMLElement).offsetHeight;
 
     if (window.pageYOffset > offset) {
-      nav?.classList.remove('bottom-nav');
-      nav?.classList.add('top-nav');
+      setBottomNav(false);
     } else {
-      nav?.classList.add('bottom-nav');
-      nav?.classList.remove('top-nav');
+      setBottomNav(true);
     }
   };
 
@@ -43,7 +42,7 @@ const IndexPage = () => {
         hasLogo
         fullScreen
       />
-      <NavBar bottomNav />
+      <NavBar bottomNav={bottomNav} withLogo />
       <Welcome
         title={header.datoCmsHome.welcomeTitle}
         description={header.datoCmsHome.welcomeMessage}
