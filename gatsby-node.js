@@ -14,6 +14,13 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        allDatoCmsExploreCard {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
       }
     `).then(result => {
       result.data.allDatoCmsRoom.edges.map(({ node: room }) => {
@@ -22,6 +29,15 @@ exports.createPages = ({ graphql, actions }) => {
           component: path.resolve(`./src/templates/Room.tsx`),
           context: {
             slug: room.slug
+          }
+        });
+      });
+      result.data.allDatoCmsExploreCard.edges.map(({ node: explore }) => {
+        createPage({
+          path: `/${explore.slug}`,
+          component: path.resolve(`./src/templates/Explore.tsx`),
+          context: {
+            slug: explore.slug
           }
         });
       });

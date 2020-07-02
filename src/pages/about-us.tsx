@@ -17,7 +17,7 @@ const Contact = () => {
           <div className="grid grid-cols-3 gap-24">
             <div>
               <h2 className="font-bold col-span-1 my-12">{datoCmsAbout.title}</h2>
-              <p>{datoCmsAbout.description1}</p>
+              <p className="text-xl">{datoCmsAbout.description1}</p>
             </div>
             <Img className="col-span-2" fluid={datoCmsAbout.image1.fluid} />
           </div>

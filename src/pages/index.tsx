@@ -3,7 +3,6 @@ import Layout from '../components/Layout';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Rooms from '../components/Rooms';
-import Explore from '../components/Explore';
 import InstagramFeed from '../components/InstagramFeed';
 import Directions from '../components/Directions';
 import { useHeader } from '../hooks/useHeader';
@@ -46,7 +45,6 @@ const IndexPage = () => {
       <NavBar bottomNav />
       <Layout>
         <Rooms />
-        <Explore />
         <InstagramFeed />
       </Layout>
       <Directions />

@@ -46,7 +46,7 @@ const Rooms = ({ withTitle = true, withBooking = true, limit = undefined, curren
   const remainingRooms =
     currentRoomId && data.allDatoCmsRoom.edges.filter(({ node: room }) => room.id !== currentRoomId);
 
-  const shuffledRooms = remainingRooms && shuffleArray(remainingRooms);
+  const shuffledRooms = remainingRooms ? shuffleArray(remainingRooms) : shuffleArray(data.allDatoCmsRoom.edges);
 
   const rooms = limit ? shuffledRooms.slice(0, limit) : data.allDatoCmsRoom.edges;
 
