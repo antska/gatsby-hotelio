@@ -24,6 +24,7 @@ const Map = compose(
       animation={2}
       position={{ lat: 36.9946846, lng: 25.1366965 }}
       labelAnchor={new google.maps.Point(0, 70)}
+      onClick={() => window.open('https://g.page/helenstudios_paros?share', '_blank')}
     >
       <div className="flex justify-center flex-col">
         <img
@@ -40,6 +41,7 @@ const Map = compose(
       animation={2}
       position={{ lat: 36.994665, lng: 25.136193 }}
       labelAnchor={new google.maps.Point(140, 50)}
+      onClick={() => window.open('https://goo.gl/maps/1naBWPBYucfQRqmB7', '_blank')}
     >
       <div className="flex justify-center flex-col">
         <img
