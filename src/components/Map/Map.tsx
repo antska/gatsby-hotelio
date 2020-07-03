@@ -1,6 +1,9 @@
 import React from 'react';
 import { compose, withProps } from 'recompose';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
+import { MarkerWithLabel } from 'react-google-maps/lib/components/addons/MarkerWithLabel';
+
+import fancyMapStyle from './mapStyle.json';
 
 const Map = compose(
   withProps({
@@ -12,8 +15,36 @@ const Map = compose(
   withScriptjs,
   withGoogleMap
 )(({ marker }) => (
-  <GoogleMap defaultZoom={17} defaultCenter={{ lat: 36.9946889, lng: 25.1345078 }}>
-    <Marker animation={2} position={marker} />
+  <GoogleMap
+    defaultZoom={17}
+    defaultCenter={{ lat: 36.9946889, lng: 25.1345078 }}
+    defaultOptions={{ styles: fancyMapStyle }}
+  >
+    <MarkerWithLabel animation={2} position={marker} labelAnchor={new google.maps.Point(0, 70)}>
+      <div className="flex justify-center flex-col">
+        <img
+          className="inline-block w-20 m-auto"
+          src="https://www.datocms-assets.com/27980/1593773921-helensminimalstudio-resized.png"
+        />
+        <p className="tracking-widest text-sm text-helens-blue">
+          Helen's Minimal
+          <br /> Studios & Apartments
+        </p>
+      </div>
+    </MarkerWithLabel>
+    <MarkerWithLabel
+      animation={2}
+      position={{ lat: 36.994665, lng: 25.136193 }}
+      labelAnchor={new google.maps.Point(140, 50)}
+    >
+      <div className="flex justify-center flex-col">
+        <img
+          className="inline-block w-20 m-auto"
+          src="https://www.datocms-assets.com/27980/1593773118-alykilogoresized.png"
+        />
+        <p className="tracking-widest text-xs text-helens-blue">Aliki Restaurant Paros</p>
+      </div>
+    </MarkerWithLabel>
   </GoogleMap>
 ));
 

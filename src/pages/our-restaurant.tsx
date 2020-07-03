@@ -18,7 +18,6 @@ const Gallery = () => {
         title={datoCmsRestaurant.title}
         subtitle={datoCmsRestaurant.subtitle}
         bgFixed
-        fullScreen
       />
       <Layout>
         <NavBar withLogo />

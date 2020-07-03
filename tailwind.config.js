@@ -6,6 +6,9 @@ module.exports = {
       body: ['Lato', 'sans-serif']
     },
     extend: {
+      fontFamily: {
+        insta: ['Lobster', 'Helvetica', 'Arial', 'sans-serif']
+      },
       colors: {
         'helens-blue': '#59809a',
         instagram: '#C13584',

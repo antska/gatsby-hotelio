@@ -49,7 +49,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
 
   return (
     <>
-      <Header heroImage={room.coverImage.fluid} title={room.title} subtitle={room.excerpt} bgFixed />
+      <Header heroImage={room.coverImage.fluid} title={room.title} subtitle={room.excerpt} bgFixed height="h-90vh" />
       <Layout extraClasses="relative z-30 scroll-smooth">
         <NavBar withLogo />
         <ul className="absolute flex -mt-8 text-white uppercase centered-axis-x">

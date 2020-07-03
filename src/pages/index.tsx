@@ -40,7 +40,6 @@ const IndexPage = () => {
         title="Pleasant Stay in Paros Island"
         subtitle="Rooms &amp; apartments"
         hasLogo
-        fullScreen
       />
       <NavBar bottomNav={bottomNav} withLogo />
       <Welcome
@@ -50,6 +49,17 @@ const IndexPage = () => {
       />
       <Layout>
         <Rooms />
+      </Layout>
+      <Header
+        heroImage={header.datoCmsHome.discoverImage.fluid}
+        title="Discover Aliki"
+        subtitle="Activities, Nearby villages &amp; more"
+        actionTo="/blog"
+        height="h-600"
+        margin="my-16"
+        bgFixed
+      />
+      <Layout>
         <InstagramFeed />
       </Layout>
       <Directions />

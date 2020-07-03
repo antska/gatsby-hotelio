@@ -13,7 +13,8 @@
     "noUnusedParameters": true,
     "removeComments": false,
     "preserveConstEnums": true,
-    "plugins": [{ "name": "typescript-plugin-tw-template" }]
+    "plugins": [{ "name": "typescript-plugin-tw-template" }],
+    "resolveJsonModule": true
   },
   "include": ["./src/**/*"]
 }

@@ -23,6 +23,11 @@ export const useHeader = () =>
               ...GatsbyDatoCmsFluid
             }
           }
+          discoverImage {
+            fluid(maxWidth: 1920) {
+              ...GatsbyDatoCmsFluid
+            }
+          }
         }
         allDatoCmsHeroSlider {
           edges {

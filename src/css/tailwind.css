@@ -43,7 +43,7 @@ h4 {
 
 @tailwind utilities;
 html {
-    font-family: 'Titillium Web', 'Renner', 'Lato', 'Helvetica', sans-serif;
+    font-family: 'Titillium Web', 'Billabong', 'Renner', 'Lato', 'Helvetica', sans-serif;
 }
 
 .slick-prev {

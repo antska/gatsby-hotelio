@@ -23,13 +23,7 @@ const settings = {
 const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
   return (
     <>
-      <Header
-        heroImage={explore.coverImage.fluid}
-        title={explore.title}
-        subtitle={explore.excerpt}
-        bgFixed
-        fullScreen
-      />
+      <Header heroImage={explore.coverImage.fluid} title={explore.title} subtitle={explore.excerpt} bgFixed />
       <Layout>
         <NavBar withLogo />
       </Layout>
