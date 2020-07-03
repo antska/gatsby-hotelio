@@ -34,7 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
       });
       result.data.allDatoCmsExploreCard.edges.map(({ node: explore }) => {
         createPage({
-          path: `/${explore.slug}`,
+          path: `blog/${explore.slug}`,
           component: path.resolve(`./src/templates/Explore.tsx`),
           context: {
             slug: explore.slug
