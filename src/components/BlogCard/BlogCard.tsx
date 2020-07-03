@@ -23,7 +23,9 @@ const BlogCard = ({ image, title, excerpt, tags, url }: Props) => (
       <div className="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">{excerpt}</div>
       <div className="relative mt-2 lg:absolute bottom-0 mb-4 md:hidden lg:block">
         {tags.split(',').map(tag => (
-          <p className="inline bg-gray-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700">{tag}</p>
+          <p className="inline bg-gray-300 py-1 px-2 rounded-full text-xs lowercase text-gray-700" key={tag}>
+            {tag}
+          </p>
         ))}
       </div>
     </div>

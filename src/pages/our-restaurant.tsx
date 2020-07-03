@@ -26,10 +26,10 @@ const Gallery = () => {
             <p className="text-sm">{datoCmsRestaurant.textLeft}</p>
             <p className="text-sm">{datoCmsRestaurant.textRight}</p>
             {Object.keys(datoCmsRestaurant.menu).map(key => (
-              <div className="text-sm mr-8">
+              <div className="text-sm mr-8" key={key}>
                 <h4 className="mb-8">{key}</h4>
                 {datoCmsRestaurant.menu[key].map(food => (
-                  <div className="flex flex-row justify-between">
+                  <div className="flex flex-row justify-between" key={food.name}>
                     <div className="mb-6">
                       <strong className="tracking-widest">{food.name}</strong>
                       <p>{food.ingredients}</p>

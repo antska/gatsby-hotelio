@@ -25,7 +25,7 @@ const Blog = () => {
           <div className="px-4">
             <div className="block md:flex justify-between md:-mx-2">
               {allDatoCmsExploreCard.edges.map(({ node: card }) => (
-                <div className="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
+                <div className="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0" key={card.slug}>
                   <BlogCard
                     image={card.coverImage.fluid}
                     title={card.title}

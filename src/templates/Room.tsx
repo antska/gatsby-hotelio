@@ -112,7 +112,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
       <section id="gallery" className="my-4">
         <Slider {...settings}>
           {room.gallery.map(img => (
-            <div>
+            <div key={img.originalId}>
               <BackgroundImage Tag="div" fluid={img.fluid} className="mr-4 h-600" />
             </div>
           ))}
@@ -139,6 +139,7 @@ export const query = graphql`
       pricelist
       info
       gallery {
+        originalId
         fluid {
           ...GatsbyDatoCmsFluid
         }
