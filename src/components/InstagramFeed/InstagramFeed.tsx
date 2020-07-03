@@ -17,6 +17,9 @@ const InstagramFeed = () => {
   return (
     <>
       <div className="mb-1 mt-16">
+        <div className="flex justify-center items-center font-light">
+          <h4 className="font-insta">Our Instagram</h4>
+        </div>
         <a href="https://www.instagram.com/helenstudios_paros" target="_blank" rel="noopener norefferer">
           <div className="flex items-center">
             <img className="mr-2 h-12 w-12" src={instagram.datoCmsHome.logo.url} alt="logo" title="logo" />

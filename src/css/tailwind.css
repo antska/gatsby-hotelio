@@ -29,7 +29,7 @@ h4 {
 }
 
 .top-nav {
-    @apply fixed top-0 left-0 shadow-xl transition-all duration-300;
+    @apply fixed top-0 left-0 shadow-xl transition-all duration-300 flex justify-between border-b border-gray-300;
 }
 
 .social-icon {
@@ -43,7 +43,7 @@ h4 {
 
 @tailwind utilities;
 html {
-    font-family: 'Titillium Web', 'Renner', 'Lato', 'Helvetica', sans-serif;
+    font-family: 'Titillium Web', 'Billabong', 'Renner', 'Lato', 'Helvetica', sans-serif;
 }
 
 .slick-prev {
@@ -83,7 +83,7 @@ html {
 }
 
 .svg-icon path, .svg-icon polygon, .svg-icon rect {
-    fill: black;
+    /* fill: black; */
 }
 
 .svg-icon circle {

@@ -6,6 +6,9 @@ module.exports = {
       body: ['Lato', 'sans-serif']
     },
     extend: {
+      fontFamily: {
+        insta: ['Lobster', 'Helvetica', 'Arial', 'sans-serif']
+      },
       colors: {
         'helens-blue': '#59809a',
         instagram: '#C13584',
@@ -24,6 +27,9 @@ module.exports = {
         '1': '1rem',
         '2': '2rem',
         '3': '3rem'
+      },
+      fill: {
+        white: 'white'
       }
     }
   },

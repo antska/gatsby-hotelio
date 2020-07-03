@@ -18,7 +18,6 @@ const Gallery = () => {
         title={datoCmsGallery.title}
         subtitle={datoCmsGallery.subtitle}
         bgFixed
-        fullScreen
       />
       <Layout extraClasses="relative z-30 scroll-smooth">
         <NavBar withLogo />
