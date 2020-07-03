@@ -58,7 +58,7 @@ const Gallery = () => {
         </section>
       </Layout>
       <section className="h-600">
-        <Map marker={{ lat: 36.994698, lng: 25.136169 }} />
+        <Map />
       </section>
       <Footer />
     </>

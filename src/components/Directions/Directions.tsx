@@ -4,7 +4,7 @@ import Map from '../Map';
 const Directions = () => (
   <section className="grid grid-cols-3 mt-8">
     <div className="col-span-2">
-      <Map marker={{ lat: 36.9946846, lng: 25.1366965 }} />
+      <Map />
     </div>
     <div className="col-span-1 bg-helens-blue p-20 text-white">
       <h2 className="font-semibold">How to reach us</h2>

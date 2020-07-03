@@ -14,13 +14,17 @@ const Map = compose(
   }),
   withScriptjs,
   withGoogleMap
-)(({ marker }) => (
+)(() => (
   <GoogleMap
     defaultZoom={17}
     defaultCenter={{ lat: 36.9946889, lng: 25.1345078 }}
     defaultOptions={{ styles: fancyMapStyle }}
   >
-    <MarkerWithLabel animation={2} position={marker} labelAnchor={new google.maps.Point(0, 70)}>
+    <MarkerWithLabel
+      animation={2}
+      position={{ lat: 36.9946846, lng: 25.1366965 }}
+      labelAnchor={new google.maps.Point(0, 70)}
+    >
       <div className="flex justify-center flex-col">
         <img
           className="inline-block w-20 m-auto"
