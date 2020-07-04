@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
+import { motion } from 'framer-motion';
 
 import { FluidObject } from 'gatsby-image';
 import { useHeader } from '../../hooks/useHeader';
@@ -28,6 +29,12 @@ const Header = ({
 }: Props) => {
   const header = useHeader();
 
+  const spring = {
+    type: 'spring',
+    damping: 10,
+    stiffness: 100
+  };
+
   return (
     <BackgroundImage
       Tag="header"
@@ -43,7 +50,14 @@ const Header = ({
             </div>
           )}
           <div className="text-center font-hairline text-white">
-            <h1 className="text-center">{title}</h1>
+            <motion.h1
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={spring}
+              className="text-center"
+            >
+              {title}
+            </motion.h1>
             <p>{subtitle}</p>
             {actionTo && (
               <Link to={actionTo}>

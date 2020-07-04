@@ -6,6 +6,7 @@
   "dependencies": {
     "autoprefixer": "^9.8.0",
     "dotenv": "^8.1.0",
+    "framer-motion": "^1.11.1",
     "gatsby": "^2.20.0",
     "gatsby-background-image": "^1.1.1",
     "gatsby-background-image-es5": "^1.1.1",
@@ -26,9 +27,7 @@
     "react-google-maps": "^9.4.5",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.10.0",
-    "react-masonry-component": "^6.2.1",
     "react-slick": "^0.25.2",
-    "react-spring": "^8.0.27",
     "recompose": "^0.30.0",
     "simple-react-lightbox": "^3.2.3-3",
     "slick-carousel": "^1.8.1",
