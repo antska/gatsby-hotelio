@@ -70,7 +70,7 @@ const Rooms = ({ withTitle = true, withBooking = true, limit = undefined, curren
           </div>
         )}
       </div>
-      <div className="grid grid-cols-3 gap-6 xs:grid-cols-1">
+      <div className="grid grid-cols-3 gap-6 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         {rooms.map(({ node: room }) => (
           <Card
             image={room.coverImage.fluid}

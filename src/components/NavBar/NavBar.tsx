@@ -8,12 +8,12 @@ type Props = { bottomNav?: boolean; withLogo?: boolean };
 const NavBar = ({ bottomNav = false, withLogo = false }: Props) => {
   const header = useHeader();
   const [open, setOpen] = useState(false);
-  const navHidden = !open && !bottomNav ? 'hidden' : '';
-  const burgerOpen = open ? 'flex xs:flex-col' : 'flex';
+  const navHidden = !open && !bottomNav ? 'xs:hidden sm:hidden md:flex md:justify-end md:mr-2' : '';
+  const burgerOpen = open ? 'xs:flex-col' : '';
 
   return (
     <div className={`w-full text-gray-700 bg-white nav ${bottomNav ? 'bottom-nav' : 'top-nav'}`}>
-      <div className="flex flex-col max-w-screen-xl px-4 w-full md:items-center md:justify-between md:flex-row md:px-6 lg:px-8 xs:px-0">
+      <div className="flex flex-col w-full md:items-center md:justify-between md:flex-row">
         <div className="p-4 flex flex-row items-center justify-between xs:p-2">
           {withLogo && !bottomNav && (
             <>
@@ -43,13 +43,11 @@ const NavBar = ({ bottomNav = false, withLogo = false }: Props) => {
             </>
           )}
         </div>
-        <nav
-          className={`${navHidden} ${burgerOpen} flex-grow pb-4 md:pb-0 md:flex md:justify-end xs:pb-2 xs:justify-center xs:items-center`}
-        >
+        <nav className={`${navHidden} ${burgerOpen} flex flex-grow pb-4 xs:pb-2 justify-center items-center md:pb-0`}>
           {header.allDatoCmsMenu.edges.map(({ node: menuItem }, key: number) => (
             <div
               key={`menuItem_${key}`}
-              className="px-4 py-2 text-sm text-gray-900 rounded-lg md:mt-0 focus:outline-none focus:shadow-outline hover:text-helens-blue transition-all duration-300 uppercase font-thin xs:p-3 xs:text-xs xs:px-2"
+              className="px-4 py-2 text-sm text-gray-900 rounded-lg md:mt-0 focus:outline-none focus:shadow-outline hover:text-helens-blue transition-all duration-300 uppercase font-thin xs:p-3 xs:text-xs xs:px-2 md:text-base"
             >
               <Link to={menuItem.url}>{menuItem.label}</Link>
             </div>
