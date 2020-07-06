@@ -14,9 +14,9 @@ const Map = compose(
   }),
   withScriptjs,
   withGoogleMap
-)(() => (
+)(({ mobile }) => (
   <GoogleMap
-    defaultZoom={17}
+    defaultZoom={mobile ? 14 : 17}
     defaultCenter={{ lat: 36.9946889, lng: 25.1345078 }}
     defaultOptions={{ styles: fancyMapStyle }}
   >

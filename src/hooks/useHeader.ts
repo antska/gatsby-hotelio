@@ -12,19 +12,19 @@ export const useHeader = () =>
             url
           }
           hero {
-            fluid(maxWidth: 1920) {
+            fluid(maxWidth: 3008) {
               ...GatsbyDatoCmsFluid
             }
           }
           welcomeTitle
           welcomeMessage
           welcomeImage {
-            fluid {
+            fluid(maxWidth: 4928) {
               ...GatsbyDatoCmsFluid
             }
           }
           discoverImage {
-            fluid(maxWidth: 1920) {
+            fluid(maxWidth: 4000) {
               ...GatsbyDatoCmsFluid
             }
           }
