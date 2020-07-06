@@ -22,7 +22,7 @@ const Gallery = () => {
       <Layout>
         <NavBar withLogo />
         <section className="mb-8 p-12">
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 gap-8 xs:grid-cols-1 md:grid-cols-2">
             <p className="text-sm">{datoCmsRestaurant.textLeft}</p>
             <p className="text-sm">{datoCmsRestaurant.textRight}</p>
             {Object.keys(datoCmsRestaurant.menu).map(key => (
@@ -40,7 +40,7 @@ const Gallery = () => {
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-3  gap-8 mt-24">
+          <div className="grid grid-cols-3 gap-8 mt-24 xs:grid-cols-1 lg:grid-cols-3">
             <Img className="col-span-2" fluid={datoCmsRestaurant.philosophyImage.fluid} />
             <div>
               <h2>Our Philoshopy</h2>

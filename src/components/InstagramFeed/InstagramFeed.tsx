@@ -33,7 +33,7 @@ const InstagramFeed = () => {
           </div>
         </a>
       </div>
-      <div className="grid grid-cols-4 gap-4 xs:grid-cols-2 xs:mx-4">
+      <div className="grid grid-cols-4 gap-4 xs:grid-cols-2 xs:mx-4 lg:grid-cols-4">
         {igPosts.slice(0, visible).map(({ node: ig }) => (
           <a href={`https://www.instagram.com/p/${ig.id}`} target="_blank" rel="noopener norefferer" key={ig.id}>
             <Img fluid={ig.localFile.childImageSharp.fluid} />

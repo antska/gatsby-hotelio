@@ -15,7 +15,7 @@ const BlogCard = ({ image, title, excerpt, tags, url }: Props) => (
     <Img fluid={image} className="h-56 w-full object-cover object-center" />
     <div className="p-4 h-auto md:h-40 lg:h-48">
       <Link
-        to={`blog/${url}`}
+        to={`${url}`}
         className="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg"
       >
         {title}

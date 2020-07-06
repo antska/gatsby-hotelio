@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-helens-blue text-white">
-      <div className="container mx-auto grid grid-cols-4 justify-center py-24 xs:grid-cols-1 xs:content-center xs:items-center xs:justify-items-center xs:text-center xs:gap-6 xs:py-4">
+      <div className="container mx-auto grid grid-cols-4 justify-center py-24 xs:grid-cols-1 xs:content-center xs:items-center xs:justify-items-center xs:text-center xs:gap-6 xs:py-4 lg:grid-cols-4 lg:text-left lg:items-start lg:py-24">
         <div>
           <h5 className="mb-4">CONTACT</h5>
           <p>
@@ -22,6 +22,7 @@ const Footer = () => {
           </p>
         </div>
         <div>
+          <h5 className="mb-4 uppercase">Find us on Social</h5>
           <SocialIcons />
         </div>
         {footer.datoCmsFooter.footerImages.map((award, key: number) => (
@@ -49,9 +50,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between mx-2 py-8 px-12 border-t border-white text-xs xs:flex-col xs:px-2">
-        <div className="flex-1 xs:text-center xs:mb-4">© Copyright Helen's Minimal Studios & Apartments</div>
-        <div className="flex-1 text-right xs:flex xs:flex-col xs:text-center">
+      <div className="flex justify-between mx-2 pt-8 pb-4 px-12 border-t border-white text-xs xs:flex-col xs:px-2 md:flex-row md:px-2">
+        <div className="xs:text-center xs:mb-4">© Copyright Helen's Minimal Studios & Apartments</div>
+        <div className="text-right xs:flex xs:flex-col xs:text-center md:flex-row md:text-right">
           {footer.allDatoCmsMenu.edges.map(({ node: menuItem }, key: number) => (
             <Link className="mr-6 xs:mb-2" to={menuItem.url} key={`menuLink_${key}`}>
               {menuItem.label}

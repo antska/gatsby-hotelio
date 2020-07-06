@@ -13,19 +13,22 @@ const Form = () => {
     setState({ ...state, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
+  const handleSubmit = async e => {
     const form = e.target;
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...state
-      })
-    })
-      .then(() => navigate('/'))
-      .catch(error => alert(error));
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': form.getAttribute('name'),
+          ...state
+        })
+      });
+      navigate('/');
+    } catch (error) {
+      alert(error);
+    }
   };
 
   return (
@@ -49,7 +52,7 @@ const Form = () => {
           Full Name
         </label>
         <input
-          className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+          className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none placeholder-gray-400"
           type="text"
           id="name"
           name="name"
@@ -64,7 +67,7 @@ const Form = () => {
           Email
         </label>
         <input
-          className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+          className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none placeholder-gray-400"
           type="email"
           id="email"
           name="email"
@@ -79,7 +82,8 @@ const Form = () => {
           Your Message
         </label>
         <textarea
-          className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+          className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none placeholder-gray-400"
+          required
           id="message"
           name="message"
           rows={4}
@@ -90,7 +94,7 @@ const Form = () => {
       </div>
       <div className="md:flex md:items-center my-6">
         <label className="block text-gray-500 font-bold">
-          <input className="mr-2 leading-tight" type="checkbox" name="checkbox" onChange={handleChange} />
+          <input className="mr-2 leading-tight" type="checkbox" required name="checkbox" onChange={handleChange} />
           <span className="text-sm">I consent to Helen's Studios collecting my details through this form.</span>
         </label>
       </div>

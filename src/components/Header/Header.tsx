@@ -54,11 +54,11 @@ const Header = ({
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={spring}
-              className="text-center text-2xl xl:text-2xl lg:text-xl md:text-xl sm:text-xl xs:text-xl"
+              className="text-center text-2xl xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
             >
               {title}
             </motion.h1>
-            <p className="xs:text-sm">{subtitle}</p>
+            <p className="xs:text-sm sm:text-base md:text-lg mx-auto">{subtitle}</p>
             {actionTo && (
               <Link to={actionTo}>
                 <button className="text-center border border-white hover:bg-white hover:bg-opacity-25 hover:text-white transition-all duration-500 block py-4 px-6 w-full mt-4">

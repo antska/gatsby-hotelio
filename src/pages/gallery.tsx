@@ -21,7 +21,7 @@ const Gallery = () => {
       />
       <Layout extraClasses="relative z-30 scroll-smooth">
         <NavBar withLogo />
-        <section className="mb-8 p-12 z-40">
+        <section className="mb-8 p-12 z-40 xs:p-0 xs:mt-0 md:mt-12">
           <SimpleReactLightbox>
             <ImageGallery images={datoCmsGallery.photos} />
           </SimpleReactLightbox>

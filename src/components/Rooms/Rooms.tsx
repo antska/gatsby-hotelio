@@ -52,7 +52,7 @@ const Rooms = ({ withTitle = true, withBooking = true, limit = undefined, curren
 
   return (
     <>
-      <div className="flex justify-between items-center mt-16 xs:mx-4 xs:flex-col xs:mb-4">
+      <div className="flex justify-between items-center mt-16 xs:mx-4 xs:flex-col xs:mb-4 md:flex-row md:mb-0">
         {withTitle && <h2 className="font-semibold xs:text-2xl">Our Rooms</h2>}
         {withBooking && (
           <div className="xs:text-sm">
