@@ -21,7 +21,7 @@ const InstagramFeed = () => {
           <h4 className="font-insta">Our Instagram</h4>
         </div>
         <a href="https://www.instagram.com/helenstudios_paros" target="_blank" rel="noopener norefferer">
-          <div className="flex items-center">
+          <div className="flex items-center xs:mx-4">
             <img className="mr-2 h-12 w-12" src={instagram.datoCmsHome.logo.url} alt="logo" title="logo" />
             <div className="flex flex-col">
               <p className="font-semibold">helenstudios_paros</p>
@@ -33,7 +33,7 @@ const InstagramFeed = () => {
           </div>
         </a>
       </div>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-4 xs:grid-cols-2 xs:mx-4 lg:grid-cols-4">
         {igPosts.slice(0, visible).map(({ node: ig }) => (
           <a href={`https://www.instagram.com/p/${ig.id}`} target="_blank" rel="noopener norefferer" key={ig.id}>
             <Img fluid={ig.localFile.childImageSharp.fluid} />

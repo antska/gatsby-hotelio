@@ -15,7 +15,7 @@ type Props = {
 
 const ImageGallery = ({ images }: Props) => (
   <SRLWrapper options={{ buttons: { showDownloadButton: false } }}>
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-3 gap-4 xs:grid-cols-1 xs:gap-0 md:grid-cols-2 lg:grid-cols-3">
       {images.map(photo => (
         <Img
           key={photo.originalId}

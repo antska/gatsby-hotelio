@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
+import { motion } from 'framer-motion';
 
 import { FluidObject } from 'gatsby-image';
 import { useHeader } from '../../hooks/useHeader';
@@ -28,10 +29,16 @@ const Header = ({
 }: Props) => {
   const header = useHeader();
 
+  const spring = {
+    type: 'spring',
+    damping: 10,
+    stiffness: 100
+  };
+
   return (
     <BackgroundImage
       Tag="header"
-      className={`${height} ${bgFixed && 'bg-fixed'} ${margin}`}
+      className={`${height} ${bgFixed && 'bg-fixed'} ${margin} sm:h-screen`}
       fluid={heroImage}
       backgroundColor={`#040e18`}
     >
@@ -43,8 +50,15 @@ const Header = ({
             </div>
           )}
           <div className="text-center font-hairline text-white">
-            <h1 className="text-center">{title}</h1>
-            <p>{subtitle}</p>
+            <motion.h1
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={spring}
+              className="text-center text-2xl xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
+            >
+              {title}
+            </motion.h1>
+            <p className="xs:text-sm sm:text-base md:text-lg mx-auto">{subtitle}</p>
             {actionTo && (
               <Link to={actionTo}>
                 <button className="text-center border border-white hover:bg-white hover:bg-opacity-25 hover:text-white transition-all duration-500 block py-4 px-6 w-full mt-4">

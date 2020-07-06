@@ -12,7 +12,7 @@ export const useFooter = () =>
             }
           }
         }
-        allDatoCmsMenu {
+        allDatoCmsMenu(sort: { fields: position }) {
           edges {
             node {
               url

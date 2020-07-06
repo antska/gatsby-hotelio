@@ -52,20 +52,25 @@ const Rooms = ({ withTitle = true, withBooking = true, limit = undefined, curren
 
   return (
     <>
-      <div className="flex justify-between items-center mt-16">
-        {withTitle && <h2 className="font-semibold">Our Rooms</h2>}
+      <div className="flex justify-between items-center mt-16 xs:mx-4 xs:flex-col xs:mb-4 md:flex-row md:mb-0">
+        {withTitle && <h2 className="font-semibold xs:text-2xl">Our Rooms</h2>}
         {withBooking && (
-          <div>
+          <div className="xs:text-sm">
             <p>
               Make a reservation on{' '}
-              <Link to="https://www.booking.com/hotel/gr/eleni-studios-aliki.html" className="text-blue-800">
+              <a
+                href="https://www.booking.com/hotel/gr/eleni-studios-aliki.html"
+                target="_blank"
+                rel="noopener norefferer"
+                className="text-blue-800"
+              >
                 booking.com
-              </Link>
+              </a>
             </p>
           </div>
         )}
       </div>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 gap-6 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         {rooms.map(({ node: room }) => (
           <Card
             image={room.coverImage.fluid}

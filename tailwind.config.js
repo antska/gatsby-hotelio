@@ -1,9 +1,18 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   purge: ['./src/**/*.js*', './src/**/*.ts*'],
   theme: {
     fontFamily: {
       display: ['Lato', 'sans-serif'],
       body: ['Lato', 'sans-serif']
+    },
+    screens: {
+      xs: '320px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px'
     },
     extend: {
       fontFamily: {
@@ -33,5 +42,19 @@ module.exports = {
       }
     }
   },
-  variants: {}
+  variants: {},
+  plugins: [
+    plugin(function({ addUtilities, e }) {
+      const justify = ['start', 'center', 'end', 'baseline'];
+      const justifyVariants = ['responsive'];
+
+      const utilities = justify.map(alignment => ({
+        [`.justify-items-${e(alignment)}`]: {
+          'justify-items': alignment
+        }
+      }));
+
+      addUtilities(utilities, justifyVariants);
+    })
+  ]
 };
