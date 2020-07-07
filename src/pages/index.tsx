@@ -56,7 +56,7 @@ const IndexPage = () => {
         subtitle="Activities, Nearby villages &amp; more"
         actionTo="/blog"
         height="h-600"
-        margin="my-16"
+        margin="mb-16"
         bgFixed
       />
       <Layout>

@@ -53,7 +53,7 @@ const Rooms = ({ withTitle = true, withBooking = true, limit = undefined, curren
   return (
     <>
       <div className="flex justify-between items-center mt-16 xs:mx-4 xs:flex-col xs:mb-4 md:flex-row md:mb-0">
-        {withTitle && <h2 className="font-semibold xs:text-2xl">Our Rooms</h2>}
+        {withTitle && <h2 className="font-semibold xs:text-2xl md:text-4xl">Our Rooms</h2>}
         {withBooking && (
           <div className="xs:text-sm">
             <p>
@@ -70,7 +70,7 @@ const Rooms = ({ withTitle = true, withBooking = true, limit = undefined, curren
           </div>
         )}
       </div>
-      <div className="grid grid-cols-3 gap-6 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+      <div className="grid grid-cols-3 gap-6 mb-16 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
         {rooms.map(({ node: room }) => (
           <Card
             image={room.coverImage.fluid}
