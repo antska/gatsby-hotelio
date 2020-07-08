@@ -7,12 +7,13 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Map from '../components/Map';
 import { useRestaurant } from '../hooks/useRestaurant';
+import ScrollButton from '../components/ScrollButton';
 
 const Gallery = () => {
   const { datoCmsRestaurant } = useRestaurant();
 
   return (
-    <>
+    <main className="relative h-full">
       <Header
         heroImage={datoCmsRestaurant.coverImage.fluid}
         title={datoCmsRestaurant.title}
@@ -61,7 +62,8 @@ const Gallery = () => {
         <Map />
       </section>
       <Footer />
-    </>
+      <ScrollButton />
+    </main>
   );
 };
 

@@ -10,6 +10,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Rooms from '../components/Rooms';
 import useWindowSize from '../hooks/useWindowSize';
+import ScrollButton from '../components/ScrollButton';
 
 const settings = {
   slidesToShow: 2,
@@ -37,7 +38,7 @@ const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
   };
 
   return (
-    <>
+    <main className="relative h-full">
       <Layout extraClasses="mt-24">
         <NavBar withLogo />
         <Img className="h-600" fluid={explore.coverImage.fluid} />
@@ -61,7 +62,8 @@ const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
         <Rooms withTitle={false} withBooking={false} limit={3} />
       </Layout>
       <Footer />
-    </>
+      <ScrollButton />
+    </main>
   );
 };
 

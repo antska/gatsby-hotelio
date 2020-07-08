@@ -14,6 +14,7 @@ import PriceList from '../components/Pricelist';
 import RoomInfo from '../components/RoomInfo';
 import Rooms from '../components/Rooms';
 import useWindowSize from '../hooks/useWindowSize';
+import ScrollButton from '../components/ScrollButton';
 
 const amenities = [
   'Air conditioning',
@@ -53,7 +54,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
   };
 
   return (
-    <>
+    <main className="relative h-full">
       <Header heroImage={room.coverImage.fluid} title={room.title} subtitle={room.excerpt} bgFixed height="h-90vh" />
       <Layout extraClasses="relative z-30 scroll-smooth">
         <NavBar withLogo />
@@ -143,7 +144,8 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
         <Rooms withTitle={false} withBooking={false} limit={3} currentRoomId={room.id} />
       </Layout>
       <Footer />
-    </>
+      <ScrollButton />
+    </main>
   );
 };
 

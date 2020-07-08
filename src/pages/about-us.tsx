@@ -5,12 +5,13 @@ import Layout from '../components/Layout';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { useAboutUs } from '../hooks/useAboutUs';
+import ScrollButton from '../components/ScrollButton';
 
 const Contact = () => {
   const { datoCmsAbout } = useAboutUs();
 
   return (
-    <>
+    <main className="relative h-full">
       <Layout>
         <NavBar withLogo />
         <section className="mt-32 mb-12">
@@ -33,7 +34,8 @@ const Contact = () => {
         </section>
       </Layout>
       <Footer />
-    </>
+      <ScrollButton />
+    </main>
   );
 };
 

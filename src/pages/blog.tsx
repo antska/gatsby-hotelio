@@ -6,12 +6,13 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { useBlog } from '../hooks/useBlog';
 import BlogCard from '../components/BlogCard';
+import ScrollButton from '../components/ScrollButton';
 
 const Blog = () => {
   const { datoCmsBlog, allDatoCmsExploreCard } = useBlog();
 
   return (
-    <>
+    <main className="relative h-full">
       <Header
         heroImage={datoCmsBlog.coverImage.fluid}
         title={datoCmsBlog.title}
@@ -40,7 +41,8 @@ const Blog = () => {
         </main>
       </Layout>
       <Footer />
-    </>
+      <ScrollButton />
+    </main>
   );
 };
 
