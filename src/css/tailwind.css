@@ -33,7 +33,7 @@ h4 {
 }
 
 .social-icon {
-    @apply inline-block outline-none rounded-full text-white transition-all duration-300 h-8 w-8 text-base text-center mr-2;
+    @apply inline-flex justify-center items-center outline-none rounded-full text-white transition-all duration-300 h-12 w-12 text-base text-center mr-2 shadow-lg;
 }
 
 .centered-axis-x {
@@ -44,6 +44,12 @@ h4 {
 @tailwind utilities;
 html {
     font-family: 'Titillium Web', 'Billabong', 'Renner', 'Lato', 'Helvetica', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    height: 100%;
 }
 
 .slick-prev {
@@ -89,4 +95,44 @@ html {
 .svg-icon circle {
     stroke: black;
     stroke-width: 1;
+}
+
+.scrolltop-wrap {
+    box-sizing: border-box;
+    position: absolute;
+    top: 12rem;
+    right: 1rem;
+    bottom: 0;
+    pointer-events: none;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+@supports (-moz-appearance: meterbar) {
+    .scrolltop-wrap {
+        clip: rect(0, 3rem, auto, 0);
+    }
+}
+
+.scrolltop-wrap div {
+    position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
+    top: -5rem;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: -5rem;
+    -webkit-transform: translateY(100vh);
+    transform: translateY(100vh);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: all;
+    outline: none;
+    overflow: hidden;
 }
