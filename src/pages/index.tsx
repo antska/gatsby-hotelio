@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef } from 'react';
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -8,62 +8,49 @@ import Directions from '../components/Directions';
 import { useHeader } from '../hooks/useHeader';
 import NavBar from '../components/NavBar';
 import Welcome from '../components/Welcome';
+import ScrollButton from '../components/ScrollButton';
+import useOnScreen from '../hooks/useOnScreen';
 
 const IndexPage = () => {
   const header = useHeader();
-  const [bottomNav, setBottomNav] = useState(true);
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const handleScroll = () => {
-    const main = document.querySelector('header');
-    const nav = document.querySelector('.nav');
-    const offset = main?.offsetHeight ?? 0 - (nav as HTMLElement).offsetHeight;
-
-    if (window.pageYOffset > offset) {
-      setBottomNav(false);
-    } else {
-      setBottomNav(true);
-    }
-  };
+  const tRef = useRef(null);
+  const tOnScreen = useOnScreen(tRef);
 
   return (
     <>
-      <Header
-        heroImage={header.datoCmsHome.hero.fluid}
-        title="Pleasant Stay in Paros Island"
-        subtitle="Rooms &amp; apartments"
-        hasLogo
-      />
-      <NavBar bottomNav={bottomNav} withLogo />
-      <Welcome
-        title={header.datoCmsHome.welcomeTitle}
-        description={header.datoCmsHome.welcomeMessage}
-        image={header.datoCmsHome.welcomeImage.fluid}
-      />
-      <Layout>
-        <Rooms />
-      </Layout>
-      <Header
-        heroImage={header.datoCmsHome.discoverImage.fluid}
-        title="Discover Aliki"
-        subtitle="Activities, Nearby villages &amp; more"
-        actionTo="/blog"
-        height="h-600"
-        margin="mb-16"
-        bgFixed
-      />
-      <Layout>
-        <InstagramFeed />
-      </Layout>
-      <Directions />
-      <Footer />
+      <NavBar bottomNav={!tOnScreen} withLogo />
+      <main className="relative h-full">
+        <Header
+          heroImage={header.datoCmsHome.hero.fluid}
+          title="Pleasant Stay in Paros Island"
+          subtitle="Rooms &amp; apartments"
+          hasLogo
+        />
+        <Welcome
+          title={header.datoCmsHome.welcomeTitle}
+          description={header.datoCmsHome.welcomeMessage}
+          image={header.datoCmsHome.welcomeImage.fluid}
+        />
+        <Layout>
+          <Rooms ref={tRef} />
+        </Layout>
+        <Header
+          heroImage={header.datoCmsHome.discoverImage.fluid}
+          title="Discover Aliki"
+          subtitle="Activities, Nearby villages &amp; more"
+          actionTo="/blog"
+          height="h-600"
+          margin="mb-16"
+          bgFixed
+        />
+        <Layout>
+          <InstagramFeed />
+        </Layout>
+        <Directions />
+        <Footer />
+        <ScrollButton />
+      </main>
     </>
   );
 };
