@@ -12,8 +12,8 @@ export const useRooms = () =>
               slug
               excerpt
               coverImage {
-                fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
-                  ...GatsbyDatoCmsSizes
+                fluid(maxWidth: 1920) {
+                  ...GatsbyDatoCmsFluid
                 }
               }
             }

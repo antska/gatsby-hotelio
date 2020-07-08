@@ -28,10 +28,12 @@ const RoomInfo = ({ info }: Props) => {
         <IoIosHome color="#636363" size={size.width <= 768 ? '24' : '40'} />
         <p className="ml-4 xs:text-sm lg:text-base">{info.sqm}</p>
       </div>
-      <div className="flex items-center">
-        <WiSunrise color="#636363" size={size.width <= 768 ? '24' : '40'} />
-        <p className="ml-4 xs:text-sm lg:text-base">{info.view}</p>
-      </div>
+      {info.view && (
+        <div className="flex items-center">
+          <WiSunrise color="#636363" size={size.width <= 768 ? '24' : '40'} />
+          <p className="ml-4 xs:text-sm lg:text-base">{info.view}</p>
+        </div>
+      )}
     </div>
   );
 };
