@@ -30,7 +30,11 @@ module.exports = {
       },
       height: {
         '90vh': '90vh',
+        '320': '320px',
         '600': '600px'
+      },
+      top: {
+        '12': '12rem'
       },
       right: {
         '1': '1rem',

@@ -14,6 +14,7 @@ import PriceList from '../components/Pricelist';
 import RoomInfo from '../components/RoomInfo';
 import Rooms from '../components/Rooms';
 import useWindowSize from '../hooks/useWindowSize';
+import ScrollButton from '../components/ScrollButton';
 
 const amenities = [
   'Air conditioning',
@@ -53,7 +54,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
   };
 
   return (
-    <>
+    <main className="relative h-full">
       <Header heroImage={room.coverImage.fluid} title={room.title} subtitle={room.excerpt} bgFixed height="h-90vh" />
       <Layout extraClasses="relative z-30 scroll-smooth">
         <NavBar withLogo />
@@ -76,7 +77,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
               {isMobile && (
                 <div className="px-8 border-l-2 border-gray-700 my-8">
                   <p className="text-sm">FROM</p>
-                  <h1 className="font-light ml-8">{Object.values(room.pricelist)[0]}</h1>
+                  <h1 className="font-light ml-6">{Object.values(room.pricelist)[0]}</h1>
                   <button className="border border-helens-blue bg-helens-blue hover:bg-gray-900 transition-all duration-500 text-white block rounded-sm py-4 px-6 w-full">
                     BOOK NOW
                   </button>
@@ -87,7 +88,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
               <PriceList prices={room.pricelist} />
             </div>
             {!isMobile && (
-              <div className="px-8 border-l-2 border-gray-700">
+              <div className="px-8 border-l-2 border-gray-700 md:px-0 md:pl-6 xl:px-8">
                 <p className="text-sm">FROM</p>
                 <h1 className="font-light ml-8">{Object.values(room.pricelist)[0]}</h1>
                 <button className="border border-helens-blue bg-helens-blue transition-all duration-500 text-white block rounded-sm py-4 px-6 w-full hover:bg-gray-900 md:px-4 md:py-4">
@@ -99,7 +100,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
           </div>
         </section>
       </Layout>
-      <section id="amenities" className="p-24 bg-helens-dark-blue text-white xs:p-8 lg:p-24">
+      <section id="amenities" className="p-24 bg-helens-dark-blue text-white xs:p-8 md:p-24">
         <div className="grid grid-cols-2 gap-4 xs:grid-cols-1 md:grid-cols-2">
           <div className="pr-12 xs:pr-0">
             <div className="flex items-center mb-4">
@@ -143,7 +144,8 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
         <Rooms withTitle={false} withBooking={false} limit={3} currentRoomId={room.id} />
       </Layout>
       <Footer />
-    </>
+      <ScrollButton />
+    </main>
   );
 };
 

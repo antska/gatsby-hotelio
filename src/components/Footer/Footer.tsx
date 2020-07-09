@@ -28,12 +28,12 @@ const Footer = () => {
         {footer.datoCmsFooter.footerImages.map((award, key: number) => (
           <div key={`award_${key}`}>
             <h5 className="mb-4">{award.title}</h5>
-            <Img fixed={award.fixed} />
+            <Img fixed={award.fixed} className="shadow-xl" />
           </div>
         ))}
         <div>
           <h5 className="mb-4">TRIPADVISOR</h5>
-          <div id="TA_cdsratingsonlynarrow690" className="TA_cdsratingsonlynarrow">
+          <div id="TA_cdsratingsonlynarrow690" className="TA_cdsratingsonlynarrow shadow-xl">
             <ul id="Q5HYeQWb" className="TA_links SPakd4">
               <li id="XsqhDlm2mA" className="yOduvrE">
                 <a

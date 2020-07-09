@@ -7,12 +7,13 @@ import { useGallery } from '../hooks/useGallery';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ImageGallery from '../components/ImageGallery';
+import ScrollButton from '../components/ScrollButton';
 
 const Gallery = () => {
   const { datoCmsGallery } = useGallery();
 
   return (
-    <>
+    <main className="relative h-full">
       <Header
         heroImage={datoCmsGallery.coverImage.fluid}
         title={datoCmsGallery.title}
@@ -28,7 +29,8 @@ const Gallery = () => {
         </section>
       </Layout>
       <Footer />
-    </>
+      <ScrollButton />
+    </main>
   );
 };
 
