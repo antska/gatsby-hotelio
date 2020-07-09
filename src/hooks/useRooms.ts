@@ -11,6 +11,7 @@ export const useRooms = () =>
               title
               slug
               excerpt
+              info
               coverImage {
                 fluid(maxWidth: 1920) {
                   ...GatsbyDatoCmsFluid

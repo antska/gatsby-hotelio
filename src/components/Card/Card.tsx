@@ -1,19 +1,38 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img, { FluidObject } from 'gatsby-image';
+import { FluidObject } from 'gatsby-image';
+import BackgroundImage from 'gatsby-background-image';
+
+import RoomInfo from '../RoomInfo';
 
 type Props = {
   image: FluidObject;
   title: string;
   excerpt: string;
   linkTo: string;
+  info: { bed: string; people: string; sqm: string; view: string };
 };
 
-const Card = ({ image, title, excerpt, linkTo }: Props) => (
+const Card = ({ image, title, excerpt, linkTo, info }: Props) => (
   <div className="h-full">
     <div className="mb-4 transition duration-150 ease-in-out">
       <Link to={`/${linkTo}`}>
-        <Img fluid={image} alt={title} />
+        <BackgroundImage
+          Tag="div"
+          className="h-320 xs:h-320 lg:h-64 xl:h-320"
+          style={{
+            width: '100%',
+            backgroundPosition: 'bottom center',
+            backgroundSize: 'cover'
+          }}
+          fluid={image}
+          alt={title}
+          backgroundColor={`#040e18`}
+        >
+          <div className="flex justify-center items-end h-full w-full">
+            <RoomInfo info={info} orientation="horizontal" />
+          </div>
+        </BackgroundImage>
       </Link>
     </div>
     <div className="">

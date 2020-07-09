@@ -66,6 +66,7 @@ const Rooms = React.forwardRef<HTMLDivElement, Props>(
               title={room.title}
               excerpt={room.excerpt}
               linkTo={`rooms/${room.slug}`}
+              info={room.info}
               key={room.slug}
             />
           ))}
