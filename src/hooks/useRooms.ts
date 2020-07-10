@@ -14,7 +14,7 @@ export const useRooms = () =>
               info
               coverImage {
                 fluid(maxWidth: 1920) {
-                  ...GatsbyDatoCmsFluid
+                  ...GatsbyDatoCmsFluid_noBase64
                 }
               }
             }

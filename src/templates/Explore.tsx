@@ -85,13 +85,13 @@ export const query = graphql`
       description
       coverImage {
         fluid {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
       gallery {
         originalId
         fluid {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
     }

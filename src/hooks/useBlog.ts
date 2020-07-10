@@ -9,7 +9,7 @@ export const useBlog = () =>
           subtitle
           coverImage {
             fluid(maxWidth: 1920) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
         }
@@ -23,7 +23,7 @@ export const useBlog = () =>
               tags
               coverImage {
                 fluid {
-                  ...GatsbyDatoCmsFluid
+                  ...GatsbyDatoCmsFluid_noBase64
                 }
               }
             }

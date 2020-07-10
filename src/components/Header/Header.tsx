@@ -33,7 +33,7 @@ const Header = ({
       Tag="header"
       className={`${height} ${bgFixed && 'bg-fixed'} ${margin} xs:h-screen`}
       fluid={heroImage}
-      backgroundColor={`#040e18`}
+      fadeIn={false}
     >
       <div className="h-full bg-black bg-opacity-25">
         <div className="flex items-center justify-center h-full">

@@ -7,7 +7,7 @@ export const useGallery = () =>
         datoCmsGallery {
           coverImage {
             fluid(maxWidth: 1920) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
           title
@@ -17,7 +17,7 @@ export const useGallery = () =>
             alt
             title
             fluid {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
         }

@@ -187,7 +187,7 @@ export const query = graphql`
       gallery {
         originalId
         fluid {
-          ...GatsbyDatoCmsFluid
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
       coverImage {

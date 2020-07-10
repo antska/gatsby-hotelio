@@ -13,19 +13,19 @@ export const useHeader = () =>
           }
           hero {
             fluid(maxWidth: 3008) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
           welcomeTitle
           welcomeMessage
           welcomeImage {
             fluid(maxWidth: 4928) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
           discoverImage {
             fluid(maxWidth: 4000) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
         }
@@ -36,7 +36,7 @@ export const useHeader = () =>
               subtitle
               image {
                 fluid(maxWidth: 1920) {
-                  ...GatsbyDatoCmsFluid
+                  ...GatsbyDatoCmsFluid_noBase64
                 }
               }
             }
