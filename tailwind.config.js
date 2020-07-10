@@ -46,7 +46,17 @@ module.exports = {
       }
     }
   },
-  variants: {},
+  variants: {
+    translate: ['responsive', 'hover', 'focus', 'group-hover'],
+    scale: ['responsive', 'hover', 'focus', 'group-hover'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    backgroundOpacity: ['responsive', 'hover', 'focus', 'group-hover'],
+    opacity: ['responsive', 'hover', 'focus', 'group-hover'],
+    padding: ['responsive', 'hover', 'focus', 'group-hover'],
+    textColor: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+    fontSize: ['responsive', 'hover', 'focus', 'group-hover'],
+    boxShadow: ['responsive', 'hover', 'focus', 'active', 'group-hover']
+  },
   plugins: [
     plugin(function({ addUtilities, e }) {
       const justify = ['start', 'center', 'end', 'baseline'];

@@ -60,8 +60,8 @@ const Header = ({
             </motion.h1>
             <p className="xs:text-xs sm:text-base md:text-lg xs:mx-12 md:mx-40">{subtitle}</p>
             {actionTo && (
-              <Link to={actionTo}>
-                <button className="text-center border border-white hover:bg-white hover:bg-opacity-25 hover:text-white transition-all duration-500 block py-4 px-6 w-full mt-4">
+              <Link to={actionTo} className="inline-flex">
+                <button className="text-center border border-white hover:bg-white hover:bg-opacity-25 hover:text-white transition-all duration-500 block py-4 px-16 mt-4">
                   More Info
                 </button>
               </Link>
