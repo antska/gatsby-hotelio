@@ -44,7 +44,13 @@ const Rooms = React.forwardRef<HTMLDivElement, Props>(
         >
           {withTitle && <h2 className="font-semibold xs:text-2xl md:text-4xl">Our Rooms</h2>}
           {withBooking && (
-            <div className="xs:text-sm">
+            <div
+              className="xs:text-sm"
+              data-sal="slide-left"
+              data-sal-duration="700"
+              data-sal-delay="800"
+              data-sal-easing="easeInSine"
+            >
               <p>
                 Make a reservation on{' '}
                 <a
@@ -60,7 +66,7 @@ const Rooms = React.forwardRef<HTMLDivElement, Props>(
           )}
         </div>
         <div className="grid grid-cols-3 gap-6 mb-16 xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-          {rooms.map(({ node: room }) => (
+          {rooms.map(({ node: room }, index: number) => (
             <Card
               image={room.coverImage.fluid}
               title={room.title}
@@ -68,6 +74,7 @@ const Rooms = React.forwardRef<HTMLDivElement, Props>(
               linkTo={`rooms/${room.slug}`}
               info={room.info}
               key={room.slug}
+              id={index}
             />
           ))}
         </div>

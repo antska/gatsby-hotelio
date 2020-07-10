@@ -3,6 +3,29 @@ const plugin = require('tailwindcss/plugin');
 module.exports = {
   purge: ['./src/**/*.js*', './src/**/*.ts*'],
   theme: {
+    animations: {
+      fadeInLeft: {
+        from: {
+          opacity: 0,
+          transform: 'translateX(-20px)'
+        },
+        to: {
+          opacity: 1,
+          transform: 'translateX(0px)'
+        }
+      }
+    },
+    filter: {
+      none: 'none',
+      grayscale: 'grayscale(1)',
+      invert: 'invert(1)',
+      sepia: 'sepia(1)',
+      blur: 'blur(3px)'
+    },
+    backdropFilter: {
+      none: 'none',
+      blur: 'blur(20px)'
+    },
     fontFamily: {
       display: ['Lato', 'sans-serif'],
       body: ['Lato', 'sans-serif']
@@ -55,7 +78,9 @@ module.exports = {
     padding: ['responsive', 'hover', 'focus', 'group-hover'],
     textColor: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
     fontSize: ['responsive', 'hover', 'focus', 'group-hover'],
-    boxShadow: ['responsive', 'hover', 'focus', 'active', 'group-hover']
+    boxShadow: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+    filter: ['responsive', 'hover', 'group-hover'],
+    backdropFilter: ['responsive', 'hover', 'group-hover']
   },
   plugins: [
     plugin(function({ addUtilities, e }) {
@@ -69,6 +94,8 @@ module.exports = {
       }));
 
       addUtilities(utilities, justifyVariants);
-    })
+    }),
+    require('tailwindcss-animations'),
+    require('tailwindcss-filters')
   ]
 };

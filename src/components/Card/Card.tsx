@@ -11,10 +11,17 @@ type Props = {
   excerpt: string;
   linkTo: string;
   info: { bed: string; people: string; sqm: string; view: string };
+  id: number;
 };
 
-const Card = ({ image, title, excerpt, linkTo, info }: Props) => (
-  <div className="group h-full">
+const Card = ({ image, title, excerpt, linkTo, info, id }: Props) => (
+  <div
+    className="group h-full"
+    data-sal="slide-up"
+    data-sal-duration="700"
+    data-sal-delay={(id + 1) * 100}
+    data-sal-easing="easeInSine"
+  >
     <div className=" mb-4 transition duration-500 ease-in-out transform group-hover:shadow-2xl group-hover:scale-90">
       <Link to={`/${linkTo}`}>
         <BackgroundImage

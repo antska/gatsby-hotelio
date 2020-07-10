@@ -42,6 +42,7 @@ module.exports = {
         maxPosts: 10
       }
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-scroll-reveal`
   ]
 };
