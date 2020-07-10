@@ -42,7 +42,15 @@ const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
       <Layout extraClasses="mt-24">
         <NavBar withLogo />
         <Img className="h-600" fluid={explore.coverImage.fluid} />
-        <h2 className="text-center uppercase my-12">{explore.title}</h2>
+        <h2
+          className="text-center uppercase my-12"
+          data-sal="slide-right"
+          data-sal-duration="700"
+          data-sal-delay="200"
+          data-sal-easing="easeInSine"
+        >
+          {explore.title}
+        </h2>
         <p className="text-justify whitespace-pre-line xs:mx-4">{explore.description}</p>
       </Layout>
       <section className="my-4">

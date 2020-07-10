@@ -7,7 +7,13 @@ const InfoCard = () => {
   const { datoCmsInfoCard } = useInfo();
 
   return (
-    <div className="flex items-center justify-center">
+    <div
+      className="flex items-center justify-center"
+      data-sal="flip-right"
+      data-sal-duration="700"
+      data-sal-delay="500"
+      data-sal-easing="easeInSine"
+    >
       <div className="max-w-sm w-full sm:w-full lg:w-full px-3">
         <div className="bg-white shadow-xl rounded-lg overflow-hidden">
           <Img fluid={datoCmsInfoCard.cover.fluid} className="bg-cover bg-center h-56 p-4" />

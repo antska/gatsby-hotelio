@@ -58,7 +58,13 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
       <Header heroImage={room.coverImage.fluid} title={room.title} subtitle={room.excerpt} bgFixed height="h-90vh" />
       <Layout extraClasses="relative z-30 scroll-smooth">
         <NavBar withLogo />
-        <ul className="absolute flex -mt-8 text-white uppercase centered-axis-x items-center text-center xs:-mt-24 md:-mt-12">
+        <ul
+          className="absolute flex -mt-8 text-white uppercase centered-axis-x items-center text-center xs:-mt-24 md:-mt-12"
+          data-sal="fade"
+          data-sal-duration="700"
+          data-sal-delay="1000"
+          data-sal-easing="easeInSine"
+        >
           <li className="mr-6 cursor-pointer" onClick={() => scrollTo('detail')}>
             Detail
           </li>
@@ -78,7 +84,13 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
                 <div className="px-8 border-l-2 border-gray-700 my-8">
                   <p className="text-sm">FROM</p>
                   <h1 className="font-light ml-6">{Object.values(room.pricelist)[0]}</h1>
-                  <button className="border border-helens-blue bg-helens-blue hover:bg-gray-900 transition-all duration-500 text-white block rounded-sm py-4 px-6 w-full">
+                  <button
+                    className="border border-helens-blue bg-helens-blue hover:bg-gray-900 transition-all duration-500 text-white block rounded-sm py-4 px-6 w-full"
+                    data-sal="slide-left"
+                    data-sal-duration="700"
+                    data-sal-delay="500"
+                    data-sal-easing="easeInSine"
+                  >
                     BOOK NOW
                   </button>
                   <RoomInfo info={room.info} />
@@ -91,7 +103,13 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
               <div className="px-8 border-l-2 border-gray-700 md:px-0 md:pl-6 xl:px-8">
                 <p className="text-sm">FROM</p>
                 <h1 className="font-light ml-8">{Object.values(room.pricelist)[0]}</h1>
-                <button className="border border-helens-blue bg-helens-blue transition-all duration-500 text-white block rounded-sm py-4 px-6 w-full hover:bg-gray-900 md:px-4 md:py-4">
+                <button
+                  className="border border-helens-blue bg-helens-blue transition-all duration-500 text-white block rounded-sm py-4 px-6 w-full hover:bg-gray-900 md:px-4 md:py-4"
+                  data-sal="slide-left"
+                  data-sal-duration="700"
+                  data-sal-delay="500"
+                  data-sal-easing="easeInSine"
+                >
                   BOOK NOW
                 </button>
                 <RoomInfo info={room.info} />
@@ -100,7 +118,14 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
           </div>
         </section>
       </Layout>
-      <section id="amenities" className="p-24 bg-helens-dark-blue text-white xs:p-8 md:p-24">
+      <section
+        id="amenities"
+        className="p-24 bg-helens-dark-blue text-white xs:p-8 md:p-24"
+        data-sal="flip-up"
+        data-sal-duration="700"
+        data-sal-delay="500"
+        data-sal-easing="easeInSine"
+      >
         <div className="grid grid-cols-2 gap-4 xs:grid-cols-1 md:grid-cols-2">
           <div className="pr-12 xs:pr-0">
             <div className="flex items-center mb-4">
