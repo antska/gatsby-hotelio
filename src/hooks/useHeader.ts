@@ -28,6 +28,9 @@ export const useHeader = () =>
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
+          seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
+          }
         }
         allDatoCmsHeroSlider {
           edges {

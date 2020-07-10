@@ -22,7 +22,7 @@ const Card = ({ image, title, excerpt, linkTo, info, id }: Props) => (
     data-sal-delay={(id + 1) * 100}
     data-sal-easing="easeInSine"
   >
-    <div className=" mb-4 transition duration-500 ease-in-out transform group-hover:shadow-2xl group-hover:scale-90">
+    <div className=" mb-4 transition duration-500 ease-in-out transform group-hover:shadow-2xl group-hover:scale-105">
       <Link to={`/${linkTo}`}>
         <BackgroundImage
           Tag="div"
@@ -36,7 +36,7 @@ const Card = ({ image, title, excerpt, linkTo, info, id }: Props) => (
           alt={title}
           backgroundColor={`#040e18`}
         >
-          <div className="flex justify-center items-end h-full w-full transition-all duration-500 group-hover:bg-helens-grey group-hover:bg-opacity-50">
+          <div className="flex justify-center items-end h-full w-full transition-all duration-500 group-hover:bg-helens-grey group-hover:bg-opacity-25">
             <RoomInfo info={info} orientation="horizontal" />
           </div>
         </BackgroundImage>
@@ -45,15 +45,11 @@ const Card = ({ image, title, excerpt, linkTo, info, id }: Props) => (
     <div className="">
       <Link
         to={`/${linkTo}`}
-        className="block pb-4 text-center text-gray-900 font-semibold xs:text-base md:text-lg lg:text-xl transition-all duration-700 transform group-hover:-translate-y-48 group-hover:text-3xl"
+        className="block pb-4 text-center text-gray-900 font-semibold xs:text-base md:text-lg lg:text-xl"
       >
         <h4>{title}</h4>
       </Link>
-      {excerpt && (
-        <p className="border-t border-black p-1 text-sm xs:text-xs xs:mx-4 md:text-base transition-all duration-500 transform group-hover:-translate-y-16 group-hover:scale-90">
-          {excerpt}
-        </p>
-      )}
+      {excerpt && <p className="border-t border-black p-1 text-sm xs:text-xs xs:mx-4 md:text-base">{excerpt}</p>}
     </div>
   </div>
 );

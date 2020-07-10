@@ -3,7 +3,8 @@ const tailwindConfig = require('./tailwind.config.js');
 
 module.exports = {
   siteMetadata: {
-    title: `Hotelio`
+    title: `Hotelio`,
+    siteUrl: 'https://www.helenstudios.com'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,6 +12,10 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-typescript`,
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-scroll-reveal`,
     {
       resolve: 'gatsby-background-image-es5',
       options: {
@@ -41,8 +46,6 @@ module.exports = {
         paginate: 100,
         maxPosts: 10
       }
-    },
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-scroll-reveal`
+    }
   ]
 };
