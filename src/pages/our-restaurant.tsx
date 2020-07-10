@@ -24,10 +24,33 @@ const Gallery = () => {
         <NavBar withLogo />
         <section className="mb-8 p-12">
           <div className="grid grid-cols-2 gap-8 xs:grid-cols-1 md:grid-cols-2">
-            <p className="text-sm">{datoCmsRestaurant.textLeft}</p>
-            <p className="text-sm">{datoCmsRestaurant.textRight}</p>
+            <p
+              className="text-sm"
+              data-sal="slide-right"
+              data-sal-duration="800"
+              data-sal-delay="300"
+              data-sal-easing="easeInSine"
+            >
+              {datoCmsRestaurant.textLeft}
+            </p>
+            <p
+              className="text-sm"
+              data-sal="slide-left"
+              data-sal-duration="800"
+              data-sal-delay="300"
+              data-sal-easing="easeInSine"
+            >
+              {datoCmsRestaurant.textRight}
+            </p>
             {Object.keys(datoCmsRestaurant.menu).map(key => (
-              <div className="text-sm mr-8" key={key}>
+              <div
+                className="text-sm mr-8"
+                key={key}
+                data-sal="fade"
+                data-sal-duration="500"
+                data-sal-delay="400"
+                data-sal-easing="easeInSine"
+              >
                 <h4 className="mb-8">{key}</h4>
                 {datoCmsRestaurant.menu[key].map(food => (
                   <div className="flex flex-row justify-between" key={food.name}>
@@ -42,15 +65,37 @@ const Gallery = () => {
             ))}
           </div>
           <div className="grid grid-cols-3 gap-8 mt-24 xs:grid-cols-1 lg:grid-cols-3">
-            <Img className="col-span-2" fluid={datoCmsRestaurant.philosophyImage.fluid} />
+            <div
+              className="col-span-2"
+              data-sal="slide-right"
+              data-sal-duration="500"
+              data-sal-delay="500"
+              data-sal-easing="easeInSine"
+            >
+              <Img fluid={datoCmsRestaurant.philosophyImage.fluid} />
+            </div>
             <div>
-              <h2>Our Philoshopy</h2>
-              <p className="text-lg italic mt-4 mb-12">{datoCmsRestaurant.philosophy}</p>
+              <h2 data-sal="slide-left" data-sal-duration="500" data-sal-delay="700" data-sal-easing="easeInSine">
+                Our Philoshopy
+              </h2>
+              <p
+                className="text-lg italic mt-4 mb-12"
+                data-sal="slide-left"
+                data-sal-duration="500"
+                data-sal-delay="700"
+                data-sal-easing="easeInSine"
+              >
+                {datoCmsRestaurant.philosophy}
+              </p>
               <a
                 href="https://www.alikirestaurant.com"
                 target="_blank"
                 rel="noopener norefferer"
                 className="text-center border border-helens-blue hover:bg-gray-900 hover:text-white transition-all duration-500 block py-4 px-6 w-full"
+                data-sal="zoom-in"
+                data-sal-duration="500"
+                data-sal-delay="900"
+                data-sal-easing="easeInSine"
               >
                 MORE ABOUT US
               </a>

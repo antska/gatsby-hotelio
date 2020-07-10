@@ -7,7 +7,7 @@ export const useRestaurant = () =>
         datoCmsRestaurant {
           coverImage {
             fluid(maxWidth: 1920) {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
           title
@@ -18,7 +18,7 @@ export const useRestaurant = () =>
           philosophy
           philosophyImage {
             fluid {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
         }

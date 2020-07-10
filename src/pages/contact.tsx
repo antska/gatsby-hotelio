@@ -13,7 +13,13 @@ const Contact = () => (
   <main className="relative h-full">
     <Layout>
       <section className="flex justify-between items-center mt-32 mb-12 xs:flex-col xs:mx-4 md:flex-row md:mx-0">
-        <h1 className="font-bold">
+        <h1
+          className="font-bold"
+          data-sal="slide-right"
+          data-sal-duration="900"
+          data-sal-delay="300"
+          data-sal-easing="easeInSine"
+        >
           Located in the heart of <br />
           Aliki village, of Paros island
         </h1>
@@ -22,12 +28,22 @@ const Contact = () => (
           target="_blank"
           rel="noopener norefferer"
           className="border border-helens-blue bg-helens-blue hover:bg-gray-900 transition-all duration-500 text-white block rounded-sm py-4 px-6 text-center"
+          data-sal="zoom-in"
+          data-sal-duration="700"
+          data-sal-delay="500"
+          data-sal-easing="easeInSine"
         >
           GET DIRECTIONS
         </a>
       </section>
     </Layout>
-    <section className="h-600">
+    <section
+      className="h-600"
+      data-sal="zoom-out"
+      data-sal-duration="900"
+      data-sal-delay="600"
+      data-sal-easing="easeInSine"
+    >
       <Map marker={{ lat: 36.9946846, lng: 25.1366965 }} />
     </section>
     <Layout>
@@ -57,7 +73,7 @@ const Contact = () => (
         </div>
       </section>
       <section className="grid grid-cols-2 mb-24 xs:grid-cols-1 xs:mx-4 xs:gap-12 md:grid-cols-2 md:gap-12 md:mx-0">
-        <div>
+        <div data-sal="slide-right" data-sal-duration="700" data-sal-delay="300" data-sal-easing="easeInSine">
           <h2>Do you want to book a room?</h2>
           <Form />
         </div>

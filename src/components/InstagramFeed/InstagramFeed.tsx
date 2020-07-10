@@ -18,7 +18,15 @@ const InstagramFeed = () => {
     <>
       <div className="mb-1 mt-16">
         <div className="flex justify-center items-center font-light">
-          <h4 className="font-insta">Our Instagram</h4>
+          <h4
+            className="font-insta"
+            data-sal="slide-right"
+            data-sal-duration="700"
+            data-sal-delay="200"
+            data-sal-easing="easeInSine"
+          >
+            Our Instagram
+          </h4>
         </div>
         <a href="https://www.instagram.com/helenstudios_paros" target="_blank" rel="noopener norefferer">
           <div className="flex items-center xs:mx-4">
@@ -34,8 +42,17 @@ const InstagramFeed = () => {
         </a>
       </div>
       <div className="grid grid-cols-4 gap-4 xs:grid-cols-2 xs:mx-4 lg:grid-cols-4">
-        {igPosts.slice(0, visible).map(({ node: ig }) => (
-          <a href={`https://www.instagram.com/p/${ig.id}`} target="_blank" rel="noopener norefferer" key={ig.id}>
+        {igPosts.slice(0, visible).map(({ node: ig }, index: number) => (
+          <a
+            href={`https://www.instagram.com/p/${ig.id}`}
+            target="_blank"
+            rel="noopener norefferer"
+            key={ig.id}
+            data-sal="fade"
+            data-sal-duration="700"
+            data-sal-delay={(index + 1) * 100}
+            data-sal-easing="easeInSine"
+          >
             <Img fluid={ig.localFile.childImageSharp.fluid} />
           </a>
         ))}

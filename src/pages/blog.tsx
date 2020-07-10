@@ -25,8 +25,15 @@ const Blog = () => {
           <h2 className="text-center font-thin mb-12">Explore Aliki & Paros</h2>
           <div className="px-4">
             <div className="block md:flex justify-between md:-mx-2">
-              {allDatoCmsExploreCard.edges.map(({ node: card }) => (
-                <div className="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0" key={card.slug}>
+              {allDatoCmsExploreCard.edges.map(({ node: card }, index: number) => (
+                <div
+                  className="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0"
+                  key={card.slug}
+                  data-sal="flip-left"
+                  data-sal-duration="700"
+                  data-sal-delay={(index + 1) * 100}
+                  data-sal-easing="easeInSine"
+                >
                   <BlogCard
                     image={card.coverImage.fluid}
                     title={card.title}

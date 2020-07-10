@@ -10,6 +10,7 @@ import NavBar from '../components/NavBar';
 import Welcome from '../components/Welcome';
 import ScrollButton from '../components/ScrollButton';
 import useOnScreen from '../hooks/useOnScreen';
+import SEO from '../components/SEO';
 
 const IndexPage = () => {
   const header = useHeader();
@@ -19,6 +20,7 @@ const IndexPage = () => {
 
   return (
     <>
+      <SEO meta={header.seoMetaTags} />
       <NavBar bottomNav={!tOnScreen} withLogo />
       <main className="relative h-full">
         <Header

@@ -7,14 +7,14 @@ export const useInfo = () =>
         datoCmsInfoCard {
           cover {
             fluid {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
           title
           address
           profile {
             fluid {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
         }

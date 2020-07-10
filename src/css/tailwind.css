@@ -136,3 +136,30 @@ body {
     outline: none;
     overflow: hidden;
 }
+
+.card {
+    transform-origin: center center 0px;
+    transition: all .5s ease-out;
+    animation-name: animate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    /* transform: perspective(3000px) rotateX(35deg) rotateY(4deg) rotateZ(-5deg); */
+}
+
+.card:hover {
+    animation: unset;
+    margin-top: 3vh;
+    /* transform: perspective(3000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) */
+}
+
+@keyframes animate {
+    0% {
+        margin-top: 5vh;
+    }
+    50% {
+        margin-top: 3vh;
+    }
+    100% {
+        margin-top: 5vh;
+    }
+}

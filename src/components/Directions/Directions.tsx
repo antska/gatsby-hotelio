@@ -7,7 +7,13 @@ const Directions = () => {
   const size = useWindowSize();
 
   return (
-    <section className="grid grid-cols-3 mt-8 xs:grid-cols-1 lg:grid-cols-3">
+    <section
+      className="grid grid-cols-3 mt-8 xs:grid-cols-1 lg:grid-cols-3"
+      data-sal="slide-up"
+      data-sal-duration="800"
+      data-sal-delay="200"
+      data-sal-easing="easeInSine"
+    >
       <div className="col-span-2 xs:w-full xs:h-600">
         <Map mobile={size.width <= 640} />
       </div>

@@ -7,12 +7,12 @@ export const useAboutUs = () =>
         datoCmsAbout {
           image1 {
             fluid {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
           image2 {
             fluid {
-              ...GatsbyDatoCmsFluid
+              ...GatsbyDatoCmsFluid_noBase64
             }
           }
           signature {
