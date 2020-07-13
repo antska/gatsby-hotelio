@@ -15,7 +15,7 @@ const Welcome = ({ title, description, image }: Props) => (
           className="mb-16 text-right font-light uppercase tracking-widest xs:mr-0"
           data-sal="slide-right"
           data-sal-duration="700"
-          data-sal-delay="500"
+          data-sal-delay="200"
           data-sal-easing="easeInSine"
         >
           {title}
@@ -24,13 +24,13 @@ const Welcome = ({ title, description, image }: Props) => (
           className="text-xl text-justify xs:ml-0 xl:ml-24"
           data-sal="slide-right"
           data-sal-duration="700"
-          data-sal-delay="700"
+          data-sal-delay="400"
           data-sal-easing="easeInSine"
         >
           {description}
         </p>
       </div>
-      <div data-sal="fade" data-sal-duration="700" data-sal-delay="300" data-sal-easing="easeInSine">
+      <div data-sal="fade" data-sal-duration="700" data-sal-delay="400" data-sal-easing="easeInSine">
         <Img fluid={image.fluid} alt={image.alt} title={image.title} />
       </div>
     </div>

@@ -49,7 +49,7 @@ const Header = ({
               className="text-center text-2xl font-semibold tracking-wider xs:text-3xl lg:text-4xl xl:text-5xl"
               data-sal="fade"
               data-sal-duration="700"
-              data-sal-delay="300"
+              data-sal-delay="100"
               data-sal-easing="easeInSine"
             >
               {title}
@@ -58,7 +58,7 @@ const Header = ({
               className="xs:text-xs sm:text-base md:text-lg xs:mx-12 md:mx-40"
               data-sal="fade"
               data-sal-duration="700"
-              data-sal-delay="500"
+              data-sal-delay="300"
               data-sal-easing="easeInSine"
             >
               {subtitle}
@@ -69,7 +69,7 @@ const Header = ({
                 className="inline-flex"
                 data-sal="zoom-in"
                 data-sal-duration="700"
-                data-sal-delay="700"
+                data-sal-delay="500"
                 data-sal-easing="easeInSine"
               >
                 <button className="text-center border border-white hover:bg-white hover:bg-opacity-25 hover:text-white transition-all duration-500 block py-4 px-16 mt-4">

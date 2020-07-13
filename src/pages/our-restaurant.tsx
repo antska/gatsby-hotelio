@@ -28,7 +28,7 @@ const Gallery = () => {
               className="text-sm"
               data-sal="slide-right"
               data-sal-duration="800"
-              data-sal-delay="300"
+              data-sal-delay="100"
               data-sal-easing="easeInSine"
             >
               {datoCmsRestaurant.textLeft}
@@ -37,7 +37,7 @@ const Gallery = () => {
               className="text-sm"
               data-sal="slide-left"
               data-sal-duration="800"
-              data-sal-delay="300"
+              data-sal-delay="100"
               data-sal-easing="easeInSine"
             >
               {datoCmsRestaurant.textRight}
@@ -48,7 +48,7 @@ const Gallery = () => {
                 key={key}
                 data-sal="fade"
                 data-sal-duration="500"
-                data-sal-delay="400"
+                data-sal-delay="200"
                 data-sal-easing="easeInSine"
               >
                 <h4 className="mb-8">{key}</h4>
@@ -69,7 +69,7 @@ const Gallery = () => {
               className="col-span-2"
               data-sal="slide-right"
               data-sal-duration="500"
-              data-sal-delay="500"
+              data-sal-delay="400"
               data-sal-easing="easeInSine"
             >
               <Img
@@ -79,7 +79,7 @@ const Gallery = () => {
               />
             </div>
             <div>
-              <h2 data-sal="slide-left" data-sal-duration="500" data-sal-delay="700" data-sal-easing="easeInSine">
+              <h2 data-sal="slide-left" data-sal-duration="500" data-sal-delay="500" data-sal-easing="easeInSine">
                 Our Philoshopy
               </h2>
               <p
@@ -98,7 +98,7 @@ const Gallery = () => {
                 className="text-center border border-helens-blue hover:bg-gray-900 hover:text-white transition-all duration-500 block py-4 px-6 w-full"
                 data-sal="zoom-in"
                 data-sal-duration="500"
-                data-sal-delay="900"
+                data-sal-delay="600"
                 data-sal-easing="easeInSine"
               >
                 MORE ABOUT US

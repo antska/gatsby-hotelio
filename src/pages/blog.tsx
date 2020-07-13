@@ -31,7 +31,7 @@ const Blog = () => {
                   key={card.slug}
                   data-sal="flip-left"
                   data-sal-duration="700"
-                  data-sal-delay={(index + 1) * 100}
+                  data-sal-delay={(index + 1) * 50}
                   data-sal-easing="easeInSine"
                 >
                   <BlogCard

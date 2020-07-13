@@ -21,7 +21,7 @@ const Contact = () => {
                 className="font-bold col-span-1 my-12"
                 data-sal="slide-right"
                 data-sal-duration="700"
-                data-sal-delay="200"
+                data-sal-delay="100"
                 data-sal-easing="easeInSine"
               >
                 {datoCmsAbout.title}
@@ -30,7 +30,7 @@ const Contact = () => {
                 className="text-xl lg:text-justify"
                 data-sal="slide-right"
                 data-sal-duration="700"
-                data-sal-delay="500"
+                data-sal-delay="200"
                 data-sal-easing="easeInSine"
               >
                 {datoCmsAbout.description1}
@@ -55,12 +55,12 @@ const Contact = () => {
                 className="col-span-1 text-xl my-12"
                 data-sal="slide-left"
                 data-sal-duration="700"
-                data-sal-delay="500"
+                data-sal-delay="300"
                 data-sal-easing="easeInSine"
               >
                 {datoCmsAbout.description2}
               </p>
-              <div data-sal="slide-left" data-sal-duration="700" data-sal-delay="1000" data-sal-easing="easeInSine">
+              <div data-sal="slide-left" data-sal-duration="700" data-sal-delay="500" data-sal-easing="easeInSine">
                 <Img
                   fixed={datoCmsAbout.signature.fixed}
                   title={datoCmsAbout.signature.title}

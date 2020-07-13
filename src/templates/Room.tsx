@@ -62,7 +62,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
           className="absolute flex -mt-8 text-white uppercase centered-axis-x items-center text-center xs:-mt-24 md:-mt-12"
           data-sal="fade"
           data-sal-duration="700"
-          data-sal-delay="1000"
+          data-sal-delay="200"
           data-sal-easing="easeInSine"
         >
           <li className="mr-6 cursor-pointer" onClick={() => scrollTo('detail')}>
@@ -88,7 +88,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
                     className="border border-helens-blue bg-helens-blue hover:bg-gray-900 transition-all duration-500 text-white block rounded-sm py-4 px-6 w-full"
                     data-sal="slide-left"
                     data-sal-duration="700"
-                    data-sal-delay="500"
+                    data-sal-delay="300"
                     data-sal-easing="easeInSine"
                   >
                     BOOK NOW
@@ -107,7 +107,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
                   className="border border-helens-blue bg-helens-blue transition-all duration-500 text-white block rounded-sm py-4 px-6 w-full hover:bg-gray-900 md:px-4 md:py-4"
                   data-sal="slide-left"
                   data-sal-duration="700"
-                  data-sal-delay="500"
+                  data-sal-delay="300"
                   data-sal-easing="easeInSine"
                 >
                   BOOK NOW
@@ -123,7 +123,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
         className="p-24 bg-helens-dark-blue text-white xs:p-8 md:p-24"
         data-sal="flip-up"
         data-sal-duration="700"
-        data-sal-delay="500"
+        data-sal-delay="400"
         data-sal-easing="easeInSine"
       >
         <div className="grid grid-cols-2 gap-4 xs:grid-cols-1 md:grid-cols-2">

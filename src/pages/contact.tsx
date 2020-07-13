@@ -17,7 +17,7 @@ const Contact = () => (
           className="font-bold"
           data-sal="slide-right"
           data-sal-duration="900"
-          data-sal-delay="300"
+          data-sal-delay="100"
           data-sal-easing="easeInSine"
         >
           Located in the heart of <br />
@@ -30,7 +30,7 @@ const Contact = () => (
           className="border border-helens-blue bg-helens-blue hover:bg-gray-900 transition-all duration-500 text-white block rounded-sm py-4 px-6 text-center"
           data-sal="zoom-in"
           data-sal-duration="700"
-          data-sal-delay="500"
+          data-sal-delay="300"
           data-sal-easing="easeInSine"
         >
           GET DIRECTIONS
@@ -41,7 +41,7 @@ const Contact = () => (
       className="h-600"
       data-sal="zoom-out"
       data-sal-duration="900"
-      data-sal-delay="600"
+      data-sal-delay="400"
       data-sal-easing="easeInSine"
     >
       <Map marker={{ lat: 36.9946846, lng: 25.1366965 }} />

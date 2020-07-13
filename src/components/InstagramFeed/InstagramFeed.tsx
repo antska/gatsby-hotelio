@@ -22,7 +22,7 @@ const InstagramFeed = () => {
             className="font-insta"
             data-sal="slide-right"
             data-sal-duration="700"
-            data-sal-delay="200"
+            data-sal-delay="100"
             data-sal-easing="easeInSine"
           >
             Our Instagram
@@ -55,7 +55,7 @@ const InstagramFeed = () => {
             key={ig.id}
             data-sal="fade"
             data-sal-duration="700"
-            data-sal-delay={(index + 1) * 100}
+            data-sal-delay={(index + 1) * 50}
             data-sal-easing="easeInSine"
           >
             <Img

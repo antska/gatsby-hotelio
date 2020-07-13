@@ -11,7 +11,7 @@ const Directions = () => {
       className="grid grid-cols-3 mt-8 xs:grid-cols-1 lg:grid-cols-3"
       data-sal="slide-up"
       data-sal-duration="800"
-      data-sal-delay="200"
+      data-sal-delay="100"
       data-sal-easing="easeInSine"
     >
       <div className="col-span-2 xs:w-full xs:h-600">

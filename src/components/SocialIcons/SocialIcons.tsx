@@ -12,7 +12,7 @@ const SocialIcons = () => (
       aria-label="Facebook"
       data-sal="fade"
       data-sal-duration="700"
-      data-sal-delay="100"
+      data-sal-delay="50"
       data-sal-easing="easeInSine"
     >
       <FaFacebookF className="hover:text-facebook" size="24" title="Facebook" />
@@ -25,7 +25,7 @@ const SocialIcons = () => (
       aria-label="Instagram"
       data-sal="fade"
       data-sal-duration="700"
-      data-sal-delay="200"
+      data-sal-delay="150"
       data-sal-easing="easeInSine"
     >
       <FaInstagram className="hover:text-instagram" size="24" title="Instagram" />
@@ -38,7 +38,7 @@ const SocialIcons = () => (
       aria-label="TripAdvisor"
       data-sal="fade"
       data-sal-duration="700"
-      data-sal-delay="300"
+      data-sal-delay="200"
       data-sal-easing="easeInSine"
     >
       <FaTripadvisor className="hover:text-tripadvisor" size="24" title="TripAdvisor" />
@@ -51,7 +51,7 @@ const SocialIcons = () => (
       aria-label="Email"
       data-sal="fade"
       data-sal-duration="700"
-      data-sal-delay="400"
+      data-sal-delay="250"
       data-sal-easing="easeInSine"
     >
       <FiMail className="hover:text-email" size="24" title="e-mail" />
