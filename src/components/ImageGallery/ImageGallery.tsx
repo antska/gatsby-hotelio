@@ -19,13 +19,13 @@ const ImageGallery = ({ images }: Props) => (
       {images.map((photo, index) => (
         <div
           className="w-full h-full"
+          key={photo.originalId}
           data-sal="zoom-in"
           data-sal-duration="700"
           data-sal-delay={(index + 1) * 50}
           data-sal-easing="easeInSine"
         >
           <Img
-            key={photo.originalId}
             fluid={photo.fluid}
             alt={photo.alt}
             title={photo.title}

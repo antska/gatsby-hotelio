@@ -22,6 +22,9 @@ export const useGallery = () =>
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
+          seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
+          }
         }
       }
     `

@@ -37,7 +37,7 @@ const Header = ({
       alt={title}
       title={title}
     >
-      <div className="h-full bg-black bg-opacity-25">
+      <div className="h-full bg-black bg-opacity-50">
         <div className="flex items-center justify-center h-full">
           {hasLogo && (
             <div className="absolute top-0 z-10 w-56 h-8 mt-4 text-center">
@@ -55,7 +55,7 @@ const Header = ({
               {title}
             </h1>
             <p
-              className="xs:text-xs sm:text-base md:text-lg xs:mx-12 md:mx-40"
+              className="font-light xs:text-xs sm:text-base md:text-lg xs:mx-12 md:mx-40"
               data-sal="fade"
               data-sal-duration="700"
               data-sal-delay="300"

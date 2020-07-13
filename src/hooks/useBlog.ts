@@ -14,6 +14,9 @@ export const useBlog = () =>
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
+          seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
+          }
         }
         allDatoCmsExploreCard {
           edges {

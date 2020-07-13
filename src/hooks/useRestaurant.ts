@@ -25,6 +25,9 @@ export const useRestaurant = () =>
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
+          seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
+          }
         }
       }
     `

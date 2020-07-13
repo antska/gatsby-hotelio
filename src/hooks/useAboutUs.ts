@@ -29,6 +29,9 @@ export const useAboutUs = () =>
           title
           description1
           description2
+          seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
+          }
         }
       }
     `

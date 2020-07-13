@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef, lazy, Suspense } from 'react';
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Rooms from '../components/Rooms';
 import InstagramFeed from '../components/InstagramFeed';
-import Directions from '../components/Directions';
+// import Directions from '../components/Directions';
 import { useHeader } from '../hooks/useHeader';
 import NavBar from '../components/NavBar';
 import Welcome from '../components/Welcome';
@@ -12,6 +12,8 @@ import ScrollButton from '../components/ScrollButton';
 import useOnScreen from '../hooks/useOnScreen';
 import SEO from '../components/SEO';
 import useWindowSize from '../hooks/useWindowSize';
+
+const Directions = lazy(() => import('../components/Directions'));
 
 const IndexPage = () => {
   const header = useHeader();
@@ -23,7 +25,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <SEO meta={header.seoMetaTags} />
+      <SEO meta={header.datoCmsHome.seoMetaTags} />
       <NavBar bottomNav={!tOnScreen && !isMobile} withLogo />
       <main className="relative h-full">
         <Header
@@ -51,7 +53,9 @@ const IndexPage = () => {
         <Layout>
           <InstagramFeed />
         </Layout>
-        <Directions />
+        {/* <Suspense fallback={<div>Loading map...</div>}>
+          <Directions />
+        </Suspense> */}
         <Footer />
         <ScrollButton />
       </main>

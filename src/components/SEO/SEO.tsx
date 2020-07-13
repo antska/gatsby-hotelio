@@ -6,7 +6,12 @@ type Props = {
 };
 
 const SEO = ({ meta }: Props) => {
-  return <HelmetDatoCms seo={meta} />;
+  return (
+    <HelmetDatoCms seo={meta}>
+      <html lang="en" />
+      <title>Helen's Minimal Studios &amp; Apartments</title>
+    </HelmetDatoCms>
+  );
 };
 
 export default SEO;
