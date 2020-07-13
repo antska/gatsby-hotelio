@@ -30,6 +30,8 @@ const Map = compose(
         <img
           className="inline-block w-20 m-auto"
           src="https://www.datocms-assets.com/27980/1593773921-helensminimalstudio-resized.png"
+          alt="helen's minimal marker"
+          title="helen's minimal marker"
         />
         <p className="tracking-widest text-sm text-helens-blue">
           Helen's Minimal
@@ -47,6 +49,8 @@ const Map = compose(
         <img
           className="inline-block w-20 m-auto"
           src="https://www.datocms-assets.com/27980/1593773118-alykilogoresized.png"
+          alt="aliki restaurant marker"
+          title="aliki restaurant marker"
         />
         <p className="tracking-widest text-xs text-helens-blue">Aliki Restaurant Paros</p>
       </div>

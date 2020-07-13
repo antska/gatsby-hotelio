@@ -12,16 +12,6 @@ import Rooms from '../components/Rooms';
 import useWindowSize from '../hooks/useWindowSize';
 import ScrollButton from '../components/ScrollButton';
 
-const settings = {
-  slidesToShow: 2,
-  speed: 500,
-  infinite: true,
-  centerMode: true,
-  slidesToScroll: 1,
-  nextArrow: <RiArrowRightSLine size="12" color="black" />,
-  prevArrow: <RiArrowLeftSLine size="12" color="black" />
-};
-
 const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
   const size = useWindowSize();
   const isMobile = size.width <= 650;
@@ -41,7 +31,12 @@ const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
     <main className="relative h-full">
       <Layout extraClasses="mt-24">
         <NavBar withLogo />
-        <Img className="h-600" fluid={explore.coverImage.fluid} />
+        <Img
+          className="h-600"
+          fluid={explore.coverImage.fluid}
+          title={explore.coverImage.title}
+          alt={explore.coverImage.alt}
+        />
         <h2
           className="text-center uppercase my-12"
           data-sal="slide-right"
@@ -57,7 +52,13 @@ const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
         <Slider {...settings}>
           {explore.gallery.map(img => (
             <div key={img.originalId}>
-              <BackgroundImage Tag="div" fluid={img.fluid} className="mr-4 h-600 xs:mr-0 md:mr-4" />
+              <BackgroundImage
+                Tag="div"
+                fluid={img.fluid}
+                className="mr-4 h-600 xs:mr-0 md:mr-4"
+                alt={img.alt}
+                title={img.title}
+              />
             </div>
           ))}
         </Slider>

@@ -34,6 +34,8 @@ const Header = ({
       className={`${height} ${bgFixed && 'bg-fixed'} ${margin} xs:h-screen`}
       fluid={heroImage}
       fadeIn={false}
+      alt={title}
+      title={title}
     >
       <div className="h-full bg-black bg-opacity-25">
         <div className="flex items-center justify-center h-full">
@@ -44,7 +46,7 @@ const Header = ({
           )}
           <div className="text-center font-hairline text-white">
             <h1
-              className="text-center text-2xl font-semibold tracking-wider xs:text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl"
+              className="text-center text-2xl font-semibold tracking-wider xs:text-3xl lg:text-4xl xl:text-5xl"
               data-sal="fade"
               data-sal-duration="700"
               data-sal-delay="300"

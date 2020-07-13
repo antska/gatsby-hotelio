@@ -156,7 +156,13 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
         <Slider {...settings}>
           {room.gallery.map(img => (
             <div key={img.originalId}>
-              <BackgroundImage Tag="div" fluid={img.fluid} className="mr-4 h-600 xs:mr-0 md:mr-4" />
+              <BackgroundImage
+                Tag="div"
+                fluid={img.fluid}
+                className="mr-4 h-600 xs:mr-0 md:mr-4"
+                alt={img.alt}
+                title={img.title}
+              />
             </div>
           ))}
         </Slider>

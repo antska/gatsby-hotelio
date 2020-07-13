@@ -18,7 +18,7 @@ const NavBar = ({ bottomNav = false, withLogo = false }: Props) => {
           {withLogo && !bottomNav && (
             <>
               <Link to="/" className="w-32 h-auto align-middle ml-8 xs:ml-0">
-                <img src={header.datoCmsHome.miniLogo.url} alt="Home" title="Home" />
+                <img src={header.datoCmsHome.miniLogo.url} alt="Logo" title="Logo" />
               </Link>
 
               <button

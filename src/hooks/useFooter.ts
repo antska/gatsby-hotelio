@@ -7,6 +7,8 @@ export const useFooter = () =>
         datoCmsFooter {
           footerImages {
             title
+            alt
+            customData
             fixed(height: 151, width: 151) {
               ...GatsbyDatoCmsFixed
             }

@@ -3,7 +3,7 @@ import Img, { FluidObject } from 'gatsby-image';
 import { Link } from 'gatsby';
 
 type Props = {
-  image: FluidObject;
+  image: { fluid: FluidObject; title: string; alt: string };
   title: string;
   excerpt: string;
   tags: string;
@@ -13,7 +13,7 @@ type Props = {
 const BlogCard = ({ image, title, excerpt, tags, url }: Props) => (
   <Link to={`${url}`}>
     <div className="bg-white rounded-lg overflow-hidden shadow-2xl relative hover:scale-105 transform transition-all duration-500">
-      <Img fluid={image} className="h-56 w-full object-cover object-center" />
+      <Img fluid={image.fluid} className="h-56 w-full object-cover object-center" title={image.title} alt={image.alt} />
       <div className="p-4 h-auto md:h-40 lg:h-48">
         <h2 className="block text-blue-500 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
           {title}

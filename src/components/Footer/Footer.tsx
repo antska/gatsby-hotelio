@@ -28,27 +28,11 @@ const Footer = () => {
         {footer.datoCmsFooter.footerImages.map((award, key: number) => (
           <div key={`award_${key}`}>
             <h5 className="mb-4">{award.title}</h5>
-            <Img fixed={award.fixed} className="shadow-xl" />
+            <a href={award.customData.url} target="_blank" rel="noopener norefferer">
+              <Img fixed={award.fixed} className="shadow-xl" title={award.title} alt={award.alt} />
+            </a>
           </div>
         ))}
-        <div>
-          <h5 className="mb-4">TRIPADVISOR</h5>
-          <div id="TA_cdsratingsonlynarrow690" className="TA_cdsratingsonlynarrow shadow-xl">
-            <ul id="Q5HYeQWb" className="TA_links SPakd4">
-              <li id="XsqhDlm2mA" className="yOduvrE">
-                <a
-                  target="_blank"
-                  href="https://www.tripadvisor.com/Hotel_Review-g1190421-d3437250-Reviews-Helen_s_Minimal_Studios-Aliki_Paros_Cyclades_South_Aegean.html"
-                >
-                  <img
-                    src="https://www.tripadvisor.com/img/cdsi/img2/branding/v2/Tripadvisor_lockup_horizontal_secondary_registered-18034-2.svg"
-                    alt="TripAdvisor"
-                  />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
       <div className="flex justify-between mx-2 pt-8 pb-4 px-12 border-t border-white text-xs xs:flex-col xs:px-2 md:flex-row md:px-2">
         <div className="xs:text-center xs:mb-4">© Copyright Helen's Minimal Studios & Apartments</div>

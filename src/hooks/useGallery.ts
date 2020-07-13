@@ -6,6 +6,8 @@ export const useGallery = () =>
       query gallery {
         datoCmsGallery {
           coverImage {
+            title
+            alt
             fluid(maxWidth: 1920) {
               ...GatsbyDatoCmsFluid_noBase64
             }

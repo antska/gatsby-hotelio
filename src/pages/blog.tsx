@@ -35,7 +35,7 @@ const Blog = () => {
                   data-sal-easing="easeInSine"
                 >
                   <BlogCard
-                    image={card.coverImage.fluid}
+                    image={card.coverImage}
                     title={card.title}
                     excerpt={card.excerpt}
                     tags={card.tags}

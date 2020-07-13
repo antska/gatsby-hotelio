@@ -72,7 +72,11 @@ const Gallery = () => {
               data-sal-delay="500"
               data-sal-easing="easeInSine"
             >
-              <Img fluid={datoCmsRestaurant.philosophyImage.fluid} />
+              <Img
+                fluid={datoCmsRestaurant.philosophyImage.fluid}
+                title={datoCmsRestaurant.philosophyImage.title}
+                alt={datoCmsRestaurant.philosophyImage.alt}
+              />
             </div>
             <div>
               <h2 data-sal="slide-left" data-sal-duration="500" data-sal-delay="700" data-sal-easing="easeInSine">

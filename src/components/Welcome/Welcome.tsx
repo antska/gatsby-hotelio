@@ -4,7 +4,7 @@ import Img, { FluidObject } from 'gatsby-image';
 type Props = {
   title: string;
   description: string;
-  image: FluidObject;
+  image: { fluid: FluidObject; title: string; alt: string };
 };
 
 const Welcome = ({ title, description, image }: Props) => (
@@ -31,7 +31,7 @@ const Welcome = ({ title, description, image }: Props) => (
         </p>
       </div>
       <div data-sal="fade" data-sal-duration="700" data-sal-delay="300" data-sal-easing="easeInSine">
-        <Img fluid={image} />
+        <Img fluid={image.fluid} alt={image.alt} title={image.title} />
       </div>
     </div>
   </section>

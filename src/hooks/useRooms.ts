@@ -13,6 +13,8 @@ export const useRooms = () =>
               excerpt
               info
               coverImage {
+                alt
+                title
                 fluid(maxWidth: 1920) {
                   ...GatsbyDatoCmsFluid_noBase64
                 }

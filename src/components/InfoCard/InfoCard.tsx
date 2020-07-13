@@ -16,7 +16,12 @@ const InfoCard = () => {
     >
       <div className="max-w-sm w-full sm:w-full lg:w-full px-3">
         <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-          <Img fluid={datoCmsInfoCard.cover.fluid} className="bg-cover bg-center h-56 p-4" />
+          <Img
+            fluid={datoCmsInfoCard.cover.fluid}
+            className="bg-cover bg-center h-56 p-4"
+            title={datoCmsInfoCard.cover.title}
+            alt={datoCmsInfoCard.cover.alt}
+          />
           <div className="p-4">
             {/* <p className="uppercase tracking-wide text-sm font-bold text-gray-700">Garden view • Seaview</p> */}
             <p className="text-3xl text-gray-900">{datoCmsInfoCard.title}</p>
@@ -50,6 +55,8 @@ const InfoCard = () => {
               <Img
                 fluid={datoCmsInfoCard.profile.fluid}
                 className="bg-cover bg-center w-20 h-20 rounded-full mr-3 xs:rounded-lg lg:rounded-full"
+                title={datoCmsInfoCard.profile.title}
+                alt={datoCmsInfoCard.profile.alt}
               />
               <div>
                 <p className="font-bold text-gray-900">Eleni Ragkousi</p>

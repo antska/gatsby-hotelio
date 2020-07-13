@@ -30,7 +30,12 @@ const InstagramFeed = () => {
         </div>
         <a href="https://www.instagram.com/helenstudios_paros" target="_blank" rel="noopener norefferer">
           <div className="flex items-center xs:mx-4">
-            <img className="mr-2 h-12 w-12" src={instagram.datoCmsHome.logo.url} alt="logo" title="logo" />
+            <img
+              className="mr-2 h-12 w-12"
+              src={instagram.datoCmsHome.logo.url}
+              alt="instagram logo"
+              title="instagram logo"
+            />
             <div className="flex flex-col">
               <p className="font-semibold">helenstudios_paros</p>
               <p className="text-xs">
@@ -53,7 +58,11 @@ const InstagramFeed = () => {
             data-sal-delay={(index + 1) * 100}
             data-sal-easing="easeInSine"
           >
-            <Img fluid={ig.localFile.childImageSharp.fluid} />
+            <Img
+              fluid={ig.localFile.childImageSharp.fluid}
+              title={`Instagram photo ${index + 1}`}
+              alt={`Instagram photo ${index + 1}`}
+            />
           </a>
         ))}
       </div>

@@ -33,6 +33,7 @@ const Card = ({ image, title, excerpt, linkTo, info, id }: Props) => (
             backgroundSize: 'cover'
           }}
           fluid={image}
+          title={title}
           alt={title}
           backgroundColor={`#040e18`}
         >
