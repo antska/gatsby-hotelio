@@ -23,8 +23,8 @@ export const useHeader = () =>
           welcomeImage {
             title
             alt
-            fluid(maxWidth: 4928) {
-              ...GatsbyDatoCmsFluid_noBase64
+            fluid(maxWidth: 1915, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsFluid
             }
           }
           discoverImage {

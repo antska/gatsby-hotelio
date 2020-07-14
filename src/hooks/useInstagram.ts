@@ -18,8 +18,8 @@ export const useInstagram = () =>
               timestamp
               localFile {
                 childImageSharp {
-                  fluid(maxWidth: 300, maxHeight: 300) {
-                    ...GatsbyImageSharpFluid
+                  fixed(width: 300, height: 300) {
+                    ...GatsbyImageSharpFixed
                   }
                 }
               }

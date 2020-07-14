@@ -18,7 +18,7 @@ export const useGallery = () =>
             originalId
             alt
             title
-            fluid {
+            fluid(maxWidth: 1280, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
