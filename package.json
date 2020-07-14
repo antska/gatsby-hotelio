@@ -36,6 +36,8 @@
     "tailwindcss": "^1.4.6",
     "tailwindcss-animations": "^2.0.0",
     "tailwindcss-filters": "^3.0.0",
+    "typeface-lobster": "^0.0.72",
+    "typeface-titillium-web": "^0.0.72",
     "typescript": "^3.9.2"
   },
   "keywords": [
