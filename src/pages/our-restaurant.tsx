@@ -111,7 +111,7 @@ const Gallery = () => {
           </section>
         </Layout>
         <section>
-          <Map width="w-full" height="h-600" />
+          <Map />
         </section>
         <Footer />
         <ScrollButton />

@@ -10,7 +10,7 @@ const Directions = () => (
     data-sal-delay="100"
     data-sal-easing="easeInSine"
   >
-    <div className="bg-helens-blue">
+    <div className="h-600 w-full bg-helens-blue">
       <Map />
     </div>
     <div className="bg-helens-blue p-20 text-white xs:p-4 xs:text-center xs:w-full">

@@ -50,7 +50,7 @@ const Contact = () => {
           data-sal-delay="400"
           data-sal-easing="easeInSine"
         >
-          <Map width="w-full" height="h-600" />
+          <Map />
         </section>
         <Layout>
           <NavBar withLogo />

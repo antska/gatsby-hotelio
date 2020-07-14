@@ -17,6 +17,21 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-scroll-reveal`,
     {
+      resolve: `gatsby-source-googlemaps-static`,
+      options: {
+        key: process.env.GOOGLE_MAPS_API,
+        center: `36.9946889,25.1345078`,
+        zoom: '15',
+        scale: '2',
+        markers: [
+          {
+            location: `36.9946846,25.1366965`,
+            label: `Helen's Minimal Studios & Apartments`
+          }
+        ]
+      }
+    },
+    {
       resolve: 'gatsby-background-image-es5',
       options: {
         // add your own characters to escape, replacing the default ':/'
