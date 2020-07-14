@@ -19,7 +19,7 @@ const IndexPage = () => {
   const tRef = useRef(null);
   const tOnScreen = useOnScreen(tRef);
   const size = useWindowSize();
-  const isMobile = size.width < 768;
+  const isMobile = size.width! < 768;
 
   return (
     <>

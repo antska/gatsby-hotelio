@@ -2513,7 +2513,7 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.10.0.tgz#a17b3a8ea811060e74d47d306122400ad4497ae2"
   integrity sha512-3YDiu347mtVtjpyV3u5kVqQLP242c06zwDOgpeRnybmXlYYsLbtTrUBUm8i8srONt+FWobl5aibnU1030PeeuA==
 
-axe-core@^3.5.4:
+axe-core@^3.5.0, axe-core@^3.5.4:
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.5.5.tgz#84315073b53fa3c0c51676c588d59da09a192227"
   integrity sha512-5P0QZ6J5xGikH780pghEdbEKijCTrruK9KxtPZCFWUpef0f6GipO+xEZ5GKCb020mmqgbiNO6TcA55CriL784Q==
@@ -6612,6 +6612,13 @@ gatsby-plugin-postcss@2.3.2:
   dependencies:
     "@babel/runtime" "^7.9.6"
     postcss-loader "^3.0.0"
+
+gatsby-plugin-react-axe@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-axe/-/gatsby-plugin-react-axe-0.4.1.tgz#fe3be5f5bbe111639a1328969d7699bbaa185f1d"
+  integrity sha512-JV/waKoj/e94Z2SmaVFlmvBrbxRppxzvlUA8r5ko13yciajhYaIOtivM9rwG2ojp5jqEa9QnLYNBoROHqCikIA==
+  dependencies:
+    react-axe "^3.4.1"
 
 gatsby-plugin-react-helmet@^3.1.16:
   version "3.3.9"
@@ -12075,6 +12082,14 @@ rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-axe@^3.4.1:
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/react-axe/-/react-axe-3.5.3.tgz#38dac84e20cdf3e09e5752eb405b30c5ac845fa8"
+  integrity sha512-WDKAoLVsC6rsmYboXThY7OnVDaQOOOecySHJJjggn1cFOJyWtzNh2uiV3oSxoAolONGTi22G9zKDxw53g/8Vqg==
+  dependencies:
+    axe-core "^3.5.0"
+    requestidlecallback "^0.3.0"
+
 react-dev-utils@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-4.2.3.tgz#5b42d9ea58d5e9e017a2f57a40a8af408a3a46fb"
@@ -12706,6 +12721,11 @@ request@^2.83.0, request@^2.88.0:
     tough-cookie "~2.5.0"
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
+
+requestidlecallback@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/requestidlecallback/-/requestidlecallback-0.3.0.tgz#6fb74e0733f90df3faa4838f9f6a2a5f9b742ac5"
+  integrity sha1-b7dOBzP5DfP6pIOPn2oqX5t0KsU=
 
 require-directory@^2.1.1:
   version "2.1.1"

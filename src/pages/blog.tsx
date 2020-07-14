@@ -27,7 +27,7 @@ const Blog = () => {
           <main className="py-4 my-12">
             <h2 className="text-center font-thin mb-12">Explore Aliki & Paros</h2>
             <div className="px-4">
-              <div className="block md:flex justify-between md:-mx-2">
+              <div className="block md:flex justify-center md:-mx-2">
                 {allDatoCmsExploreCard.edges.map(({ node: card }, index: number) => (
                   <div
                     className="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0"
