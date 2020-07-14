@@ -50,7 +50,7 @@ const Contact = () => {
           data-sal-delay="400"
           data-sal-easing="easeInSine"
         >
-          <Map marker={{ lat: 36.9946846, lng: 25.1366965 }} />
+          <Map width="w-full" height="h-600" />
         </section>
         <Layout>
           <NavBar withLogo />

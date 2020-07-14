@@ -1,61 +1,26 @@
 import React from 'react';
-import { compose, withProps } from 'recompose';
-import { withScriptjs, withGoogleMap, GoogleMap } from 'react-google-maps';
-import { MarkerWithLabel } from 'react-google-maps/lib/components/addons/MarkerWithLabel';
 
-import fancyMapStyle from './mapStyle.json';
+type Props = {
+  width?: string;
+  height?: string;
+};
 
-const Map = compose(
-  withProps({
-    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API}`,
-    loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `100%` }} />,
-    mapElement: <div style={{ height: `100%` }} />
-  }),
-  withScriptjs,
-  withGoogleMap
-)(({ mobile }) => (
-  <GoogleMap
-    defaultZoom={mobile ? 14 : 17}
-    defaultCenter={{ lat: 36.9957998, lng: 25.1364208 }}
-    defaultOptions={{ styles: fancyMapStyle }}
+const Map = ({ width, height }: Props) => (
+  <a
+    href="https://g.page/helenstudios_paros?share"
+    className="group block transform transition-all duration-500 hover:shadow-xl"
+    target="_blank"
+    rel="noopener norefferer"
+    title="Google Maps link"
   >
-    <MarkerWithLabel
-      animation={2}
-      position={{ lat: 36.9946846, lng: 25.1366965 }}
-      labelAnchor={new google.maps.Point(0, 70)}
-      onClick={() => window.open('https://g.page/helenstudios_paros?share', '_blank')}
-    >
-      <div className="flex justify-center flex-col">
-        <img
-          className="inline-block w-20 m-auto"
-          src="https://www.datocms-assets.com/27980/1593773921-helensminimalstudio-resized.png"
-          alt="helen's minimal marker"
-          title="helen's minimal marker"
-        />
-        <p className="tracking-widest text-sm text-helens-blue">
-          Helen's Minimal
-          <br /> Studios & Apartments
-        </p>
-      </div>
-    </MarkerWithLabel>
-    <MarkerWithLabel
-      animation={2}
-      position={{ lat: 36.994665, lng: 25.136193 }}
-      labelAnchor={new google.maps.Point(140, 50)}
-      onClick={() => window.open('https://goo.gl/maps/1naBWPBYucfQRqmB7', '_blank')}
-    >
-      <div className="flex justify-center flex-col">
-        <img
-          className="inline-block w-20 m-auto"
-          src="https://www.datocms-assets.com/27980/1593773118-alykilogoresized.png"
-          alt="aliki restaurant marker"
-          title="aliki restaurant marker"
-        />
-        <p className="tracking-widest text-xs text-helens-blue">Aliki Restaurant Paros</p>
-      </div>
-    </MarkerWithLabel>
-  </GoogleMap>
-));
+    <div className="flex justify-center items-center absolute w-full h-full bg-opacity-25 group-hover:bg-opacity-0 bg-black transition-all duration-500" />
+    <img
+      className={`inline-block xs:object-cover md:object-none lg:object-cover ${width} ${height}`}
+      src={`https://maps.googleapis.com/maps/api/staticmap?scale=2&zoom=15&size=640x500&maptype=roadmap&key=${process.env.GOOGLE_MAPS_API}&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:H%7C36.9946846,25.1366965&language=en`}
+      title="Helen's Minimal location"
+      alt="Google Map of 36.9946846,25.1366965"
+    />
+  </a>
+);
 
 export default Map;

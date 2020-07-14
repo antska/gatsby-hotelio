@@ -1,10 +1,10 @@
-import React, { useRef, lazy, Suspense } from 'react';
+import React, { useRef } from 'react';
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Rooms from '../components/Rooms';
 import InstagramFeed from '../components/InstagramFeed';
-// import Directions from '../components/Directions';
+import Directions from '../components/Directions';
 import { useHeader } from '../hooks/useHeader';
 import NavBar from '../components/NavBar';
 import Welcome from '../components/Welcome';
@@ -12,8 +12,6 @@ import ScrollButton from '../components/ScrollButton';
 import useOnScreen from '../hooks/useOnScreen';
 import SEO from '../components/SEO';
 import useWindowSize from '../hooks/useWindowSize';
-
-const Directions = lazy(() => import('../components/Directions'));
 
 const IndexPage = () => {
   const header = useHeader();
@@ -53,9 +51,7 @@ const IndexPage = () => {
         <Layout>
           <InstagramFeed />
         </Layout>
-        {/* <Suspense fallback={<div>Loading map...</div>}>
-          <Directions />
-        </Suspense> */}
+        <Directions />
         <Footer />
         <ScrollButton />
       </main>
