@@ -6,6 +6,8 @@ export const useRestaurant = () =>
       query restaurant {
         datoCmsRestaurant {
           coverImage {
+            alt
+            title
             fluid(maxWidth: 1920) {
               ...GatsbyDatoCmsFluid_noBase64
             }
@@ -17,9 +19,14 @@ export const useRestaurant = () =>
           menu
           philosophy
           philosophyImage {
+            alt
+            title
             fluid {
               ...GatsbyDatoCmsFluid_noBase64
             }
+          }
+          seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
           }
         }
       }

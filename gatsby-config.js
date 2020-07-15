@@ -14,8 +14,22 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`,
     `gatsby-plugin-scroll-reveal`,
+    `gatsby-plugin-react-axe`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Helen's Minimal Studios & Apartments`,
+        short_name: `Helen Studios`,
+        description: `Minimal accomodation in Alyki with Seaview or garden view.`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#59809a`,
+        display: `standalone`,
+        icon: `src/images/helensminimalstudio-512x512.png`
+      }
+    },
+    `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-background-image-es5',
       options: {
@@ -45,6 +59,22 @@ module.exports = {
         username: `12375540439`,
         paginate: 100,
         maxPosts: 10
+      }
+    },
+    {
+      resolve: `gatsby-source-googlemaps-static`,
+      options: {
+        key: process.env.GOOGLE_MAPS_API,
+        secret: process.env.GOOGLE_MAPS_SECRET,
+        center: `36.9946889,25.1345078`,
+        zoom: '15',
+        scale: '2',
+        markers: [
+          {
+            location: `36.9946846,25.1366965`,
+            label: `Helen's Minimal Studios & Apartments`
+          }
+        ]
       }
     }
   ]

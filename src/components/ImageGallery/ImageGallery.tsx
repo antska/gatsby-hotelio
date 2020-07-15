@@ -19,15 +19,16 @@ const ImageGallery = ({ images }: Props) => (
       {images.map((photo, index) => (
         <div
           className="w-full h-full"
+          key={photo.originalId}
           data-sal="zoom-in"
           data-sal-duration="700"
           data-sal-delay={(index + 1) * 50}
           data-sal-easing="easeInSine"
         >
           <Img
-            key={photo.originalId}
             fluid={photo.fluid}
             alt={photo.alt}
+            title={photo.title}
             className="h-full cursor-pointer border-opacity-0 border-helens-dark-blue border-2 hover:opacity-75 transform hover:border-opacity-100 hover:scale-105 transition-all duration-700"
           />
         </div>

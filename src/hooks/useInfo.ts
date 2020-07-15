@@ -6,6 +6,8 @@ export const useInfo = () =>
       query info {
         datoCmsInfoCard {
           cover {
+            alt
+            title
             fluid {
               ...GatsbyDatoCmsFluid_noBase64
             }
@@ -13,6 +15,8 @@ export const useInfo = () =>
           title
           address
           profile {
+            alt
+            title
             fluid {
               ...GatsbyDatoCmsFluid_noBase64
             }

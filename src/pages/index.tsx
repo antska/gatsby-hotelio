@@ -11,28 +11,30 @@ import Welcome from '../components/Welcome';
 import ScrollButton from '../components/ScrollButton';
 import useOnScreen from '../hooks/useOnScreen';
 import SEO from '../components/SEO';
+import useWindowSize from '../hooks/useWindowSize';
 
 const IndexPage = () => {
   const header = useHeader();
 
   const tRef = useRef(null);
   const tOnScreen = useOnScreen(tRef);
+  const size = useWindowSize();
+  const isMobile = size.width! < 768;
 
   return (
     <>
-      <SEO meta={header.seoMetaTags} />
-      <NavBar bottomNav={!tOnScreen} withLogo />
+      <SEO meta={header.datoCmsHome.seoMetaTags} />
+      <NavBar bottomNav={!tOnScreen && !isMobile} withLogo />
       <main className="relative h-full">
         <Header
           heroImage={header.datoCmsHome.hero.fluid}
-          title="Pleasant Stay in Paros Island"
-          subtitle="Rooms &amp; apartments"
-          hasLogo
+          title="Helen's Minimal"
+          subtitle="Rooms &amp; apartments in Aliki, Paros"
         />
         <Welcome
           title={header.datoCmsHome.welcomeTitle}
           description={header.datoCmsHome.welcomeMessage}
-          image={header.datoCmsHome.welcomeImage.fluid}
+          image={header.datoCmsHome.welcomeImage}
         />
         <Layout>
           <Rooms ref={tRef} />

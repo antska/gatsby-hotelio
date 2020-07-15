@@ -8,9 +8,14 @@ export const useBlog = () =>
           title
           subtitle
           coverImage {
+            title
+            alt
             fluid(maxWidth: 1920) {
               ...GatsbyDatoCmsFluid_noBase64
             }
+          }
+          seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
           }
         }
         allDatoCmsExploreCard {
@@ -22,6 +27,8 @@ export const useBlog = () =>
               description
               tags
               coverImage {
+                title
+                alt
                 fluid {
                   ...GatsbyDatoCmsFluid_noBase64
                 }

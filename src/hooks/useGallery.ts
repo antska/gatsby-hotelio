@@ -6,6 +6,8 @@ export const useGallery = () =>
       query gallery {
         datoCmsGallery {
           coverImage {
+            title
+            alt
             fluid(maxWidth: 1920) {
               ...GatsbyDatoCmsFluid_noBase64
             }
@@ -16,9 +18,12 @@ export const useGallery = () =>
             originalId
             alt
             title
-            fluid {
+            fluid(maxWidth: 1280, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsFluid_noBase64
             }
+          }
+          seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
           }
         }
       }

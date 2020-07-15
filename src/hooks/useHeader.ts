@@ -12,6 +12,8 @@ export const useHeader = () =>
             url
           }
           hero {
+            title
+            alt
             fluid(maxWidth: 3008) {
               ...GatsbyDatoCmsFluid_noBase64
             }
@@ -19,11 +21,15 @@ export const useHeader = () =>
           welcomeTitle
           welcomeMessage
           welcomeImage {
-            fluid(maxWidth: 4928) {
-              ...GatsbyDatoCmsFluid_noBase64
+            title
+            alt
+            fluid(maxWidth: 1915, imgixParams: { fm: "jpg", auto: "compress" }) {
+              ...GatsbyDatoCmsFluid
             }
           }
           discoverImage {
+            title
+            alt
             fluid(maxWidth: 4000) {
               ...GatsbyDatoCmsFluid_noBase64
             }
@@ -38,6 +44,8 @@ export const useHeader = () =>
               title
               subtitle
               image {
+                title
+                alt
                 fluid(maxWidth: 1920) {
                   ...GatsbyDatoCmsFluid_noBase64
                 }

@@ -48,7 +48,7 @@ const Rooms = React.forwardRef<HTMLDivElement, Props>(
               className="xs:text-sm"
               data-sal="slide-left"
               data-sal-duration="700"
-              data-sal-delay="800"
+              data-sal-delay="200"
               data-sal-easing="easeInSine"
             >
               <p>
