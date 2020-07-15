@@ -19,6 +19,7 @@ const Contact = () => {
       <SEO meta={datoCmsContact.seoMetaTags} />
       <main className="relative h-full">
         <Layout>
+          <NavBar withLogo />
           <section className="flex justify-between items-center mt-32 mb-12 xs:flex-col xs:mx-4 md:flex-row md:mx-0">
             <h1
               className="font-bold whitespace-pre-line"
@@ -42,18 +43,15 @@ const Contact = () => {
               GET DIRECTIONS
             </a>
           </section>
-        </Layout>
-        <section
-          className="h-600"
-          data-sal="zoom-out"
-          data-sal-duration="900"
-          data-sal-delay="400"
-          data-sal-easing="easeInSine"
-        >
-          <Map />
-        </section>
-        <Layout>
-          <NavBar withLogo />
+          <section
+            className="h-600 w-6/12 mx-auto xs:w-full lg:w-6/12"
+            data-sal="zoom-out"
+            data-sal-duration="900"
+            data-sal-delay="400"
+            data-sal-easing="easeInSine"
+          >
+            <Map />
+          </section>
           <section className="mb-8 p-12 z-40 grid grid-cols-3 xs:grid-cols-1 xs:gap-12 md:grid-cols-3 md:gap-0">
             <div>
               <h5 className="font-semibold">Our Adress</h5>

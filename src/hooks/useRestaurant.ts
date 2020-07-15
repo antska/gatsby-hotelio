@@ -29,6 +29,15 @@ export const useRestaurant = () =>
             ...GatsbyDatoCmsSeoMetaTags
           }
         }
+        datoCmsContact {
+          title
+          address
+          byCar
+          byBus
+          seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
+          }
+        }
       }
     `
   );
