@@ -31,22 +31,6 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     {
-      resolve: `@ccalamos/gatsby-source-googlemaps-static`,
-      options: {
-        key: process.env.GOOGLE_MAPS_API,
-        secret: process.env.GOOGLE_MAPS_SECRET,
-        center: `36.9946889,25.1345078`,
-        zoom: '15',
-        scale: '2',
-        markers: [
-          {
-            location: `36.9946846,25.1366965`,
-            label: `Helen's Minimal Studios & Apartments`
-          }
-        ]
-      }
-    },
-    {
       resolve: 'gatsby-background-image-es5',
       options: {
         // add your own characters to escape, replacing the default ':/'
@@ -75,6 +59,22 @@ module.exports = {
         username: `12375540439`,
         paginate: 100,
         maxPosts: 10
+      }
+    },
+    {
+      resolve: `gatsby-source-googlemaps-static`,
+      options: {
+        key: process.env.GOOGLE_MAPS_API,
+        secret: process.env.GOOGLE_MAPS_SECRET,
+        center: `36.9946889,25.1345078`,
+        zoom: '15',
+        scale: '2',
+        markers: [
+          {
+            location: `36.9946846,25.1366965`,
+            label: `Helen's Minimal Studios & Apartments`
+          }
+        ]
       }
     }
   ]
