@@ -59,7 +59,7 @@ const InstagramFeed = () => {
             data-sal-easing="easeInSine"
           >
             <Img
-              fixed={ig.localFile.childImageSharp.fixed}
+              fluid={ig.localFile.childImageSharp.fluid}
               title={`Instagram photo ${index + 1}`}
               alt={`Instagram photo ${index + 1}`}
             />

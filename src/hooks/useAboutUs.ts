@@ -8,7 +8,7 @@ export const useAboutUs = () =>
           image1 {
             title
             alt
-            fluid {
+            fluid(maxWidth: 600) {
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
@@ -27,8 +27,16 @@ export const useAboutUs = () =>
             }
           }
           title
-          description1
-          description2
+          description1Node {
+            childMarkdownRemark {
+              html
+            }
+          }
+          description2Node {
+            childMarkdownRemark {
+              html
+            }
+          }
           seoMetaTags {
             ...GatsbyDatoCmsSeoMetaTags
           }

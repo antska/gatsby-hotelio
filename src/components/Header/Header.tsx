@@ -31,7 +31,7 @@ const Header = ({
   return (
     <BackgroundImage
       Tag="header"
-      className={`${height} ${bgFixed && 'bg-fixed'} ${margin} xs:h-screen`}
+      className={`${height} ${bgFixed && 'bg-fixed'} bg-bottom ${margin} xs:h-screen`}
       fluid={heroImage}
       fadeIn={false}
       alt={title}

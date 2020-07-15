@@ -38,21 +38,6 @@ export const useHeader = () =>
             ...GatsbyDatoCmsSeoMetaTags
           }
         }
-        allDatoCmsHeroSlider {
-          edges {
-            node {
-              title
-              subtitle
-              image {
-                title
-                alt
-                fluid(maxWidth: 1920) {
-                  ...GatsbyDatoCmsFluid_noBase64
-                }
-              }
-            }
-          }
-        }
         allDatoCmsMenu(sort: { fields: position }) {
           edges {
             node {

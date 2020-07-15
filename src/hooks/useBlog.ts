@@ -23,6 +23,7 @@ export const useBlog = () =>
             node {
               slug
               title
+              subtitle
               excerpt
               description
               tags

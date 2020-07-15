@@ -12,6 +12,7 @@ import Rooms from '../components/Rooms';
 import useWindowSize from '../hooks/useWindowSize';
 import ScrollButton from '../components/ScrollButton';
 import SEO from '../components/SEO';
+import Header from '../components/Header';
 
 const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
   const size = useWindowSize();
@@ -32,41 +33,88 @@ const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
     <>
       <SEO meta={explore.seoMetaTags} />
       <main className="relative h-full">
-        <Layout extraClasses="mt-24">
-          <NavBar withLogo />
-          <Img
-            className="h-600"
-            fluid={explore.coverImage.fluid}
-            title={explore.coverImage.title}
-            alt={explore.coverImage.alt}
-          />
-          <h2
-            className="text-center uppercase my-12"
-            data-sal="slide-right"
-            data-sal-duration="700"
-            data-sal-delay="200"
-            data-sal-easing="easeInSine"
-          >
-            {explore.title}
-          </h2>
-          <p className="text-justify whitespace-pre-line xs:mx-4">{explore.description}</p>
-        </Layout>
-        <section className="my-4">
-          <Slider {...settings}>
-            {explore.gallery.map(img => (
-              <div key={img.originalId}>
-                <BackgroundImage
-                  Tag="div"
-                  fluid={img.fluid}
-                  className="mr-4 h-600 xs:mr-0 md:mr-4"
-                  alt={img.alt}
-                  title={img.title}
-                />
-              </div>
-            ))}
-          </Slider>
-        </section>
+        <Header heroImage={explore.coverImage.fluid} title={explore.title} subtitle={explore.subtitle} />
         <Layout>
+          <NavBar withLogo />
+          <section className="mt-16 mb-12">
+            <div
+              className="text-justify whitespace-pre-line xs:mx-4 mb-12"
+              dangerouslySetInnerHTML={{ __html: explore.descriptionNode.childMarkdownRemark.html }}
+            />
+            <Slider {...settings} className="mb-12">
+              {explore.gallery &&
+                explore.gallery.map(img => (
+                  <div key={img.originalId}>
+                    <BackgroundImage
+                      Tag="div"
+                      fluid={img.fluid}
+                      className="mr-4 h-600 xs:mr-0 md:mr-4"
+                      alt={img.alt}
+                      title={img.title}
+                    />
+                  </div>
+                ))}
+            </Slider>
+            {explore.info.map((entry, index) =>
+              index % 2 === 0 || isMobile ? (
+                <div className="grid grid-cols-3 gap-24 xs:grid-cols-1 xs:gap-8 lg:grid-cols-3 xl:gap-24">
+                  <div className="xs:mx-4">
+                    <h2
+                      className="font-bold col-span-1 my-12"
+                      data-sal="slide-right"
+                      data-sal-duration="700"
+                      data-sal-delay="100"
+                      data-sal-easing="easeInSine"
+                    >
+                      {entry.title}
+                    </h2>
+                    <div
+                      className="text-xl lg:text-justify"
+                      data-sal="slide-right"
+                      data-sal-duration="700"
+                      data-sal-delay="200"
+                      data-sal-easing="easeInSine"
+                      dangerouslySetInnerHTML={{ __html: entry.descriptionNode.childMarkdownRemark.html }}
+                    />
+                  </div>
+                  <Img
+                    className="col-span-2"
+                    fluid={entry.image.fluid}
+                    title={entry.image.title}
+                    alt={entry.image.alt}
+                  />
+                </div>
+              ) : (
+                <div className="grid grid-cols-3 gap-24 my-32 xs:grid-cols-1 xs:gap-8 lg:grid-cols-3 xl:gap-24">
+                  <Img
+                    className="col-span-2"
+                    fluid={entry.image.fluid}
+                    title={entry.image.title}
+                    alt={entry.image.alt}
+                  />
+                  <div className="xs:mx-4">
+                    <h2
+                      className="font-bold col-span-1 my-12"
+                      data-sal="slide-left"
+                      data-sal-duration="700"
+                      data-sal-delay="100"
+                      data-sal-easing="easeInSine"
+                    >
+                      {entry.title}
+                    </h2>
+                    <div
+                      className="text-xl lg:text-justify"
+                      data-sal="slide-left"
+                      data-sal-duration="700"
+                      data-sal-delay="200"
+                      data-sal-easing="easeInSine"
+                      dangerouslySetInnerHTML={{ __html: entry.descriptionNode.childMarkdownRemark.html }}
+                    />
+                  </div>
+                </div>
+              )
+            )}
+          </section>
           <div className="text-center mt-12">
             <h2>Rooms</h2>
             <p>COULD ALSO BE INTEREST FOR YOU</p>
@@ -87,7 +135,27 @@ export const query = graphql`
       title
       slug
       excerpt
-      description
+      subtitle
+      descriptionNode {
+        childMarkdownRemark {
+          html
+        }
+      }
+      info {
+        title
+        descriptionNode {
+          childMarkdownRemark {
+            html
+          }
+        }
+        image {
+          title
+          alt
+          fluid {
+            ...GatsbyDatoCmsFluid_noBase64
+          }
+        }
+      }
       coverImage {
         fluid {
           ...GatsbyDatoCmsFluid_noBase64
