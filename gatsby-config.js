@@ -34,6 +34,7 @@ module.exports = {
       resolve: `gatsby-source-googlemaps-static`,
       options: {
         key: process.env.GOOGLE_MAPS_API,
+        secret: process.env.GOOGLE_MAPS_SECRET,
         center: `36.9946889,25.1345078`,
         zoom: '15',
         scale: '2',
