@@ -78,7 +78,7 @@ const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
                     />
                   </div>
                   <Img
-                    className="col-span-2"
+                    className="col-span-2 h-500"
                     fluid={entry.image.fluid}
                     title={entry.image.title}
                     alt={entry.image.alt}
@@ -87,7 +87,7 @@ const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
               ) : (
                 <div className="grid grid-cols-3 gap-24 my-32 xs:grid-cols-1 xs:gap-8 lg:grid-cols-3 xl:gap-24">
                   <Img
-                    className="col-span-2"
+                    className="col-span-2 h-500"
                     fluid={entry.image.fluid}
                     title={entry.image.title}
                     alt={entry.image.alt}
@@ -151,19 +151,19 @@ export const query = graphql`
         image {
           title
           alt
-          fluid {
+          fluid(maxWidth: 800, imgixParams: { fm: "jpg", auto: "compress" }) {
             ...GatsbyDatoCmsFluid_noBase64
           }
         }
       }
       coverImage {
-        fluid {
+        fluid(maxWidth: 2800) {
           ...GatsbyDatoCmsFluid_noBase64
         }
       }
       gallery {
         originalId
-        fluid {
+        fluid(maxWidth: 800, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsFluid_noBase64
         }
       }

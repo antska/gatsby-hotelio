@@ -173,7 +173,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
         <Layout>
           <div className="text-center mt-12">
             <h2>Other Rooms</h2>
-            <p>COULD ALSO BE INTEREST FOR YOU</p>
+            <p>COULD ALSO INTEREST YOU</p>
           </div>
           <Rooms withTitle={false} withBooking={false} limit={3} currentRoomId={room.id} />
         </Layout>
@@ -196,13 +196,13 @@ export const query = graphql`
       info
       gallery {
         originalId
-        fluid {
-          ...GatsbyDatoCmsFluid_noBase64
+        fluid(maxWidth: 800, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsFluid
         }
       }
       coverImage {
-        fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsSizes
+        fluid(maxWidth: 4128) {
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
       seoMetaTags {

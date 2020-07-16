@@ -10,7 +10,7 @@ export const useBlog = () =>
           coverImage {
             title
             alt
-            fluid(maxWidth: 1920) {
+            fluid(maxWidth: 2800) {
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
@@ -30,7 +30,7 @@ export const useBlog = () =>
               coverImage {
                 title
                 alt
-                fluid {
+                fluid(maxWidth: 2800) {
                   ...GatsbyDatoCmsFluid_noBase64
                 }
               }

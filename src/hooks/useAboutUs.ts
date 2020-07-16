@@ -15,7 +15,7 @@ export const useAboutUs = () =>
           image2 {
             title
             alt
-            fluid {
+            fluid(maxWidth: 1280) {
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
