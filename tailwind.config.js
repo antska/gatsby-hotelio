@@ -13,6 +13,14 @@ module.exports = {
           opacity: 1,
           transform: 'translateX(0px)'
         }
+      },
+      fadeIn: {
+        from: {
+          opacity: 0
+        },
+        to: {
+          opacity: 1
+        }
       }
     },
     filter: {

@@ -8,14 +8,44 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+          cookieName: 'gatsby-gdpr-google-analytics-enabled',
+          anonymize: true
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-cookiehub-banner`,
+      options: {
+        cookieHubId: process.env.COOKIEHUB_BANNER_ID,
+        // Categories configured with CookieHub
+        categories: [
+          {
+            categoryName: 'analytics', // Unique id of the category which is set by Cookiehub.
+            cookieName: 'gatsby-gdpr-google-analytics-enabled' // Your custom cookie name
+          }
+        ]
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-sitemap`,
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-react-axe`,
+    `gatsby-plugin-advanced-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.helenstudios.com',
+        sitemap: 'https://www.helenstudios.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -33,7 +63,6 @@ module.exports = {
     {
       resolve: 'gatsby-background-image-es5',
       options: {
-        // add your own characters to escape, replacing the default ':/'
         specialChars: '/:'
       }
     },
@@ -75,6 +104,13 @@ module.exports = {
             label: `Helen's Minimal Studios & Apartments`
           }
         ]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#59809a`,
+        showSpinner: true
       }
     }
   ]
