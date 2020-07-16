@@ -119,7 +119,7 @@ const Gallery = () => {
             <div className="xs:w-full lg:w-6/12">
               <Map />
             </div>
-            <section className="mb-8 p-12 z-40 grid grid-cols-3 xs:grid-cols-1 xs:gap-12 md:grid-cols-3 md:gap-0 items-center">
+            <section className="mb-8 p-12 z-40 grid grid-cols-3 xs:grid-cols-1 xs:gap-12 md:grid-cols-3 items-center">
               <div>
                 <h5 className="font-semibold">Our Adress</h5>
                 <p className="text-sm whitespace-pre-line">{datoCmsContact.address}</p>

@@ -13,7 +13,7 @@ const Directions = () => (
     <div className="h-600 w-6/12 bg-helens-blue xs:w-full lg:w-6/12">
       <Map />
     </div>
-    <div className="flex flex-col bg-helens-blue p-20 text-white xs:p-4 xs:text-center xs:w-full">
+    <div className="flex flex-col justify-center bg-helens-blue p-20 text-white xs:p-4 xs:text-center xs:w-full">
       <h2 className="font-semibold">How to reach us</h2>
       <div className="my-6">
         <h5 className="font-semibold">Our Adress</h5>
