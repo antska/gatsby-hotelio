@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { FaDoorOpen } from 'react-icons/fa';
 import { MdLocalAirport } from 'react-icons/md';
@@ -16,6 +16,7 @@ import Rooms from '../components/Rooms';
 import useWindowSize from '../hooks/useWindowSize';
 import ScrollButton from '../components/ScrollButton';
 import SEO from '../components/SEO';
+import Form from '../components/Form';
 
 const amenities = [
   'Air conditioning',
@@ -40,6 +41,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
       behavior: 'smooth'
     });
 
+  const [openModal, setOpenModal] = useState(false);
   const size = useWindowSize();
   const isMobile = size.width <= 650;
 
@@ -99,20 +101,23 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
                     <RoomInfo info={room.info} />
                   </div>
                 )}
-                <h3>Rates</h3>
-                <PriceList prices={room.pricelist} />
+                <div className="m-3 mt-16 text-center">
+                  <button
+                    className="bg-white text-gray-800 font-bold rounded border-b-2 border-helens-blue hover:bg-helens-blue hover:text-white py-2 px-6 inline-flex items-center shadow-lg transition-all duration-300"
+                    onClick={() => setOpenModal(true)}
+                  >
+                    <span className="mr-2">Check Rates</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                      <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                    </svg>
+                  </button>
+                </div>
               </div>
               {!isMobile && (
                 <div className="px-8 border-l-2 border-gray-700 md:px-0 md:pl-6 xl:px-8">
                   <p className="text-sm">FROM</p>
                   <h1 className="font-light ml-8">{Object.values(room.pricelist)[0]}</h1>
-                  <button
-                    className="border border-helens-blue bg-helens-blue transition-all duration-500 text-white block rounded-sm py-4 px-6 w-full hover:bg-gray-900 md:px-4 md:py-4"
-                    data-sal="slide-left"
-                    data-sal-duration="700"
-                    data-sal-delay="300"
-                    data-sal-easing="easeInSine"
-                  >
+                  <button className="border border-helens-blue bg-helens-blue transition-all duration-300 text-white block rounded-sm py-4 px-6 w-full hover:bg-gray-900 md:px-4 md:py-4">
                     BOOK NOW
                   </button>
                   <RoomInfo info={room.info} />
@@ -173,10 +178,35 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
         <Layout>
           <div className="text-center mt-12">
             <h2>Other Rooms</h2>
-            <p>COULD ALSO BE INTEREST FOR YOU</p>
+            <p>COULD ALSO INTEREST YOU</p>
           </div>
           <Rooms withTitle={false} withBooking={false} limit={3} currentRoomId={room.id} />
         </Layout>
+        {openModal && (
+          <div className="fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center bg-black bg-opacity-75 animation-fadeIn animation-linear animation-once">
+            <div className="border border-helens-blue shadow-lg modal-container bg-white w-11/12 md:max-w-md mx-auto rounded z-50 overflow-y-auto">
+              <div className="py-4 text-left px-6">
+                <div className="flex justify-between items-center pb-3">
+                  <p className="text-2xl font-bold">Send us e-mail</p>
+                  <div className="cursor-pointer z-50" onClick={() => setOpenModal(false)}>
+                    <svg
+                      className="fill-current text-black transform hover:rotate-90 hover:scale-125 hover:text-red-600 transition-all duration-500"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                    >
+                      <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div className="my-5">
+                  <Form />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
         <Footer />
         <ScrollButton />
       </main>
@@ -196,13 +226,13 @@ export const query = graphql`
       info
       gallery {
         originalId
-        fluid {
-          ...GatsbyDatoCmsFluid_noBase64
+        fluid(maxWidth: 800, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsFluid
         }
       }
       coverImage {
-        fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsSizes
+        fluid(maxWidth: 4128) {
+          ...GatsbyDatoCmsFluid_noBase64
         }
       }
       seoMetaTags {

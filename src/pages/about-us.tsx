@@ -29,18 +29,17 @@ const Contact = () => {
                 >
                   {datoCmsAbout.title}
                 </h2>
-                <p
+                <div
                   className="text-xl lg:text-justify"
                   data-sal="slide-right"
                   data-sal-duration="700"
                   data-sal-delay="200"
                   data-sal-easing="easeInSine"
-                >
-                  {datoCmsAbout.description1}
-                </p>
+                  dangerouslySetInnerHTML={{ __html: datoCmsAbout.description1Node.childMarkdownRemark.html }}
+                />
               </div>
               <Img
-                className="col-span-2"
+                className="col-span-2 w-8/12"
                 fluid={datoCmsAbout.image1.fluid}
                 title={datoCmsAbout.image1.title}
                 alt={datoCmsAbout.image1.alt}
@@ -54,15 +53,14 @@ const Contact = () => {
                 alt={datoCmsAbout.image2.alt}
               />
               <div className="xs:mx-4">
-                <p
+                <div
                   className="col-span-1 text-xl my-12"
                   data-sal="slide-left"
                   data-sal-duration="700"
                   data-sal-delay="300"
                   data-sal-easing="easeInSine"
-                >
-                  {datoCmsAbout.description2}
-                </p>
+                  dangerouslySetInnerHTML={{ __html: datoCmsAbout.description2Node.childMarkdownRemark.html }}
+                />
                 <div data-sal="slide-left" data-sal-duration="700" data-sal-delay="500" data-sal-easing="easeInSine">
                   <Img
                     fixed={datoCmsAbout.signature.fixed}

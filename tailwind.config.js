@@ -13,6 +13,14 @@ module.exports = {
           opacity: 1,
           transform: 'translateX(0px)'
         }
+      },
+      fadeIn: {
+        from: {
+          opacity: 0
+        },
+        to: {
+          opacity: 1
+        }
       }
     },
     filter: {
@@ -54,6 +62,7 @@ module.exports = {
       height: {
         '90vh': '90vh',
         '320': '320px',
+        '500': '500px',
         '600': '600px'
       },
       top: {

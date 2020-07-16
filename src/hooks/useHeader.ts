@@ -23,34 +23,19 @@ export const useHeader = () =>
           welcomeImage {
             title
             alt
-            fluid(maxWidth: 1915, imgixParams: { fm: "jpg", auto: "compress" }) {
+            fluid(maxWidth: 1280, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsFluid
             }
           }
           discoverImage {
             title
             alt
-            fluid(maxWidth: 4000) {
+            fluid(maxWidth: 3000) {
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
           seoMetaTags {
             ...GatsbyDatoCmsSeoMetaTags
-          }
-        }
-        allDatoCmsHeroSlider {
-          edges {
-            node {
-              title
-              subtitle
-              image {
-                title
-                alt
-                fluid(maxWidth: 1920) {
-                  ...GatsbyDatoCmsFluid_noBase64
-                }
-              }
-            }
           }
         }
         allDatoCmsMenu(sort: { fields: position }) {

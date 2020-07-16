@@ -19,12 +19,12 @@ const IndexPage = () => {
   const tRef = useRef(null);
   const tOnScreen = useOnScreen(tRef);
   const size = useWindowSize();
-  const isMobile = size.width! < 768;
+  const isMobile = size.width! <= 768;
 
   return (
     <>
       <SEO meta={header.datoCmsHome.seoMetaTags} />
-      <NavBar bottomNav={!tOnScreen && !isMobile} withLogo />
+      <NavBar ref={tRef} bottomNav={!tOnScreen && !isMobile} withLogo />
       <main className="relative h-full">
         <Header
           heroImage={header.datoCmsHome.hero.fluid}
@@ -37,7 +37,7 @@ const IndexPage = () => {
           image={header.datoCmsHome.welcomeImage}
         />
         <Layout>
-          <Rooms ref={tRef} />
+          <Rooms />
         </Layout>
         <Header
           heroImage={header.datoCmsHome.discoverImage.fluid}

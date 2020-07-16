@@ -5,31 +5,21 @@ export default (ref, threshold = 0.25) => {
 
   useEffect(() => {
     const element = ref.current;
-    let prevBounding = 0;
 
     const observer = new IntersectionObserver(
       entries =>
         entries.forEach(entry => {
-          const isAbove = entry.boundingClientRect.y > prevBounding;
-
-          if (entry.isIntersecting) {
-            if (!isAbove) {
-              setIntersecting(true);
-            } else {
-              setIntersecting(false);
-            }
+          if (entry.isIntersecting && entry.boundingClientRect.y < 0) {
+            setIntersecting(true);
+            observer.unobserve(element);
           }
-          if (isAbove) {
-            setIntersecting(false);
-          }
-          prevBounding = entry.boundingClientRect.y;
         }),
       {
         threshold
       }
     );
     if (element) {
-      setTimeout(() => observer.observe(element), 3500);
+      observer.observe(element);
     }
     return () => {
       observer.unobserve(element);

@@ -30,7 +30,7 @@ const Rooms = React.forwardRef<HTMLDivElement, Props>(
       if (remainingRooms) {
         return shuffleArray(remainingRooms);
       } else {
-        return shuffleArray(allDatoCmsRoom.edges);
+        return allDatoCmsRoom.edges;
       }
     }, [remainingRooms]);
 

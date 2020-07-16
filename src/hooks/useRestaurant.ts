@@ -8,7 +8,7 @@ export const useRestaurant = () =>
           coverImage {
             alt
             title
-            fluid(maxWidth: 1920) {
+            fluid(maxWidth: 2600) {
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
@@ -21,10 +21,19 @@ export const useRestaurant = () =>
           philosophyImage {
             alt
             title
-            fluid {
+            fluid(maxWidth: 800, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
+          seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
+          }
+        }
+        datoCmsContact {
+          title
+          address
+          byCar
+          byBus
           seoMetaTags {
             ...GatsbyDatoCmsSeoMetaTags
           }

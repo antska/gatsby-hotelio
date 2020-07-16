@@ -11,7 +11,7 @@ import ScrollButton from '../components/ScrollButton';
 import SEO from '../components/SEO';
 
 const Gallery = () => {
-  const { datoCmsRestaurant } = useRestaurant();
+  const { datoCmsRestaurant, datoCmsContact } = useRestaurant();
 
   return (
     <>
@@ -109,10 +109,32 @@ const Gallery = () => {
               </div>
             </div>
           </section>
+          <section
+            className="flex h-600 m-12 xs:flex-col xs:m-0 xs:h-full lg:h-600 lg:m-12 lg:flex-row"
+            data-sal="zoom-out"
+            data-sal-duration="900"
+            data-sal-delay="400"
+            data-sal-easing="easeInSine"
+          >
+            <div className="xs:w-full lg:w-6/12">
+              <Map />
+            </div>
+            <section className="mb-8 p-12 z-40 grid grid-cols-3 xs:grid-cols-1 xs:gap-12 md:grid-cols-3 items-center">
+              <div>
+                <h5 className="font-semibold">Our Adress</h5>
+                <p className="text-sm whitespace-pre-line">{datoCmsContact.address}</p>
+              </div>
+              <div>
+                <h5 className="font-semibold">By Car</h5>
+                <p className="text-sm whitespace-pre-line">{datoCmsContact.byCar}</p>
+              </div>
+              <div>
+                <h5 className="font-semibold">By Bus</h5>
+                <p className="text-sm whitespace-pre-line">{datoCmsContact.byBus}</p>
+              </div>
+            </section>
+          </section>
         </Layout>
-        <section>
-          <Map />
-        </section>
         <Footer />
         <ScrollButton />
       </main>

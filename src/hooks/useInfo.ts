@@ -8,7 +8,7 @@ export const useInfo = () =>
           cover {
             alt
             title
-            fluid {
+            fluid(maxWidth: 500, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsFluid_noBase64
             }
           }
@@ -17,7 +17,7 @@ export const useInfo = () =>
           profile {
             alt
             title
-            fluid {
+            fluid(maxWidth: 100, imgixParams: { fm: "jpg", auto: "compress" }) {
               ...GatsbyDatoCmsFluid_noBase64
             }
           }

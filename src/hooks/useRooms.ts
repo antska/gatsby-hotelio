@@ -15,8 +15,8 @@ export const useRooms = () =>
               coverImage {
                 alt
                 title
-                fluid(maxWidth: 1920) {
-                  ...GatsbyDatoCmsFluid_noBase64
+                fluid(maxWidth: 500, imgixParams: { fm: "jpg", auto: "compress" }) {
+                  ...GatsbyDatoCmsFluid
                 }
               }
             }

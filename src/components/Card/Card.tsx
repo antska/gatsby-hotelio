@@ -50,7 +50,9 @@ const Card = ({ image, title, excerpt, linkTo, info, id }: Props) => (
       >
         <h4>{title}</h4>
       </Link>
-      {excerpt && <p className="border-t border-black p-1 text-sm xs:text-xs xs:mx-4 md:text-base">{excerpt}</p>}
+      {excerpt && (
+        <p className="text-justify border-t border-black p-1 text-sm xs:text-xs xs:mx-4 md:text-base">{excerpt}</p>
+      )}
     </div>
   </div>
 );
