@@ -7,14 +7,13 @@ import Header from '../components/Header';
 import { useBlog } from '../hooks/useBlog';
 import BlogCard from '../components/BlogCard';
 import ScrollButton from '../components/ScrollButton';
-import SEO from '../components/SEO';
+import MainLayout from '../components/MainLayout';
 
 const Blog = () => {
   const { datoCmsBlog, allDatoCmsExploreCard } = useBlog();
 
   return (
-    <>
-      <SEO meta={datoCmsBlog.seoMetaTags} />
+    <MainLayout seo={datoCmsBlog.seoMetaTags}>
       <main className="relative h-full">
         <Header
           heroImage={datoCmsBlog.coverImage.fluid}
@@ -24,7 +23,7 @@ const Blog = () => {
         />
         <Layout>
           <NavBar withLogo />
-          <main className="py-4 my-12">
+          <section className="py-4 my-12">
             <h2 className="text-center font-thin mb-12">Explore Aliki & Paros</h2>
             <div className="px-4">
               <div className="block md:flex justify-center md:-mx-2">
@@ -48,12 +47,12 @@ const Blog = () => {
                 ))}
               </div>
             </div>
-          </main>
+          </section>
         </Layout>
         <Footer />
         <ScrollButton />
       </main>
-    </>
+    </MainLayout>
   );
 };
 

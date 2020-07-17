@@ -6,14 +6,13 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import { useAboutUs } from '../hooks/useAboutUs';
 import ScrollButton from '../components/ScrollButton';
-import SEO from '../components/SEO';
+import MainLayout from '../components/MainLayout';
 
 const Contact = () => {
   const { datoCmsAbout } = useAboutUs();
 
   return (
-    <>
-      <SEO meta={datoCmsAbout.seoMetaTags} />
+    <MainLayout seo={datoCmsAbout.seoMetaTags}>
       <main className="relative h-full">
         <Layout>
           <NavBar withLogo />
@@ -77,7 +76,7 @@ const Contact = () => {
         <Footer />
         <ScrollButton />
       </main>
-    </>
+    </MainLayout>
   );
 };
 

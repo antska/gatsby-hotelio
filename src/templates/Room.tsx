@@ -10,13 +10,12 @@ import Header from '../components/Header';
 import Layout from '../components/Layout';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import PriceList from '../components/Pricelist';
 import RoomInfo from '../components/RoomInfo';
 import Rooms from '../components/Rooms';
 import useWindowSize from '../hooks/useWindowSize';
 import ScrollButton from '../components/ScrollButton';
-import SEO from '../components/SEO';
 import Form from '../components/Form';
+import MainLayout from '../components/MainLayout';
 
 const amenities = [
   'Air conditioning',
@@ -57,8 +56,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
   };
 
   return (
-    <>
-      <SEO meta={room.seoMetaTags} />
+    <MainLayout seo={room.seoMetaTags}>
       <main className="relative h-full">
         <Header heroImage={room.coverImage.fluid} title={room.title} subtitle={room.excerpt} bgFixed height="h-90vh" />
         <Layout extraClasses="relative z-30 scroll-smooth">
@@ -210,7 +208,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
         <Footer />
         <ScrollButton />
       </main>
-    </>
+    </MainLayout>
   );
 };
 
