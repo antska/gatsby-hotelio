@@ -6612,11 +6612,6 @@ gatsby-plugin-advanced-sitemap@^1.5.5:
     moment "2.26.0"
     xml "^1.0.1"
 
-gatsby-plugin-cookiehub-banner@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-cookiehub-banner/-/gatsby-plugin-cookiehub-banner-0.1.0.tgz#44809334ca5c9bd6d456a12e1dccc9caf2500813"
-  integrity sha512-CRsYNhhViU9X8v1Xe1dFAtxDBpibZa8shuM13B8hZdaeCE+KDbOubuKSHY5vhhGnKNVomLfqPX4Xbl4UbT0+PQ==
-
 gatsby-plugin-gdpr-cookies@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-gdpr-cookies/-/gatsby-plugin-gdpr-cookies-1.0.7.tgz#9bc5d4ce4143e316a9bb0572a54695336616c78d"
@@ -12156,6 +12151,13 @@ react-axe@^3.4.1:
   dependencies:
     axe-core "^3.5.0"
     requestidlecallback "^0.3.0"
+
+react-cookie-consent@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/react-cookie-consent/-/react-cookie-consent-5.1.2.tgz#553c4851f8be1e3a91f40f36f350e99b47276731"
+  integrity sha512-FsTLsypqJpg2VjBa6nMT0jNMrk+4C/TUQkRm6mtDFnR6HNPrzMCWi3OHRXVptyL4h8ZbJLk74qZcL0VDUS1+cQ==
+  dependencies:
+    js-cookie "^2.2.1"
 
 react-dev-utils@^4.2.3:
   version "4.2.3"

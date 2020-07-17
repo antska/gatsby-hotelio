@@ -8,14 +8,13 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ImageGallery from '../components/ImageGallery';
 import ScrollButton from '../components/ScrollButton';
-import SEO from '../components/SEO';
+import MainLayout from '../components/MainLayout';
 
 const Gallery = () => {
   const { datoCmsGallery } = useGallery();
 
   return (
-    <>
-      <SEO meta={datoCmsGallery.seoMetaTags} />
+    <MainLayout seo={datoCmsGallery.seoMetaTags}>
       <main className="relative h-full">
         <Header
           heroImage={datoCmsGallery.coverImage.fluid}
@@ -34,7 +33,7 @@ const Gallery = () => {
         <Footer />
         <ScrollButton />
       </main>
-    </>
+    </MainLayout>
   );
 };
 

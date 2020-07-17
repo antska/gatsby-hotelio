@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -10,8 +11,8 @@ import NavBar from '../components/NavBar';
 import Welcome from '../components/Welcome';
 import ScrollButton from '../components/ScrollButton';
 import useOnScreen from '../hooks/useOnScreen';
-import SEO from '../components/SEO';
 import useWindowSize from '../hooks/useWindowSize';
+import MainLayout from '../components/MainLayout';
 
 const IndexPage = () => {
   const header = useHeader();
@@ -22,8 +23,7 @@ const IndexPage = () => {
   const isMobile = size.width! <= 768;
 
   return (
-    <>
-      <SEO meta={header.datoCmsHome.seoMetaTags} />
+    <MainLayout seo={header.datoCmsHome.seoMetaTags}>
       <NavBar ref={tRef} bottomNav={!tOnScreen && !isMobile} withLogo />
       <main className="relative h-full">
         <Header
@@ -55,7 +55,7 @@ const IndexPage = () => {
         <Footer />
         <ScrollButton />
       </main>
-    </>
+    </MainLayout>
   );
 };
 

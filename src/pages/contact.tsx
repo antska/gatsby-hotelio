@@ -8,15 +8,14 @@ import Form from '../components/Form';
 import InfoCard from '../components/InfoCard';
 import SocialIcons from '../components/SocialIcons';
 import ScrollButton from '../components/ScrollButton';
-import SEO from '../components/SEO';
 import { useContact } from '../hooks/useContact';
+import MainLayout from '../components/MainLayout';
 
 const Contact = () => {
   const { datoCmsContact } = useContact();
 
   return (
-    <>
-      <SEO meta={datoCmsContact.seoMetaTags} />
+    <MainLayout seo={datoCmsContact.seoMetaTags}>
       <main className="relative h-full">
         <Layout>
           <NavBar withLogo />
@@ -83,7 +82,7 @@ const Contact = () => {
         <Footer />
         <ScrollButton />
       </main>
-    </>
+    </MainLayout>
   );
 };
 

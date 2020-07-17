@@ -11,8 +11,8 @@ import Footer from '../components/Footer';
 import Rooms from '../components/Rooms';
 import useWindowSize from '../hooks/useWindowSize';
 import ScrollButton from '../components/ScrollButton';
-import SEO from '../components/SEO';
 import Header from '../components/Header';
+import MainLayout from '../components/MainLayout';
 
 const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
   const size = useWindowSize();
@@ -30,8 +30,7 @@ const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
   };
 
   return (
-    <>
-      <SEO meta={explore.seoMetaTags} />
+    <MainLayout seo={explore.seoMetaTags}>
       <main className="relative h-full">
         <Header heroImage={explore.coverImage.fluid} title={explore.title} subtitle={explore.subtitle} />
         <Layout>
@@ -124,7 +123,7 @@ const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
         <Footer />
         <ScrollButton />
       </main>
-    </>
+    </MainLayout>
   );
 };
 

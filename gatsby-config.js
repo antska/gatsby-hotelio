@@ -13,22 +13,9 @@ module.exports = {
       options: {
         googleAnalytics: {
           trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
-          cookieName: 'gatsby-gdpr-google-analytics-enabled',
+          cookieName: 'gatsby-gdpr-google-analytics',
           anonymize: true
         }
-      }
-    },
-    {
-      resolve: `gatsby-plugin-cookiehub-banner`,
-      options: {
-        cookieHubId: process.env.COOKIEHUB_BANNER_ID,
-        // Categories configured with CookieHub
-        categories: [
-          {
-            categoryName: 'analytics', // Unique id of the category which is set by Cookiehub.
-            cookieName: 'gatsby-gdpr-google-analytics-enabled' // Your custom cookie name
-          }
-        ]
       }
     },
     `gatsby-transformer-sharp`,

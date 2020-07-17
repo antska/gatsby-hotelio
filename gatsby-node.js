@@ -21,6 +21,13 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
+        allDatoCmsPolicy {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
       }
     `).then(result => {
       result.data.allDatoCmsRoom.edges.map(({ node: room }) => {
@@ -38,6 +45,15 @@ exports.createPages = ({ graphql, actions }) => {
           component: path.resolve(`./src/templates/Explore.tsx`),
           context: {
             slug: explore.slug
+          }
+        });
+      });
+      result.data.allDatoCmsPolicy.edges.map(({ node: policy }) => {
+        createPage({
+          path: `${policy.slug}`,
+          component: path.resolve(`./src/templates/Policy.tsx`),
+          context: {
+            slug: policy.slug
           }
         });
       });

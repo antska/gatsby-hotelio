@@ -35,7 +35,9 @@ const Footer = () => {
         ))}
       </div>
       <div className="flex justify-between mx-2 pt-8 pb-4 px-12 border-t border-white text-xs xs:flex-col xs:px-2 md:flex-row md:px-2">
-        <div className="xs:text-center xs:mb-4">© Copyright Helen's Minimal Studios & Apartments</div>
+        <div className="xs:text-center xs:mb-4">
+          © Copyright Helen's Minimal Studios & Apartments | Developed & Designed by Antonis Skandalis
+        </div>
         <div className="text-right xs:flex xs:flex-col xs:text-center md:flex-row md:text-right">
           {footer.allDatoCmsMenu.edges.map(({ node: menuItem }, key: number) => (
             <Link className="mr-6 xs:mb-2" to={menuItem.url} key={`menuLink_${key}`}>

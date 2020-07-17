@@ -8,14 +8,13 @@ import Footer from '../components/Footer';
 import Map from '../components/Map';
 import { useRestaurant } from '../hooks/useRestaurant';
 import ScrollButton from '../components/ScrollButton';
-import SEO from '../components/SEO';
+import MainLayout from '../components/MainLayout';
 
 const Gallery = () => {
   const { datoCmsRestaurant, datoCmsContact } = useRestaurant();
 
   return (
-    <>
-      <SEO meta={datoCmsRestaurant.seoMetaTags} />
+    <MainLayout seo={datoCmsRestaurant.seoMetaTags}>
       <main className="relative h-full">
         <Header
           heroImage={datoCmsRestaurant.coverImage.fluid}
@@ -138,7 +137,7 @@ const Gallery = () => {
         <Footer />
         <ScrollButton />
       </main>
-    </>
+    </MainLayout>
   );
 };
 
