@@ -6,8 +6,6 @@ import BackgroundImage from 'gatsby-background-image';
 import { RiArrowRightSLine, RiArrowLeftSLine } from 'react-icons/ri';
 
 import Layout from '../components/Layout';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
 import Rooms from '../components/Rooms';
 import useWindowSize from '../hooks/useWindowSize';
 import ScrollButton from '../components/ScrollButton';
@@ -34,7 +32,6 @@ const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
       <main className="relative h-full">
         <Header heroImage={explore.coverImage.fluid} title={explore.title} subtitle={explore.subtitle} />
         <Layout>
-          <NavBar withLogo />
           <section className="mt-16 mb-12">
             <div
               className="text-justify whitespace-pre-line xs:mx-4 mb-12"
@@ -120,7 +117,6 @@ const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
           </div>
           <Rooms withTitle={false} withBooking={false} limit={3} />
         </Layout>
-        <Footer />
         <ScrollButton />
       </main>
     </MainLayout>
@@ -151,19 +147,19 @@ export const query = graphql`
           title
           alt
           fluid(maxWidth: 800, imgixParams: { fm: "jpg", auto: "compress" }) {
-            ...GatsbyDatoCmsFluid_noBase64
+            ...GatsbyDatoCmsFluid
           }
         }
       }
       coverImage {
         fluid(maxWidth: 2800) {
-          ...GatsbyDatoCmsFluid_noBase64
+          ...GatsbyDatoCmsFluid
         }
       }
       gallery {
         originalId
         fluid(maxWidth: 800, imgixParams: { fm: "jpg", auto: "compress" }) {
-          ...GatsbyDatoCmsFluid_noBase64
+          ...GatsbyDatoCmsFluid
         }
       }
       seoMetaTags {

@@ -50,7 +50,7 @@ module.exports = {
         insta: ['Lobster', 'Helvetica', 'Arial', 'sans-serif']
       },
       colors: {
-        'helens-blue': '#59809a',
+        'helens-blue': '#407598',
         instagram: '#C13584',
         facebook: '#2D5F9A',
         tripadvisor: '#259c70',
@@ -64,6 +64,9 @@ module.exports = {
         '320': '320px',
         '500': '500px',
         '600': '600px'
+      },
+      opacity: {
+        '90': '0.9'
       },
       top: {
         '12': '12rem'

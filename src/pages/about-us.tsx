@@ -2,8 +2,6 @@ import React from 'react';
 import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
 import { useAboutUs } from '../hooks/useAboutUs';
 import ScrollButton from '../components/ScrollButton';
 import MainLayout from '../components/MainLayout';
@@ -15,7 +13,6 @@ const Contact = () => {
     <MainLayout seo={datoCmsAbout.seoMetaTags}>
       <main className="relative h-full">
         <Layout>
-          <NavBar withLogo />
           <section className="mt-32 mb-12">
             <div className="grid grid-cols-3 gap-24 xs:grid-cols-1 xs:gap-8 lg:grid-cols-3 xl:gap-24">
               <div className="xs:mx-4">
@@ -73,7 +70,6 @@ const Contact = () => {
             </div>
           </section>
         </Layout>
-        <Footer />
         <ScrollButton />
       </main>
     </MainLayout>

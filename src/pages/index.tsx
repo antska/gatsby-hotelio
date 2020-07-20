@@ -1,30 +1,20 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 import Layout from '../components/Layout';
-import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Rooms from '../components/Rooms';
 import InstagramFeed from '../components/InstagramFeed';
 import Directions from '../components/Directions';
 import { useHeader } from '../hooks/useHeader';
-import NavBar from '../components/NavBar';
 import Welcome from '../components/Welcome';
-import ScrollButton from '../components/ScrollButton';
-import useOnScreen from '../hooks/useOnScreen';
-import useWindowSize from '../hooks/useWindowSize';
 import MainLayout from '../components/MainLayout';
+import ScrollButton from '../components/ScrollButton';
 
 const IndexPage = () => {
   const header = useHeader();
 
-  const tRef = useRef(null);
-  const tOnScreen = useOnScreen(tRef);
-  const size = useWindowSize();
-  const isMobile = size.width! <= 768;
-
   return (
     <MainLayout seo={header.datoCmsHome.seoMetaTags}>
-      <NavBar ref={tRef} bottomNav={!tOnScreen && !isMobile} withLogo />
       <main className="relative h-full">
         <Header
           heroImage={header.datoCmsHome.hero.fluid}
@@ -52,7 +42,6 @@ const IndexPage = () => {
           <InstagramFeed />
         </Layout>
         <Directions />
-        <Footer />
         <ScrollButton />
       </main>
     </MainLayout>

@@ -1,8 +1,6 @@
 import React from 'react';
 
 import Layout from '../components/Layout';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { useBlog } from '../hooks/useBlog';
 import BlogCard from '../components/BlogCard';
@@ -22,7 +20,6 @@ const Blog = () => {
           bgFixed
         />
         <Layout>
-          <NavBar withLogo />
           <section className="py-4 my-12">
             <h2 className="text-center font-thin mb-12">Explore Aliki & Paros</h2>
             <div className="px-4">
@@ -49,7 +46,6 @@ const Blog = () => {
             </div>
           </section>
         </Layout>
-        <Footer />
         <ScrollButton />
       </main>
     </MainLayout>

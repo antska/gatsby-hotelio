@@ -8,8 +8,6 @@ import { RiArrowRightSLine, RiArrowLeftSLine } from 'react-icons/ri';
 
 import Header from '../components/Header';
 import Layout from '../components/Layout';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
 import RoomInfo from '../components/RoomInfo';
 import Rooms from '../components/Rooms';
 import useWindowSize from '../hooks/useWindowSize';
@@ -60,7 +58,6 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
       <main className="relative h-full">
         <Header heroImage={room.coverImage.fluid} title={room.title} subtitle={room.excerpt} bgFixed height="h-90vh" />
         <Layout extraClasses="relative z-30 scroll-smooth">
-          <NavBar withLogo />
           <ul
             className="absolute flex -mt-8 text-white uppercase centered-axis-x items-center text-center xs:-mt-24 md:-mt-12"
             data-sal="fade"
@@ -205,7 +202,6 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
             </div>
           </div>
         )}
-        <Footer />
         <ScrollButton />
       </main>
     </MainLayout>
@@ -230,7 +226,7 @@ export const query = graphql`
       }
       coverImage {
         fluid(maxWidth: 4128) {
-          ...GatsbyDatoCmsFluid_noBase64
+          ...GatsbyDatoCmsFluid
         }
       }
       seoMetaTags {
