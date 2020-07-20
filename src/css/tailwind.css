@@ -21,7 +21,7 @@ h4 {
 /*! purgecss end ignore */
 
 .nav {
-    @apply left-0 w-full bg-white text-center z-10;
+    @apply left-0 w-full bg-white text-center z-50;
 }
 
 .bottom-nav {

@@ -28,18 +28,22 @@ const Footer = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-between mx-2 pt-8 pb-4 px-12 border-t border-white text-xs xs:flex-col xs:px-2 md:flex-row md:px-2">
+      <div className="flex justify-between items-center mx-2 pt-8 pb-8 px-12 border-t border-white text-xs xs:flex-col xs:px-2 lg:flex-row lg:px-2">
         <div
-          className="xs:text-center xs:mb-4 markdown"
+          className="xs:hidden lg:block markdown"
           dangerouslySetInnerHTML={{ __html: footer.datoCmsFooter.copyrightNode.childMarkdownRemark.html }}
         />
         <div className="text-right xs:flex xs:flex-col xs:text-center md:flex-row md:text-right">
           {footer.allDatoCmsMenu.edges.map(({ node: menuItem }, key: number) => (
-            <Link className="mr-6 xs:mb-2" to={menuItem.url} key={`menuLink_${key}`}>
+            <Link className="mr-6" to={menuItem.url} key={`menuLink_${key}`}>
               {menuItem.label}
             </Link>
           ))}
         </div>
+        <div
+          className="xs:visible lg:hidden xs:text-center xs:mt-4 lg:mt-0 markdown"
+          dangerouslySetInnerHTML={{ __html: footer.datoCmsFooter.copyrightNode.childMarkdownRemark.html }}
+        />
       </div>
     </footer>
   );
