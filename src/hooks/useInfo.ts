@@ -9,7 +9,7 @@ export const useInfo = () =>
             alt
             title
             fluid(maxWidth: 500, imgixParams: { fm: "jpg", auto: "compress" }) {
-              ...GatsbyDatoCmsFluid_noBase64
+              ...GatsbyDatoCmsFluid
             }
           }
           title
@@ -18,7 +18,7 @@ export const useInfo = () =>
             alt
             title
             fluid(maxWidth: 100, imgixParams: { fm: "jpg", auto: "compress" }) {
-              ...GatsbyDatoCmsFluid_noBase64
+              ...GatsbyDatoCmsFluid
             }
           }
         }

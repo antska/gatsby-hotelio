@@ -15,7 +15,7 @@ export const useHeader = () =>
             title
             alt
             fluid(maxWidth: 3008) {
-              ...GatsbyDatoCmsFluid_noBase64
+              ...GatsbyDatoCmsFluid
             }
           }
           welcomeTitle
@@ -31,7 +31,7 @@ export const useHeader = () =>
             title
             alt
             fluid(maxWidth: 3000) {
-              ...GatsbyDatoCmsFluid_noBase64
+              ...GatsbyDatoCmsFluid
             }
           }
           seoMetaTags {
@@ -43,6 +43,7 @@ export const useHeader = () =>
             node {
               url
               label
+              mainMenu
             }
           }
         }

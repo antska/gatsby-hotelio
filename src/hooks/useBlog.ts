@@ -11,7 +11,7 @@ export const useBlog = () =>
             title
             alt
             fluid(maxWidth: 2800) {
-              ...GatsbyDatoCmsFluid_noBase64
+              ...GatsbyDatoCmsFluid
             }
           }
           seoMetaTags {
@@ -31,7 +31,7 @@ export const useBlog = () =>
                 title
                 alt
                 fluid(maxWidth: 2800) {
-                  ...GatsbyDatoCmsFluid_noBase64
+                  ...GatsbyDatoCmsFluid
                 }
               }
             }

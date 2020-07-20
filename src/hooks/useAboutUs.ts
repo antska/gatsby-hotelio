@@ -9,14 +9,14 @@ export const useAboutUs = () =>
             title
             alt
             fluid(maxWidth: 600) {
-              ...GatsbyDatoCmsFluid_noBase64
+              ...GatsbyDatoCmsFluid
             }
           }
           image2 {
             title
             alt
             fluid(maxWidth: 1280) {
-              ...GatsbyDatoCmsFluid_noBase64
+              ...GatsbyDatoCmsFluid
             }
           }
           signature {
