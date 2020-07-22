@@ -13,7 +13,7 @@ const FacebookChat = React.memo(function CustomerChat() {
         const el = document.createElement('div');
         el.className = 'fb-customerchat';
         el.setAttribute('attribution', 'setup_tool');
-        el.setAttribute('page_id', process.env.FACEBOOK_PAGE_ID);
+        el.setAttribute('page_id', `${process.env.FACEBOOK_PAGE_ID}`);
         // el.setAttribute('ptheme_color', theme.palette.primary.main);
         // el.setAttribute('plogged_in_greeting', '...');
         // el.setAttribute('plogged_out_greeting', '...');
