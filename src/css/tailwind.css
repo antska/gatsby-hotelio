@@ -167,6 +167,10 @@ body {
     /* transform: perspective(3000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) */
 }
 
+.fb_dialog, .fb_reset iframe {
+    z-index: 60
+}
+
 @keyframes animate {
     0% {
         margin-top: 5vh;
