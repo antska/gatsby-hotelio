@@ -76,7 +76,7 @@ const InstagramFeed = () => {
           href="https://www.instagram.com/helenstudios_paros/"
           target="_blank"
           rel="noopener norefferer"
-          className="ml-4 bg-blue-500 hover:bg-gray-800 text-white text-xs px-2 rounded flex justify-center items-center"
+          className="ml-4 bg-helens-blue hover:bg-blue-500 text-white text-xs px-2 rounded flex justify-center items-center"
         >
           <FaInstagram className="mr-1" title="Instagram" />
           <span>Follow us on Instagram</span>

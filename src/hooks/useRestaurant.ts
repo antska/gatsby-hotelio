@@ -9,7 +9,7 @@ export const useRestaurant = () =>
             alt
             title
             fluid(maxWidth: 2600) {
-              ...GatsbyDatoCmsFluid_noBase64
+              ...GatsbyDatoCmsFluid
             }
           }
           title
@@ -22,7 +22,7 @@ export const useRestaurant = () =>
             alt
             title
             fluid(maxWidth: 800, imgixParams: { fm: "jpg", auto: "compress" }) {
-              ...GatsbyDatoCmsFluid_noBase64
+              ...GatsbyDatoCmsFluid
             }
           }
           seoMetaTags {

@@ -9,7 +9,7 @@ export const useGallery = () =>
             title
             alt
             fluid(maxWidth: 1920) {
-              ...GatsbyDatoCmsFluid_noBase64
+              ...GatsbyDatoCmsFluid
             }
           }
           title

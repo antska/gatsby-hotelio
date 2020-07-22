@@ -1,8 +1,6 @@
 import React from 'react';
 
 import Layout from '../components/Layout';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
 import Map from '../components/Map';
 import Form from '../components/Form';
 import InfoCard from '../components/InfoCard';
@@ -18,7 +16,6 @@ const Contact = () => {
     <MainLayout seo={datoCmsContact.seoMetaTags}>
       <main className="relative h-full">
         <Layout>
-          <NavBar withLogo />
           <section className="flex justify-between items-center mt-32 mb-12 xs:flex-col xs:mx-4 md:flex-row md:mx-0">
             <h1
               className="font-bold whitespace-pre-line"
@@ -79,7 +76,6 @@ const Contact = () => {
             </div>
           </section>
         </Layout>
-        <Footer />
         <ScrollButton />
       </main>
     </MainLayout>

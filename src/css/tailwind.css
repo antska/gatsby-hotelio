@@ -21,7 +21,7 @@ h4 {
 /*! purgecss end ignore */
 
 .nav {
-    @apply left-0 w-full bg-white text-center z-10;
+    @apply left-0 w-full bg-white text-center z-50;
 }
 
 .bottom-nav {
@@ -165,6 +165,10 @@ body {
     animation: unset;
     margin-top: 3vh;
     /* transform: perspective(3000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) */
+}
+
+.fb_dialog, .fb_reset iframe {
+    z-index: 60
 }
 
 @keyframes animate {

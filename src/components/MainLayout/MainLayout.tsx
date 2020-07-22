@@ -3,6 +3,8 @@ import { Link } from 'gatsby';
 import CookieConsent from 'react-cookie-consent';
 
 import SEO from '../SEO';
+import Footer from '../Footer';
+import NavBar from '../NavBar';
 
 type Props = {
   children: React.ReactNode;
@@ -38,7 +40,9 @@ const MainLayout = ({ children, seo }: Props) => (
         .
       </p>
     </CookieConsent>
+    <NavBar />
     {children}
+    <Footer />
   </div>
 );
 

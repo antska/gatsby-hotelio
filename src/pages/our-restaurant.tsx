@@ -3,8 +3,6 @@ import Img from 'gatsby-image';
 
 import Header from '../components/Header';
 import Layout from '../components/Layout';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
 import Map from '../components/Map';
 import { useRestaurant } from '../hooks/useRestaurant';
 import ScrollButton from '../components/ScrollButton';
@@ -23,7 +21,6 @@ const Gallery = () => {
           bgFixed
         />
         <Layout>
-          <NavBar withLogo />
           <section className="mb-8 p-12">
             <div className="grid grid-cols-2 gap-8 xs:grid-cols-1 md:grid-cols-2">
               <p
@@ -134,7 +131,6 @@ const Gallery = () => {
             </section>
           </section>
         </Layout>
-        <Footer />
         <ScrollButton />
       </main>
     </MainLayout>

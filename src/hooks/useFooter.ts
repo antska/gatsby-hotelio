@@ -13,6 +13,16 @@ export const useFooter = () =>
               ...GatsbyDatoCmsFixed
             }
           }
+          copyrightNode {
+            childMarkdownRemark {
+              html
+            }
+          }
+          contactNode {
+            childMarkdownRemark {
+              html
+            }
+          }
         }
         allDatoCmsMenu(sort: { fields: position }) {
           edges {

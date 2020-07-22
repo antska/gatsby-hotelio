@@ -13,13 +13,7 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-4 justify-center py-24 xs:grid-cols-1 xs:content-center xs:items-center xs:justify-items-center xs:text-center xs:gap-6 xs:py-4 lg:grid-cols-4 lg:text-left lg:items-start lg:py-24">
         <div>
           <h5 className="mb-4">CONTACT</h5>
-          <p>
-            Mobile: (+30) 697 837 0698
-            <br />
-            WhatsApp: (+30) 698 339 5086
-            <br />
-            Email: info@helenstudios.com
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: footer.datoCmsFooter.contactNode.childMarkdownRemark.html }} />
         </div>
         <div>
           <h5 className="mb-4 uppercase">Find us on Social</h5>
@@ -34,17 +28,22 @@ const Footer = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-between mx-2 pt-8 pb-4 px-12 border-t border-white text-xs xs:flex-col xs:px-2 md:flex-row md:px-2">
-        <div className="xs:text-center xs:mb-4">
-          © Copyright Helen's Minimal Studios & Apartments | Developed & Designed by Antonis Skandalis
-        </div>
+      <div className="flex justify-between items-center mx-2 pt-8 pb-8 px-12 border-t border-white text-xs xs:flex-col xs:px-2 lg:flex-row lg:px-2">
+        <div
+          className="xs:hidden lg:block markdown"
+          dangerouslySetInnerHTML={{ __html: footer.datoCmsFooter.copyrightNode.childMarkdownRemark.html }}
+        />
         <div className="text-right xs:flex xs:flex-col xs:text-center md:flex-row md:text-right">
           {footer.allDatoCmsMenu.edges.map(({ node: menuItem }, key: number) => (
-            <Link className="mr-6 xs:mb-2" to={menuItem.url} key={`menuLink_${key}`}>
+            <Link className="mr-6" to={menuItem.url} key={`menuLink_${key}`}>
               {menuItem.label}
             </Link>
           ))}
         </div>
+        <div
+          className="xs:visible lg:hidden xs:text-center xs:mt-4 lg:mt-0 markdown"
+          dangerouslySetInnerHTML={{ __html: footer.datoCmsFooter.copyrightNode.childMarkdownRemark.html }}
+        />
       </div>
     </footer>
   );
