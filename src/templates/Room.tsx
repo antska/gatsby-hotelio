@@ -11,7 +11,6 @@ import Layout from '../components/Layout';
 import RoomInfo from '../components/RoomInfo';
 import Rooms from '../components/Rooms';
 import useWindowSize from '../hooks/useWindowSize';
-import ScrollButton from '../components/ScrollButton';
 import Form from '../components/Form';
 import MainLayout from '../components/MainLayout';
 
@@ -202,7 +201,6 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
             </div>
           </div>
         )}
-        <ScrollButton />
       </main>
     </MainLayout>
   );

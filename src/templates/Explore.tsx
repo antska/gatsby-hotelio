@@ -8,7 +8,6 @@ import { RiArrowRightSLine, RiArrowLeftSLine } from 'react-icons/ri';
 import Layout from '../components/Layout';
 import Rooms from '../components/Rooms';
 import useWindowSize from '../hooks/useWindowSize';
-import ScrollButton from '../components/ScrollButton';
 import Header from '../components/Header';
 import MainLayout from '../components/MainLayout';
 
@@ -117,7 +116,6 @@ const Explore = ({ data: { datoCmsExploreCard: explore } }) => {
           </div>
           <Rooms withTitle={false} withBooking={false} limit={3} />
         </Layout>
-        <ScrollButton />
       </main>
     </MainLayout>
   );

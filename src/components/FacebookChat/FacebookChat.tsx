@@ -10,18 +10,20 @@ const FacebookChat = React.memo(function CustomerChat() {
   useFacebook({ xfbml: false }, FB => {
     if (timeoutRef.current !== null) {
       timeoutRef.current = setTimeout(() => {
-        const el = document.createElement('div');
-        el.className = 'fb-customerchat';
-        el.setAttribute('attribution', 'setup_tool');
-        el.setAttribute('page_id', `${process.env.GATSBY_FACEBOOK_PAGE_ID}`);
-        // el.setAttribute('ptheme_color', theme.palette.primary.main);
-        // el.setAttribute('plogged_in_greeting', '...');
-        // el.setAttribute('plogged_out_greeting', '...');
-        // el.setAttribute('pgreeting_dialog_display', '...');
-        // el.setAttribute('pgreeting_dialog_delay', '...');
-        // el.setAttribute('pminimized', 'false');
-        document.body.appendChild(el);
-        FB.XFBML.parse();
+        if (!document.querySelector('.fb-customerchat')) {
+          const el = document.createElement('div');
+          el.className = 'fb-customerchat';
+          el.setAttribute('attribution', 'setup_tool');
+          el.setAttribute('page_id', `${process.env.GATSBY_FACEBOOK_PAGE_ID}`);
+          el.setAttribute('ptheme_color', '#407598');
+          // el.setAttribute('plogged_in_greeting', '...');
+          // el.setAttribute('plogged_out_greeting', '...');
+          // el.setAttribute('pgreeting_dialog_display', '...');
+          // el.setAttribute('pgreeting_dialog_delay', '...');
+          // el.setAttribute('pminimized', 'false');
+          document.body.appendChild(el);
+          FB.XFBML.parse();
+        }
       }, 2000);
     }
   });

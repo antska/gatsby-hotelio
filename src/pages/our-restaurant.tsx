@@ -5,7 +5,6 @@ import Header from '../components/Header';
 import Layout from '../components/Layout';
 import Map from '../components/Map';
 import { useRestaurant } from '../hooks/useRestaurant';
-import ScrollButton from '../components/ScrollButton';
 import MainLayout from '../components/MainLayout';
 
 const Gallery = () => {
@@ -131,7 +130,6 @@ const Gallery = () => {
             </section>
           </section>
         </Layout>
-        <ScrollButton />
       </main>
     </MainLayout>
   );

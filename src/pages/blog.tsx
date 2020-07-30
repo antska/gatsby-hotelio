@@ -4,7 +4,6 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import { useBlog } from '../hooks/useBlog';
 import BlogCard from '../components/BlogCard';
-import ScrollButton from '../components/ScrollButton';
 import MainLayout from '../components/MainLayout';
 
 const Blog = () => {
@@ -46,7 +45,6 @@ const Blog = () => {
             </div>
           </section>
         </Layout>
-        <ScrollButton />
       </main>
     </MainLayout>
   );

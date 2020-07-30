@@ -5,7 +5,6 @@ import Map from '../components/Map';
 import Form from '../components/Form';
 import InfoCard from '../components/InfoCard';
 import SocialIcons from '../components/SocialIcons';
-import ScrollButton from '../components/ScrollButton';
 import { useContact } from '../hooks/useContact';
 import MainLayout from '../components/MainLayout';
 
@@ -16,7 +15,20 @@ const Contact = () => {
     <MainLayout seo={datoCmsContact.seoMetaTags}>
       <main className="relative h-full">
         <Layout>
-          <section className="flex justify-between items-center mt-32 mb-12 xs:flex-col xs:mx-4 md:flex-row md:mx-0">
+          <section className="grid grid-cols-2 mb-12 mt-32 xs:grid-cols-1 xs:mx-4 xs:gap-12 md:grid-cols-2 md:gap-12 md:mx-0">
+            <div data-sal="slide-right" data-sal-duration="700" data-sal-delay="300" data-sal-easing="easeInSine">
+              <h2>Do you want to book a room?</h2>
+              <Form />
+            </div>
+            <InfoCard />
+          </section>
+          <section className="flex flex-col justify-center items-center">
+            <h3>Stay in touch with us</h3>
+            <div>
+              <SocialIcons />
+            </div>
+          </section>
+          <section className="flex justify-between items-center mt-12 mb-12 xs:flex-col xs:mx-4 md:flex-row md:mx-0">
             <h1
               className="font-bold whitespace-pre-line"
               data-sal="slide-right"
@@ -62,21 +74,7 @@ const Contact = () => {
               <p className="text-sm whitespace-pre-line">{datoCmsContact.byBus}</p>
             </div>
           </section>
-          <section className="grid grid-cols-2 mb-24 xs:grid-cols-1 xs:mx-4 xs:gap-12 md:grid-cols-2 md:gap-12 md:mx-0">
-            <div data-sal="slide-right" data-sal-duration="700" data-sal-delay="300" data-sal-easing="easeInSine">
-              <h2>Do you want to book a room?</h2>
-              <Form />
-            </div>
-            <InfoCard />
-          </section>
-          <section className="flex flex-col justify-center items-center mb-24">
-            <h3>Stay in touch with us</h3>
-            <div>
-              <SocialIcons />
-            </div>
-          </section>
         </Layout>
-        <ScrollButton />
       </main>
     </MainLayout>
   );

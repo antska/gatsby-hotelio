@@ -48,7 +48,7 @@ const NavBar = () => {
               menuItem.mainMenu && (
                 <div
                   key={`menuItem_${key}`}
-                  className="px-4 py-2 text-sm text-gray-900 rounded-lg md:mt-0 focus:outline-none focus:shadow-outline hover:text-helens-blue transition-all duration-300 uppercase font-light xs:p-5 xs:text-3xl xs:px-2 md:text-5xl lg:p-4 lg:text-base"
+                  className="px-4 py-2 text-sm text-gray-900 rounded-lg md:mt-0 focus:outline-none focus:shadow-outline hover:text-helens-blue transition-all duration-300 uppercase font-light xs:p-5 xs:text-3xl xs:px-2 md:text-4xl lg:p-4 lg:text-base"
                 >
                   <Link to={menuItem.url}>{menuItem.label}</Link>
                 </div>
