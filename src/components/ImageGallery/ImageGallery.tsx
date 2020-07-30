@@ -16,15 +16,8 @@ type Props = {
 const ImageGallery = ({ images }: Props) => (
   <SRLWrapper options={{ buttons: { showDownloadButton: false } }}>
     <div className="grid grid-cols-3 gap-4 xs:grid-cols-1 xs:gap-0 md:grid-cols-2 lg:grid-cols-3 md:gap-4">
-      {images.map((photo, index) => (
-        <div
-          className="w-full h-full"
-          key={photo.originalId}
-          data-sal="zoom-in"
-          data-sal-duration="700"
-          data-sal-delay={(index + 1) * 50}
-          data-sal-easing="easeInSine"
-        >
+      {images.map(photo => (
+        <div className="w-full h-full" key={photo.originalId}>
           <Img
             fluid={photo.fluid}
             alt={photo.alt}

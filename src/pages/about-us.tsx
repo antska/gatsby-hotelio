@@ -3,7 +3,6 @@ import Img from 'gatsby-image';
 
 import Layout from '../components/Layout';
 import { useAboutUs } from '../hooks/useAboutUs';
-import ScrollButton from '../components/ScrollButton';
 import MainLayout from '../components/MainLayout';
 
 const Contact = () => {
@@ -70,7 +69,6 @@ const Contact = () => {
             </div>
           </section>
         </Layout>
-        <ScrollButton />
       </main>
     </MainLayout>
   );

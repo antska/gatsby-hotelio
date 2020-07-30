@@ -1,9 +1,8 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import MainLayout from '../components/MainLayout';
 import Layout from '../components/Layout';
-import { graphql } from 'gatsby';
-import ScrollButton from '../components/ScrollButton';
 
 const PrivacyPolicy = ({ data: { datoCmsPolicy: policy } }) => (
   <MainLayout seo={policy.seoMetaTags}>
@@ -14,7 +13,6 @@ const PrivacyPolicy = ({ data: { datoCmsPolicy: policy } }) => (
           dangerouslySetInnerHTML={{ __html: policy.policyTextNode.childMarkdownRemark.html }}
         />
       </Layout>
-      <ScrollButton />
     </main>
   </MainLayout>
 );

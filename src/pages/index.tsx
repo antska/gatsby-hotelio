@@ -8,8 +8,6 @@ import Directions from '../components/Directions';
 import { useHeader } from '../hooks/useHeader';
 import Welcome from '../components/Welcome';
 import MainLayout from '../components/MainLayout';
-import ScrollButton from '../components/ScrollButton';
-import FacebookChat from '../components/FacebookChat';
 
 const IndexPage = () => {
   const header = useHeader();
@@ -43,8 +41,6 @@ const IndexPage = () => {
           <InstagramFeed />
         </Layout>
         <Directions />
-        <ScrollButton />
-        <FacebookChat />
       </main>
     </MainLayout>
   );

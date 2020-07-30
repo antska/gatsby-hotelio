@@ -5,7 +5,6 @@ import Header from '../components/Header';
 import Layout from '../components/Layout';
 import { useGallery } from '../hooks/useGallery';
 import ImageGallery from '../components/ImageGallery';
-import ScrollButton from '../components/ScrollButton';
 import MainLayout from '../components/MainLayout';
 
 const Gallery = () => {
@@ -27,7 +26,6 @@ const Gallery = () => {
             </SimpleReactLightbox>
           </section>
         </Layout>
-        <ScrollButton />
       </main>
     </MainLayout>
   );

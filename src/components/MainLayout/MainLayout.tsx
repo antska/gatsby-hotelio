@@ -5,6 +5,7 @@ import CookieConsent from 'react-cookie-consent';
 import SEO from '../SEO';
 import Footer from '../Footer';
 import NavBar from '../NavBar';
+import FacebookChat from '../FacebookChat';
 
 type Props = {
   children: React.ReactNode;
@@ -42,6 +43,7 @@ const MainLayout = ({ children, seo }: Props) => (
     </CookieConsent>
     <NavBar />
     {children}
+    <FacebookChat />
     <Footer />
   </div>
 );
