@@ -83,15 +83,15 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
                   <div className="px-8 border-l-2 border-gray-700 my-8">
                     <p className="text-sm">FROM</p>
                     <h1 className="font-light ml-6">{Object.values(room.pricelist)[0]}</h1>
-                    <button
-                      className="border border-helens-blue bg-helens-blue hover:bg-gray-900 transition-all duration-500 text-white block rounded-sm py-4 px-6 w-full"
+                    <a href="https://reservations.bookoncloud.com/welcome/studioeleniparos?lang=en&channelId=website" rel="noreferrer noopener"
+                      className="text-center border border-helens-blue bg-helens-blue hover:bg-gray-900 transition-all duration-500 text-white block rounded-sm py-4 px-6 w-full"
                       data-sal="slide-left"
                       data-sal-duration="700"
                       data-sal-delay="300"
                       data-sal-easing="easeInSine"
                     >
                       BOOK NOW
-                    </button>
+                    </a>
                     <RoomInfo info={room.info} />
                   </div>
                 )}
@@ -111,9 +111,9 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
                 <div className="px-8 border-l-2 border-gray-700 md:px-0 md:pl-6 xl:px-8">
                   <p className="text-sm">FROM</p>
                   <h1 className="font-light ml-8">{Object.values(room.pricelist)[0]}</h1>
-                  <button className="border border-helens-blue bg-helens-blue transition-all duration-300 text-white block rounded-sm py-4 px-6 w-full hover:bg-gray-900 md:px-4 md:py-4">
+                  <a href="https://reservations.bookoncloud.com/welcome/studioeleniparos?lang=en&channelId=website" rel="noreferrer noopener" className="text-center border border-helens-blue bg-helens-blue transition-all duration-300 text-white block rounded-sm py-4 px-6 w-full hover:bg-gray-900 md:px-4 md:py-4">
                     BOOK NOW
-                  </button>
+                  </a>
                   <RoomInfo info={room.info} />
                 </div>
               )}
