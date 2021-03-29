@@ -54,7 +54,7 @@ const NavBar = () => {
                 </div>
               )
           )}
-          <Link to="/contact" className={`${burgerOpen ? 'absolute bottom-0 mb-4' : ''}`}>
+          <a href="https://reservations.bookoncloud.com/welcome/studioeleniparos?lang=en&channelId=website" rel="noreferrer noopener" className={`${burgerOpen ? 'absolute bottom-0 mb-4' : ''}`}>
             <button className="border border-helens-blue bg-helens-blue hover:bg-gray-900 transition-all duration-500 text-white flex rounded-sm px-4 py-2 text-center uppercase items-center ml-2">
               <svg className="svg-icon h-6 w-6 inline-block mr-2 align-top" viewBox="0 0 20 20">
                 <path
@@ -64,7 +64,7 @@ const NavBar = () => {
               </svg>
               <span className="font-light xs:text-xl lg:text-base">Book Now</span>
             </button>
-          </Link>
+          </a>
         </nav>
       </div>
     </div>
