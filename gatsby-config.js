@@ -78,7 +78,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-googlemaps-static`,
+      resolve: `@ccalamos/gatsby-source-googlemaps-static`,
       options: {
         key: process.env.GOOGLE_MAPS_API,
         secret: process.env.GOOGLE_MAPS_SECRET,
