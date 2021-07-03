@@ -6,7 +6,7 @@ import { useInstagram } from '../../hooks/useInstagram';
 
 const InstagramFeed = () => {
   const instagram = useInstagram();
-  const igPosts = instagram.allInstaNode.edges;
+  const igPosts = instagram.allInstagramContent.edges;
 
   const [visible, setVisible] = useState(4);
 
@@ -59,7 +59,7 @@ const InstagramFeed = () => {
             data-sal-easing="easeInSine"
           >
             <Img
-              fluid={ig.localFile.childImageSharp.fluid}
+              fluid={ig.localImage.childImageSharp.fluid}
               title={`Instagram photo ${index + 1}`}
               alt={`Instagram photo ${index + 1}`}
             />
