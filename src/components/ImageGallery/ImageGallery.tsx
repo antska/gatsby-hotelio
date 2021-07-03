@@ -22,7 +22,7 @@ const ImageGallery = ({ images }: Props) => (
             fluid={photo.fluid}
             alt={photo.alt}
             title={photo.title}
-            className="h-64 cursor-pointer border-opacity-0 border-helens-dark-blue border-2 hover:opacity-75 transform hover:border-opacity-100 hover:scale-105 transition-all duration-700"
+            className="h-64 cursor-pointer hover:opacity-75 transform hover:scale-105 transition-all duration-700"
           />
         </div>
       ))}

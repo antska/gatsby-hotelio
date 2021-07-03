@@ -161,6 +161,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
                 <BackgroundImage
                   Tag="div"
                   fluid={img.fluid}
+                  style={{backgroundSize: 'contain'}}
                   className="mr-4 h-600 xs:mr-0 md:mr-4"
                   alt={img.alt}
                   title={img.title}
