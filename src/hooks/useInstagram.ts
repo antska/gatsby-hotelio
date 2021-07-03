@@ -10,29 +10,19 @@ export const useInstagram = () =>
           }
         }
 
-        allInstaNode(sort: { fields: timestamp, order: DESC }) {
+        allInstagramContent(sort: { fields: timestamp, order: DESC }) {
           edges {
             node {
               id
-              likes
               timestamp
-              localFile {
+              caption
+              localImage {
                 childImageSharp {
                   fluid(maxWidth: 300, maxHeight: 300) {
                     ...GatsbyImageSharpFluid
                   }
                 }
-              }
-              # Only available with the public api scraper
-              thumbnails {
-                src
-                config_width
-                config_height
-              }
-              dimensions {
-                height
-                width
-              }
+              }            
             }
           }
         }
