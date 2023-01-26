@@ -72,7 +72,7 @@ module.exports = {
     {
       resolve: `gatsby-source-instagram-all`,
       options: {
-        access_token: "IGQVJVaXVoLWdPR1VPV3h2eENMc3ctU2ZAHRTlwUU5oWU1CVEc4U29WOFFZAY0hPRDNDaXdFVTVzUkIxVG9oMUc2aGhNNUhyMG9VZAEFGRUUzcDdQckt6RnlMUzVDa1I2M2pQbW1uOGRhbWE2RllZAa1daeAZDZD",
+        access_token: process.env.INSTAGRAM_API,
       }
     },
     {
