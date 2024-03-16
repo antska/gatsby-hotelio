@@ -22,7 +22,7 @@ const Footer = () => {
         {footer.datoCmsFooter.footerImages.map((award, key: number) => (
           <div key={`award_${key}`}>
             <h5 className="mb-4">{award.title}</h5>
-            <a href={award.customData.url} target="_blank" rel="noopener norefferer">
+            <a href={award.customData.url} target="_blank" rel="noopener norefferer noreferrer">
               <Img fixed={award.fixed} className="shadow-xl" title={award.title} alt={award.alt} />
             </a>
           </div>

@@ -22,24 +22,24 @@ const amenities = [
   'Hairdryer',
   'Kitchenette',
   'Linen',
-  'Private bathroom',
+  'Private renovated bathroom',
   'Refrigerator',
   'Samsung® LED TV',
   'Shower',
-  'Towels'
+  'Towels',
 ];
 
-const services = ['Airport shuttle (Free)', 'Luggage storage (Free)', '10% discount on restaurant'];
+const services = ['Luggage storage (Free)', '10% discount on restaurant'];
 
 const Room = ({ data: { datoCmsRoom: room } }) => {
   const scrollTo = (sectionId: string) =>
     document.querySelector(`#${sectionId}`)?.scrollIntoView({
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
 
   const [openModal, setOpenModal] = useState(false);
-  const size = useWindowSize();
-  const isMobile = size.width <= 650;
+  const { width } = useWindowSize();
+  const isMobile = width && width <= 768;
 
   const settings = {
     slidesToShow: isMobile ? 1 : 2,
@@ -49,7 +49,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
     slidesToScroll: 1,
 
     nextArrow: <RiArrowRightSLine size="12" color="black" />,
-    prevArrow: <RiArrowLeftSLine size="12" color="black" />
+    prevArrow: <RiArrowLeftSLine size="12" color="black" />,
   };
 
   return (
@@ -82,8 +82,9 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
                 {isMobile && (
                   <div className="px-8 border-l-2 border-gray-700 my-8">
                     <p className="text-sm">FROM</p>
-                    <h1 className="font-light ml-6">{Object.values(room.pricelist)[0]}</h1>
-                    <a href="https://reservations.bookoncloud.com/welcome/studioeleniparos?lang=en&channelId=website" rel="noreferrer noopener"
+                    <a
+                      href="https://reservations.bookoncloud.com/welcome/studioeleniparos?lang=en&channelId=website"
+                      rel="noreferrer noopener"
                       className="text-center border border-helens-blue bg-helens-blue hover:bg-gray-900 transition-all duration-500 text-white block rounded-sm py-4 px-6 w-full"
                       data-sal="slide-left"
                       data-sal-duration="700"
@@ -92,7 +93,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
                     >
                       BOOK NOW
                     </a>
-                    <RoomInfo info={room.info} />
+                    <RoomInfo info={JSON.parse(room.info)} />
                   </div>
                 )}
                 <div className="m-3 mt-16 text-center">
@@ -102,19 +103,21 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
                   >
                     <span className="mr-2">Check Rates</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                      <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+                      <path fill="currentcolor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
                     </svg>
                   </button>
                 </div>
               </div>
               {!isMobile && (
                 <div className="px-8 border-l-2 border-gray-700 md:px-0 md:pl-6 xl:px-8">
-                  <p className="text-sm">FROM</p>
-                  <h1 className="font-light ml-8">{Object.values(room.pricelist)[0]}</h1>
-                  <a href="https://reservations.bookoncloud.com/welcome/studioeleniparos?lang=en&channelId=website" rel="noreferrer noopener" className="text-center border border-helens-blue bg-helens-blue transition-all duration-300 text-white block rounded-sm py-4 px-6 w-full hover:bg-gray-900 md:px-4 md:py-4">
+                  <a
+                    href="https://reservations.bookoncloud.com/welcome/studioeleniparos?lang=en&channelId=website"
+                    rel="noreferrer noopener"
+                    className="text-center border border-helens-blue bg-helens-blue transition-all duration-300 text-white block rounded-sm py-4 px-6 w-full hover:bg-gray-900 md:px-4 md:py-4"
+                  >
                     BOOK NOW
                   </a>
-                  <RoomInfo info={room.info} />
+                  <RoomInfo info={JSON.parse(room.info)} />
                 </div>
               )}
             </div>
@@ -135,10 +138,10 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
                 <h3 className="ml-4 xs:ml-0 lg:ml-4">Amenities</h3>
               </div>
               <div className="grid grid-cols-2 xs:grid-cols-1 lg:grid-cols-2">
-                {amenities.slice(0, 6).map(info => (
+                {amenities.slice(0, 6).map((info) => (
                   <p className="mb-2" key={info}>{`▸ ${info}`}</p>
                 ))}
-                {amenities.slice(6, 12).map(info => (
+                {amenities.slice(6, 12).map((info) => (
                   <p className="mb-2" key={info}>{`▸ ${info}`}</p>
                 ))}
               </div>
@@ -148,7 +151,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
                 <MdLocalAirport size="40" />
                 <h3 className="ml-4 xs:ml-0">Services</h3>
               </div>
-              {services.map(service => (
+              {services.map((service) => (
                 <p className="mb-2" key={service}>{`▸ ${service}`}</p>
               ))}
             </div>
@@ -156,12 +159,12 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
         </section>
         <section id="gallery" className="my-4">
           <Slider {...settings}>
-            {room.gallery.map(img => (
+            {room.gallery.map((img) => (
               <div key={img.originalId}>
                 <BackgroundImage
                   Tag="div"
                   fluid={img.fluid}
-                  style={{backgroundSize: 'contain'}}
+                  style={{ backgroundSize: 'contain' }}
                   className="mr-4 h-600 xs:mr-0 md:mr-4"
                   alt={img.alt}
                   title={img.title}
@@ -191,7 +194,7 @@ const Room = ({ data: { datoCmsRoom: room } }) => {
                       height="18"
                       viewBox="0 0 18 18"
                     >
-                      <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                      <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z" />
                     </svg>
                   </div>
                 </div>
