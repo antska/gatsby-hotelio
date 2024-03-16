@@ -1,95 +1,89 @@
 require('dotenv').config();
-const tailwindConfig = require('./tailwind.config.js');
+const tailwindConfig = require('./tailwind.config');
 
 module.exports = {
   siteMetadata: {
-    title: `Hotelio`,
-    siteUrl: 'https://www.helenstudios.com'
+    title: 'Hotelio',
+    siteUrl: 'https://www.helenstudios.com',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-gdpr-cookies`,
+      resolve: 'gatsby-plugin-gdpr-cookies',
       options: {
         googleAnalytics: {
           trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
           cookieName: 'gatsby-gdpr-google-analytics',
-          anonymize: true
-        }
-      }
+          anonymize: true,
+        },
+      },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-scroll-reveal`,
-    `gatsby-plugin-react-axe`,
-    `gatsby-plugin-advanced-sitemap`,
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-remark',
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-scroll-reveal',
+    'gatsby-plugin-react-axe',
+    'gatsby-plugin-advanced-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://www.helenstudios.com',
         sitemap: 'https://www.helenstudios.com/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
-      }
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `Helen's Minimal Studios & Apartments`,
-        short_name: `Helen Studios`,
-        description: `Minimal accomodation in Alyki with Seaview or garden view.`,
-        start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#59809a`,
-        display: `standalone`,
-        icon: `src/images/helensminimalstudio-512x512.png`
-      }
+        name: "Helen's Minimal Studios & Apartments",
+        short_name: 'Helen Studios',
+        description: 'Minimal accomodation in Alyki with Seaview or garden view.',
+        start_url: '/',
+        background_color: '#f7f0eb',
+        theme_color: '#59809a',
+        display: 'standalone',
+        icon: 'src/images/helensminimalstudio-512x512.png',
+      },
     },
-    `gatsby-plugin-offline`,
+    'gatsby-plugin-offline',
     {
       resolve: 'gatsby-background-image-es5',
       options: {
-        specialChars: '/:'
-      }
+        specialChars: '/:',
+      },
     },
     {
-      resolve: `gatsby-source-datocms`,
+      resolve: 'gatsby-source-datocms',
       options: {
-        apiToken: process.env.DATO_API_TOKEN
-      }
+        apiToken: process.env.DATO_API_TOKEN,
+      },
     },
     {
-      resolve: `gatsby-plugin-postcss`,
+      resolve: 'gatsby-plugin-postcss',
       options: {
         postCssPlugins: [
-          require(`tailwindcss`)(tailwindConfig),
-          require(`autoprefixer`),
-          ...(process.env.NODE_ENV === `production` ? [require(`cssnano`)] : [])
-        ]
-      }
+          require('tailwindcss')(tailwindConfig),
+          require('autoprefixer'),
+          ...(process.env.NODE_ENV === 'production' ? [require('cssnano')] : []),
+        ],
+      },
     },
     {
-      resolve: `gatsby-source-instagram-all`,
-      options: {
-        access_token: process.env.INSTAGRAM_API,
-      }
-    },
-    {
-      resolve: `@ccalamos/gatsby-source-googlemaps-static`,
+      resolve: '@ccalamos/gatsby-source-googlemaps-static',
       options: {
         key: process.env.GOOGLE_MAPS_API,
         secret: process.env.GOOGLE_MAPS_SECRET,
-        center: `36.9946889,25.1345078`,
-        zoom: '15',
+        center: '36.9946889,25.1345078',
+        zoom: '16',
         scale: '2',
         markers: [
           {
-            location: `36.9946846,25.1366965`,
-            label: `Helen's Minimal Studios & Apartments`
-          }
-        ]
-      }
-    }
-  ]
+            location: '36.9946846,25.1366965',
+            label: "Helen's Minimal Studios & Apartments",
+          },
+        ],
+      },
+    },
+  ],
 };
