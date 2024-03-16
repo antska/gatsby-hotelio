@@ -16,5 +16,5 @@
     "plugins": [{ "name": "typescript-plugin-tw-template" }],
     "resolveJsonModule": true
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*", "gatsby-config.js"]
 }

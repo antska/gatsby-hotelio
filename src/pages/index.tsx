@@ -3,7 +3,6 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Rooms from '../components/Rooms';
-import InstagramFeed from '../components/InstagramFeed';
 import Directions from '../components/Directions';
 import { useHeader } from '../hooks/useHeader';
 import Welcome from '../components/Welcome';
@@ -34,12 +33,8 @@ const IndexPage = () => {
           subtitle="Activities, Nearby villages &amp; more"
           actionTo="/blog"
           height="h-600"
-          margin="mb-16"
           bgFixed
         />
-        <Layout>
-          <InstagramFeed />
-        </Layout>
         <Directions />
       </main>
     </MainLayout>

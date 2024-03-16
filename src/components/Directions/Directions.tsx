@@ -4,7 +4,7 @@ import Map from '../Map';
 
 const Directions = () => (
   <section
-    className="flex justify-between mt-8 xs:flex-col lg:flex-row"
+    className="flex justify-between xs:flex-col lg:flex-row"
     data-sal="slide-up"
     data-sal-duration="800"
     data-sal-delay="100"

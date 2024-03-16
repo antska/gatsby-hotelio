@@ -1,53 +1,58 @@
 const plugin = require('tailwindcss/plugin');
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ['./src/**/*.js*', './src/**/*.ts*'],
+  // purge: ['./src/**/*.js*', './src/**/*.ts*'],
+  content: [
+    './src/pages/**/*.{js,jsx,ts,tsx}',
+    './src/templates/**/*.{js,jsx,ts,tsx}',
+    './src/components/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
     animations: {
       fadeInLeft: {
         from: {
           opacity: 0,
-          transform: 'translateX(-20px)'
+          transform: 'translateX(-20px)',
         },
         to: {
           opacity: 1,
-          transform: 'translateX(0px)'
-        }
+          transform: 'translateX(0px)',
+        },
       },
       fadeIn: {
         from: {
-          opacity: 0
+          opacity: 0,
         },
         to: {
-          opacity: 1
-        }
-      }
+          opacity: 1,
+        },
+      },
     },
     filter: {
       none: 'none',
       grayscale: 'grayscale(1)',
       invert: 'invert(1)',
       sepia: 'sepia(1)',
-      blur: 'blur(3px)'
+      blur: 'blur(3px)',
     },
     backdropFilter: {
       none: 'none',
-      blur: 'blur(20px)'
+      blur: 'blur(20px)',
     },
     fontFamily: {
       display: ['Lato', 'sans-serif'],
-      body: ['Lato', 'sans-serif']
+      body: ['Lato', 'sans-serif'],
     },
     screens: {
       xs: '320px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
-      xl: '1280px'
+      xl: '1280px',
     },
     extend: {
       fontFamily: {
-        insta: ['Lobster', 'Helvetica', 'Arial', 'sans-serif']
+        insta: ['Lobster', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
         'helens-blue': '#407598',
@@ -57,30 +62,30 @@ module.exports = {
         email: '#F6AD55',
         gold: '#9e7256',
         'helens-grey': '#636363',
-        'helens-dark-blue': '#2b3e4a'
+        'helens-dark-blue': '#2b3e4a',
       },
       height: {
         '90vh': '90vh',
-        '320': '320px',
-        '500': '500px',
-        '600': '600px',
-        '700': '700px',
+        320: '320px',
+        500: '500px',
+        600: '600px',
+        700: '700px',
       },
       opacity: {
-        '90': '0.9'
+        90: '0.9',
       },
       top: {
-        '12': '12rem'
+        12: '12rem',
       },
       right: {
-        '1': '1rem',
-        '2': '2rem',
-        '3': '3rem'
+        1: '1rem',
+        2: '2rem',
+        3: '3rem',
       },
       fill: {
-        white: 'white'
-      }
-    }
+        white: 'white',
+      },
+    },
   },
   variants: {
     translate: ['responsive', 'hover', 'focus', 'group-hover'],
@@ -93,22 +98,22 @@ module.exports = {
     fontSize: ['responsive', 'hover', 'focus', 'group-hover'],
     boxShadow: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
     filter: ['responsive', 'hover', 'group-hover'],
-    backdropFilter: ['responsive', 'hover', 'group-hover']
+    backdropFilter: ['responsive', 'hover', 'group-hover'],
   },
   plugins: [
-    plugin(function({ addUtilities, e }) {
+    plugin(({ addUtilities, e }) => {
       const justify = ['start', 'center', 'end', 'baseline'];
       const justifyVariants = ['responsive'];
 
-      const utilities = justify.map(alignment => ({
+      const utilities = justify.map((alignment) => ({
         [`.justify-items-${e(alignment)}`]: {
-          'justify-items': alignment
-        }
+          'justify-items': alignment,
+        },
       }));
 
       addUtilities(utilities, justifyVariants);
     }),
     require('tailwindcss-animations'),
-    require('tailwindcss-filters')
-  ]
+    require('tailwindcss-filters'),
+  ],
 };

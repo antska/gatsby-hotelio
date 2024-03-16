@@ -5,7 +5,6 @@ import CookieConsent from 'react-cookie-consent';
 import SEO from '../SEO';
 import Footer from '../Footer';
 import NavBar from '../NavBar';
-import FacebookChat from '../FacebookChat';
 
 type Props = {
   children: React.ReactNode;
@@ -27,7 +26,7 @@ const MainLayout = ({ children, seo }: Props) => (
         width: '200px',
         height: '200px',
         opacity: 0.8,
-        alignContent: 'flex-end'
+        alignContent: 'flex-end',
       }}
       contentStyle={{ flex: 'unset', margin: '0 50px 0 10px', fontSize: 'small' }}
       buttonStyle={{ fontSize: 'small' }}
@@ -43,7 +42,6 @@ const MainLayout = ({ children, seo }: Props) => (
     </CookieConsent>
     <NavBar />
     {children}
-    <FacebookChat />
     <Footer />
   </div>
 );

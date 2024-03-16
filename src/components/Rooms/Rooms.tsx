@@ -29,9 +29,8 @@ const Rooms = React.forwardRef<HTMLDivElement, Props>(
     const shuffledRooms = useMemo(() => {
       if (remainingRooms) {
         return shuffleArray(remainingRooms);
-      } else {
-        return allDatoCmsRoom.edges;
       }
+      return allDatoCmsRoom.edges;
     }, [remainingRooms]);
 
     const rooms = limit ? shuffledRooms.slice(0, limit) : allDatoCmsRoom.edges;
@@ -56,7 +55,7 @@ const Rooms = React.forwardRef<HTMLDivElement, Props>(
                 <a
                   href="https://www.booking.com/hotel/gr/eleni-studios-aliki.html"
                   target="_blank"
-                  rel="noopener norefferer"
+                  rel="noopener norefferer noreferrer"
                   className="text-blue-800"
                 >
                   booking.com
@@ -72,7 +71,7 @@ const Rooms = React.forwardRef<HTMLDivElement, Props>(
               title={room.title}
               excerpt={room.excerpt}
               linkTo={`rooms/${room.slug}`}
-              info={room.info}
+              info={JSON.parse(room.info)}
               key={room.slug}
               id={index}
             />

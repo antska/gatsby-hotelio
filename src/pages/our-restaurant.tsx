@@ -40,7 +40,7 @@ const Gallery = () => {
               >
                 {datoCmsRestaurant.textRight}
               </p>
-              {Object.keys(datoCmsRestaurant.menu).map(key => (
+              {Object.keys(JSON.parse(datoCmsRestaurant.menu)).map((key) => (
                 <div
                   className="text-sm mr-8"
                   key={key}
@@ -50,7 +50,7 @@ const Gallery = () => {
                   data-sal-easing="easeInSine"
                 >
                   <h4 className="mb-8">{key}</h4>
-                  {datoCmsRestaurant.menu[key].map(food => (
+                  {JSON.parse(datoCmsRestaurant.menu)[key]?.map((food) => (
                     <div className="flex flex-row justify-between" key={food.name}>
                       <div className="mb-6">
                         <strong className="tracking-widest">{food.name}</strong>
@@ -92,7 +92,7 @@ const Gallery = () => {
                 <a
                   href="https://www.alikirestaurant.com"
                   target="_blank"
-                  rel="noopener norefferer"
+                  rel="noopener norefferer noreferrer"
                   className="text-center border border-helens-blue hover:bg-gray-900 hover:text-white transition-all duration-500 block py-4 px-6 w-full"
                   data-sal="zoom-in"
                   data-sal-duration="500"
